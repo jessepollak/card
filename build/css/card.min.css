@@ -1,0 +1,237 @@
+@-webkit-keyframes glow-fill {
+  0% {
+    width: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  80% {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 5px;
+  }
+
+  100% {
+    width: 100%;
+    border-right-width: 0;
+  }
+}
+
+@-moz-keyframes glow-fill {
+  0% {
+    width: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  80% {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 5px;
+  }
+
+  100% {
+    width: 100%;
+    border-right-width: 0;
+  }
+}
+
+@-o-keyframes glow-fill {
+  0% {
+    width: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  80% {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 5px;
+  }
+
+  100% {
+    width: 100%;
+    border-right-width: 0;
+  }
+}
+
+@keyframes glow-fill {
+  0% {
+    width: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  80% {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 5px;
+  }
+
+  100% {
+    width: 100%;
+    border-right-width: 0;
+  }
+}
+
+.logo {
+  height: 36px;
+  width: 60px;
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  font-style: italic;
+}
+.logo.visa {
+  background: white;
+  text-transform: uppercase;
+  color: #1a1876;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.logo.visa:before, .logo.visa:after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 25%;
+}
+.logo.visa:before {
+  background: #1a1876;
+  bottom: 100%;
+}
+.logo.visa:after {
+  background: #e79800;
+  top: 100%;
+}
+.logo.mastercard {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 9px;
+  line-height: 36px;
+  z-index: 1;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+}
+.logo.mastercard:before, .logo.mastercard:after {
+  content: " ";
+  display: block;
+  width: 36px;
+  top: 0;
+  position: absolute;
+  height: 36px;
+  border-radius: 18px;
+}
+.logo.mastercard:before {
+  left: 0;
+  background: red;
+  z-index: -1;
+}
+.logo.mastercard:after {
+  right: 0;
+  background: #ffab00;
+  z-index: -2;
+}
+.logo.amex {
+  text-transform: uppercase;
+  background-color: #999999;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, #999999), color-stop(100%, #dddddd));
+  background-image: -webkit-radial-gradient(#999999, #dddddd);
+  background-image: radial-gradient(  #999999, #dddddd);
+  font-size: 4px;
+  font-weight: bold;
+  color: white;
+}
+.logo.amex:before, .logo.amex:after {
+  width: 30px;
+  height: 15px;
+  display: block;
+  background: #106480;
+  position: absolute;
+  left: 15px;
+}
+.logo.amex:before {
+  content: "american";
+  top: 3px;
+  text-align: left;
+  padding-left: 2px;
+  padding-top: 11px;
+}
+.logo.amex:after {
+  content: "express";
+  bottom: 3px;
+  text-align: right;
+  padding-right: 2px;
+}
+.logo.discover {
+  background: #ff6600;
+  color: #111;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  padding-top: 9px;
+  letter-spacing: .03em;
+  border: 1px solid #EEE;
+}
+.logo.discover:before, .logo.discover:after {
+  content: " ";
+  display: block;
+  position: absolute;
+}
+.logo.discover:before {
+  background: white;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  bottom: -5%;
+  right: -80%;
+  z-index: -1;
+}
+.logo.discover:after {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  top: 10px;
+  left: 27px;
+  background-color: white;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, white), color-stop(100%, #ff6600));
+  background-image: -webkit-radial-gradient(white, #ff6600);
+  background-image: radial-gradient(  white, #ff6600);
+  content: "network";
+  font-size: 4px;
+  line-height: 24px;
+  text-indent: -7px;
+}
+
+.form-container input[type="text"]:active, .form-container input[type="text"]:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Helvetica Neue";
+}
+body > * {
+  font-family: inherit;
+}
+
+.form-container {
+  display: none;
+}
+
+.card {
+  margin: 50px auto;
+  position: relative;
+  width: 350px;
+  height: 200px;
+  background: #3399cc;
+  border-radius: 10px;
+}
+.card > *, .card > *:before, .card > *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

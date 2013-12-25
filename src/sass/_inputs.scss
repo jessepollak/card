@@ -1,0 +1,7 @@
+.form-container {
+    input[type="text"] {
+        &:active, &:focus {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card — the better way to collect credit cards</title>
+    <link rel="stylesheet" href="/build/css/foundation.min.css">
+    <link rel="stylesheet" href="/build/css/card.min.css">
+</head>
+<body>
+
+    <div class="row">
+        <div class="small-6 columns small-centered">
+            <div class="card">
+               <!--  <div class="number">•••• •••• •••• ••••</div>
+                <div class="expiry">__ / __</div>
+                <div class="cvc">___</div> -->
+                <div class="logo visa">visa</div>
+                <div class="logo mastercard">MasterCard</div>
+                <div class="logo amex"></div>
+                <!-- <div class="logo discover">discover</div> -->
+            </div>
+
+            <div class="form-container">
+                <form action="">
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <input type="text" name="number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-4 columns">
+                            <input type="text" name="expiry">
+                        </div>
+
+                        <div class="small-4 columns">
+                            <input type="text" name="cvc">
+                        </div>
+
+                        <div class="small-4 columns">
+                            <input type="submit" value="Submit" class="button postfix">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="/src/bower_components/jquery/jquery.js"></script>
+    <script src="/src/bower_components/jquery.payment/lib/jquery.payment.js"></script>
+    <script src="/build/js/card.min.js"></script>
+</body>
+</html>

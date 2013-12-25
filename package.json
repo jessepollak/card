@@ -1,0 +1,23 @@
+{
+  "name": "Card",
+  "version": "0.0.1",
+  "author": "Jesse Pollak <jpollak92@gmail.com>",
+  "description": "A better way to enter credit card information.",
+  "contributors": [
+    {
+      "name": "Jesse Pollak",
+      "email": "jpollak92@gmail.com"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-coffee": "~0.8.0",
+    "grunt-coffeelint": "0.0.8",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-open": "~0.2.2",
+    "grunt-bower-task": "~0.3.4",
+    "bower": "~1.2.8"
+  }
+}

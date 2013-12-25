@@ -1,0 +1,49 @@
+@import "_settings";
+@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "_animations";
+@import "_logos";
+@import "_inputs";
+
+body {
+    font-family: $card-font-family;
+    & > * {
+        font-family: inherit;
+    }
+}
+
+.form-container {
+    display: none;
+}
+
+.card {
+    & > *, & > *:before, & > *:after {
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    margin: 50px auto;
+    position: relative;
+
+    width: $card-width;
+    height: $card-height;
+
+    background: $card-fill-color;
+
+    border-radius: $card-border-radius;
+
+    // &:after {
+    //     position: absolute;
+    //     content: " ";
+    //     display: block;
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     background: $card-fill-color;
+    //     // border-top-left-radius: $card-border-radius;
+    //     // border-bottom-left-radius: $card-border-radius;
+
+        
+    //     box-shadow: inset 5px 0 5px -1px $card-fill-color;
+
+    //     // @include animation(glow-fill 500ms linear);
+    //     // @include animation-fill-mode(forwards);
+    // } 
+}
