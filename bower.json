@@ -2,6 +2,8 @@
   "name": "Card",
   "directory": "src/bower_components",
   "dependencies": {
-    "jquery": "~2.0.3"
+    "jquery": "~2.0.3",
+    "foundation": "*",
+    "jquery.payment": "*",
   }
 }
