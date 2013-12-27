@@ -4,6 +4,6 @@
   "dependencies": {
     "jquery": "~2.0.3",
     "foundation": "*",
-    "jquery.payment": "https://github.com/jessepollak/jquery.payment"
+    "jquery.payment": "https://raw.github.com/jessepollak/jquery.payment/master/lib/jquery.payment.js"
   }
 }
