@@ -1,0 +1,49 @@
+@import "_logo";
+
+.logo.discover {
+    $orange: #FF6600;
+    $offset: 9px;
+    background: $orange;
+    color: #111;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    padding-top: $offset;
+    letter-spacing: .03em;
+    border: 1px solid #EEE;
+
+    &:before, &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+    }
+
+    &:before {
+        $size: 200px;
+        background: white;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+        bottom: -5%;
+        right: -80%;
+        z-index: -1;
+    }
+
+    &:after {
+        $size: 8px;
+        width: $size;
+        height: $size;
+        border-radius: $size /2;
+        top: $offset + 1;
+        left: 27px;
+        @include radial-gradient(#FFF, $orange);
+        content: "network";
+        font-size: 4px;
+        line-height: 24px;
+        text-indent: -7px;
+    }
+}

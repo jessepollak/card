@@ -1,0 +1,20 @@
+@import "../cards/_card";
+@import "../logos/_mastercard";
+
+$fill-color: #0061A8;
+
+.card.mastercard {
+    &.identified {
+        .front, .back {
+            .logo.mastercard {
+                box-shadow: none;
+            }
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .logo.mastercard {
+            opacity: 1;
+        }
+    }
+}

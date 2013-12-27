@@ -38,7 +38,7 @@ module.exports = (grunt) ->
                     {
                         expand: true
                         cwd: "src/"
-                        src: "sass/*.scss"
+                        src: "sass/**/*.scss"
                         dest: "build/css/"
                         ext: ".min.css"
                         flatten: true
@@ -65,7 +65,7 @@ module.exports = (grunt) ->
                     debounceDelay: 250
 
             styles:
-                files: ['src/sass/*.scss']
+                files: ['src/sass/**/*.scss']
                 tasks: ["sass"]
                 options:
                     livereload: true

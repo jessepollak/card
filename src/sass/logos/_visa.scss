@@ -1,0 +1,31 @@
+@import "_logo";
+
+.logo.visa {
+    &.visa {
+        // display: none;
+        $blue: #1A1876;
+        $yellow: #E79800;
+        background: white;
+        text-transform: uppercase;
+        color: $blue;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1em;
+        &:before, &:after {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 25%;
+        }
+
+        &:before {
+            background: $blue;
+            bottom: 100%;
+        }
+
+        &:after {
+            background: $yellow;
+            top: 100%;
+        }
+    }
+}

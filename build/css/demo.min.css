@@ -754,7 +754,3 @@ textarea.error {
 label.error {
   color: #f04124;
 }
-
-.form-container input[type="text"]:active, .form-container input[type="text"]:focus {
-  outline: none;
-}

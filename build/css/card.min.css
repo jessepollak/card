@@ -1,140 +1,16 @@
-@-webkit-keyframes glow-fill {
-  0% {
-    width: 0%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  80% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-width: 5px;
-  }
-
-  100% {
-    width: 100%;
-    border-right-width: 0;
-  }
-}
-
-@-moz-keyframes glow-fill {
-  0% {
-    width: 0%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  80% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-width: 5px;
-  }
-
-  100% {
-    width: 100%;
-    border-right-width: 0;
-  }
-}
-
-@-o-keyframes glow-fill {
-  0% {
-    width: 0%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  80% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-width: 5px;
-  }
-
-  100% {
-    width: 100%;
-    border-right-width: 0;
-  }
-}
-
-@keyframes glow-fill {
-  0% {
-    width: 0%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  80% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-width: 5px;
-  }
-
-  100% {
-    width: 100%;
-    border-right-width: 0;
-  }
-}
-
 .logo {
   height: 36px;
   width: 60px;
   font-style: italic;
 }
-.logo.visa {
-  background: white;
-  text-transform: uppercase;
-  color: #1a1876;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-.logo.visa:before, .logo.visa:after {
-  content: " ";
-  display: block;
-  width: 100%;
-  height: 25%;
-}
-.logo.visa:before {
-  background: #1a1876;
-  bottom: 100%;
-}
-.logo.visa:after {
-  background: #e79800;
-  top: 100%;
-}
-.logo.mastercard {
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  font-size: 9px;
-  line-height: 36px;
-  z-index: 1;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-}
-.logo.mastercard:before, .logo.mastercard:after {
-  content: " ";
-  display: block;
-  width: 36px;
-  top: 0;
-  position: absolute;
-  height: 36px;
-  border-radius: 18px;
-}
-.logo.mastercard:before {
-  left: 0;
-  background: red;
-  z-index: -1;
-}
-.logo.mastercard:after {
-  right: 0;
-  background: #ffab00;
-  z-index: -2;
-}
+
 .logo.amex {
   text-transform: uppercase;
-  background: white;
   font-size: 4px;
   font-weight: bold;
   color: white;
+  background-image: repeating-radial-gradient(circle at center, white 1px, #999999 2px);
+  background-image: repeating-radial-gradient(circle at center, white 1px, #999999 2px);
   border: 1px solid #EEE;
 }
 .logo.amex:before, .logo.amex:after {
@@ -146,12 +22,11 @@
 .logo.amex:before {
   height: 28px;
   content: "american";
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
   top: 3px;
   text-align: left;
   padding-left: 2px;
   padding-top: 11px;
-  background: #106480;
+  background: #267ac3;
 }
 .logo.amex:after {
   content: "express";
@@ -159,6 +34,33 @@
   text-align: right;
   padding-right: 2px;
 }
+
+.card.amex.flipped {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+.card.amex.identified .front:before, .card.amex.identified .back:before {
+  background-color: #108168;
+}
+.card.amex.identified .front .logo.amex {
+  opacity: 1;
+}
+.card.amex.identified .front .cvc {
+  visibility: visible;
+}
+.card.amex.identified .front:after {
+  opacity: 1;
+}
+
+.logo {
+  height: 36px;
+  width: 60px;
+  font-style: italic;
+}
+
 .logo.discover {
   background: #ff6600;
   color: #111;
@@ -203,8 +105,116 @@
   text-indent: -7px;
 }
 
-.form-container input[type="text"]:active, .form-container input[type="text"]:focus {
-  outline: none;
+.card .front .logo.discover {
+  right: 12%;
+  top: 18%;
+}
+
+.card.discover.identified .front:before, .card.discover.identified .back:before {
+  background-color: #86b8cf;
+}
+.card.discover.identified .logo.discover {
+  opacity: 1;
+}
+.card.discover.identified .front:after {
+  -webkit-transition: 400ms;
+  -moz-transition: 400ms;
+  transition: 400ms;
+  content: " ";
+  display: block;
+  background-color: #ff6600;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6600), color-stop(50%, #ffa366), color-stop(100%, #ff6600));
+  background-image: -webkit-linear-gradient(#ff6600, #ffa366, #ff6600);
+  background-image: linear-gradient(#ff6600, #ffa366, #ff6600);
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  position: absolute;
+  left: 100%;
+  top: 15%;
+  margin-left: -25px;
+  box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  height: 36px;
+  width: 60px;
+  font-style: italic;
+}
+
+.logo.visa.visa {
+  background: white;
+  text-transform: uppercase;
+  color: #1a1876;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.logo.visa.visa:before, .logo.visa.visa:after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 25%;
+}
+.logo.visa.visa:before {
+  background: #1a1876;
+  bottom: 100%;
+}
+.logo.visa.visa:after {
+  background: #e79800;
+  top: 100%;
+}
+
+.card.visa.identified .front:before, .card.visa.identified .back:before {
+  background-color: #191278;
+}
+.card.visa.identified .logo.visa {
+  opacity: 1;
+}
+
+.logo {
+  height: 36px;
+  width: 60px;
+  font-style: italic;
+}
+
+.logo.mastercard {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 9px;
+  line-height: 36px;
+  z-index: 1;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+}
+.logo.mastercard:before, .logo.mastercard:after {
+  content: " ";
+  display: block;
+  width: 36px;
+  top: 0;
+  position: absolute;
+  height: 36px;
+  border-radius: 18px;
+}
+.logo.mastercard:before {
+  left: 0;
+  background: red;
+  z-index: -1;
+}
+.logo.mastercard:after {
+  right: 0;
+  background: #ffab00;
+  z-index: -2;
+}
+
+.card.mastercard.identified .front .logo.mastercard, .card.mastercard.identified .back .logo.mastercard {
+  box-shadow: none;
+}
+.card.mastercard.identified .front:before, .card.mastercard.identified .back:before {
+  background-color: #0061a8;
+}
+.card.mastercard.identified .logo.mastercard {
+  opacity: 1;
 }
 
 body {
@@ -232,6 +242,7 @@ body > *, body > *:before, body > *:after {
   position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -241,7 +252,7 @@ body > *, body > *:before, body > *:after {
   -moz-transition: all 400ms linear;
   transition: all 400ms linear;
 }
-.card.flipped:not(.amex) {
+.card.flipped {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
@@ -267,6 +278,19 @@ body > *, body > *:before, body > *:after {
   overflow: hidden;
   border-radius: 10px;
   background: #DDD;
+}
+.card .front:before, .card .back:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
 .card .front .display, .card .back .display {
   color: white;
@@ -304,11 +328,12 @@ body > *, body > *:before, body > *:after {
 }
 .card .front .logo {
   position: absolute;
-  right: -100%;
+  opacity: 0;
+  right: 5%;
   top: 8%;
-  -webkit-transition: all 400ms;
-  -moz-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: 400ms;
+  -moz-transition: 400ms;
+  transition: 400ms;
 }
 .card .front .lower {
   width: 80%;
@@ -332,7 +357,7 @@ body > *, body > *:before, body > *:after {
   font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
   letter-spacing: 0em;
   position: relative;
-  margin-left: 40px;
+  margin-left: 60px;
   float: left;
 }
 .card .front .lower .expiry:before, .card .front .lower .expiry:after {
@@ -373,9 +398,7 @@ body > *, body > *:before, body > *:after {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-.card .back:before {
-  content: " ";
-  display: block;
+.card .back .bar {
   background-color: #777777;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #666666));
   background-image: -webkit-linear-gradient(#777777, #666666);
@@ -421,45 +444,17 @@ body > *, body > *:before, body > *:after {
   width: 230px;
   opacity: .5;
 }
-.card.identified .front, .card.identified .back {
-  background: #3399cc;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8), inset 0px 1px 3px rgba(255, 255, 255, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.2);
+.card.identified {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.card.identified .front .logo:not(.mastercard), .card.identified .back .logo:not(.mastercard) {
+.card.identified .front:before, .card.identified .back:before {
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  transition: all 400ms ease;
+  opacity: 1;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
+}
+.card.identified .front .logo, .card.identified .back .logo {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-}
-.card.identified.visa .logo.visa {
-  right: 5%;
-}
-.card.identified.mastercard .logo.mastercard {
-  right: 5%;
-}
-.card.identified.discover .front, .card.identified.discover .back {
-  background: #86b8cf;
-}
-.card.identified.discover .logo.discover {
-  right: 10%;
-  top: 18%;
-}
-.card.identified.discover .front:after {
-  content: " ";
-  display: block;
-  background-color: #ff6600;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6600), color-stop(50%, #ffa366), color-stop(100%, #ff6600));
-  background-image: -webkit-linear-gradient(#ff6600, #ffa366, #ff6600);
-  background-image: linear-gradient(#ff6600, #ffa366, #ff6600);
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  position: absolute;
-  left: 100%;
-  top: 15%;
-  margin-left: -25px;
-  box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
-}
-.card.identified.amex .logo.amex {
-  right: 5%;
-}
-.card.identified.amex .front .cvc {
-  visibility: visible;
 }

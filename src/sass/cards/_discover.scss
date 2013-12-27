@@ -1,0 +1,42 @@
+@import "../cards/_card";
+@import "../logos/_discover";
+
+$fill-color: #86B8CF;
+$highlight-color: #FF6600;
+
+.card {
+    .front .logo.discover {
+        right: 12%;
+        top: 18%;
+    }
+}
+.card.discover {
+
+    &.identified {
+        .front, .back {
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .logo.discover {
+            opacity: 1;
+        }
+
+        .front {
+            &:after {
+                $size: 50px;
+                @include transition($card-transition-time);
+                @include shape();
+                @include linear-gradient($highlight-color, lighten($highlight-color, 20%), $highlight-color);
+                height: $size;
+                width: $size;
+                border-radius: $size / 2;
+                position: absolute;
+                left: 100%;
+                top: 15%;
+                margin-left: -$size / 2;
+                box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, .5);
+            }
+        }
+    }
+}

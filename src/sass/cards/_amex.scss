@@ -1,0 +1,53 @@
+@import "../cards/_card";
+@import "../logos/_amex";
+
+$fill-color: #108168;
+
+.card.amex {
+
+    &.flipped{
+        @include transform(none);
+    }
+    .front {
+        // &:after {
+        //     opacity: 0;
+        //     content: "American Express";
+        //     position: absolute;
+        //     top: 6%;
+        //     left: 0;
+        //     width: 100%;
+        //     text-align: center;
+        //     color: white;
+        //     text-transform: uppercase;
+        //     text-shadow: 2px 2px black;
+        //     font-weight: 900;
+        //     letter-spacing: .1em;
+        //     font-size: 14px;
+        //     @include transform(scaleY(0.8) scaleX(1.2));
+        //     @include transition($card-transition-time);
+        // }
+    }
+
+    &.identified {
+        .front, .back {
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+
+        .front {
+
+            .logo.amex {
+                opacity: 1;
+            }
+
+            .cvc {
+                visibility: visible;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
