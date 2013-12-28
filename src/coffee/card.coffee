@@ -30,7 +30,6 @@ $.fn.card = (opts) ->
         </div>
     </div>
     """
-
     defaults:
       formSelectors:
         numberInput: 'input[name="number"]'
@@ -53,7 +52,6 @@ $.fn.card = (opts) ->
       @$container = $(@options.container)
 
       @render()
-      @attachFormatters()
       @attachHandlers()
 
     render: () ->
@@ -65,7 +63,6 @@ $.fn.card = (opts) ->
       $.each @options.formSelectors, (name, selector) =>
         this["$#{name}"] = @options[name] || $(selector)
 
-    attachFormatters: () ->
       @$numberInput.payment('formatCardNumber')
       @$expiryInput.payment('formatCardExpiry')
       @$cvcInput.payment('formatCardCVC')
@@ -122,9 +119,6 @@ $.fn.card = (opts) ->
         val = $el.payment('cardExpiryVal')
         return unless val.month or val.year
         e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
-
-      checkAmex: (val, $el) ->
-        val = "   " + val if $el.hasClass('amex')
 
     $.fn.bindVal = (out, filters, opts) ->
       opts = opts or { fill: true }
