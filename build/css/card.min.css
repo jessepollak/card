@@ -292,6 +292,10 @@ body > *, body > *:before, body > *:after {
   -moz-transition: all 400ms ease;
   transition: all 400ms ease;
 }
+.card .front:after, .card .back:after {
+  content: " ";
+  display: block;
+}
 .card .front .display, .card .back .display {
   color: white;
   font-weight: normal;
@@ -399,10 +403,10 @@ body > *, body > *:before, body > *:after {
   transform: rotateY(180deg);
 }
 .card .back .bar {
-  background-color: #777777;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #666666));
-  background-image: -webkit-linear-gradient(#777777, #666666);
-  background-image: linear-gradient(#777777, #666666);
+  background-color: #444444;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444444), color-stop(100%, #333333));
+  background-image: -webkit-linear-gradient(#444444, #333333);
+  background-image: linear-gradient(#444444, #333333);
   width: 100%;
   height: 20%;
   position: absolute;

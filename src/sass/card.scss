@@ -61,6 +61,10 @@ body {
             @include transition(all $card-transition-time ease);
         }
 
+        &:after {
+            @include shape();
+        }
+
         .display {
             color: $card-font-color;
             font-weight: normal;
@@ -183,7 +187,7 @@ body {
         $signature-left: 2%;
 
         .bar {
-            @include linear-gradient(#777, #666);
+            @include linear-gradient(#444, #333);
             width: 100%;
             height: 20%;
             position: absolute;
