@@ -4,126 +4,174 @@ $.card.fn = {}
 $.fn.card = (opts) ->
   $.card.fn.construct.apply(this, opts)
 
-class Card
-  @defaults:
-    selectors:
-      card: '.card'
-      numberInput: 'input[name="number"]'
-      expiryInput: 'input[name="expiry"]'
-      cvcInput: 'input[name="cvc"]'
-      numberDisplay: '.card .number'
-      expiryDisplay: '.card .expiry'
-      cvcDisplay: '.card .cvc'
+(($, window) ->
+  class Card
+    template: """
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                    <div class="logo visa">visa</div>
+                    <div class="logo mastercard">MasterCard</div>
+                    <div class="logo amex"></div>
+                    <div class="logo discover">discover</div>
+                <div class="lower">
+                    <div class="shiny"></div>
+                    <div class="cvc display">••••</div>
+                    <div class="number display">•••• •••• •••• ••••</div>
+                    <div class="name display">Jesse Pollak</div>
+                    <div class="expiry display">••/••</div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="bar"></div>
+                <div class="cvc display">•••</div>
+                <div class="shiny"></div>
+            </div>
+        </div>
+    </div>
+    """
 
-  constructor: (opts) ->
-    @options = $.extend({}, opts, Card.defaults)
+    defaults:
+      formSelectors:
+        numberInput: 'input[name="number"]'
+        expiryInput: 'input[name="expiry"]'
+        cvcInput: 'input[name="cvc"]'
+      cardSelectors:
+        card: '.card'
+        numberDisplay: '.number'
+        expiryDisplay: '.expiry'
+        cvcDisplay: '.cvc'
 
-    $.each @options.selectors, (name, selector) =>
-      this["$#{name}"] = @options[name] || $(selector)
+    constructor: (el, opts) ->
+      @options = $.extend({}, opts, @defaults)
+      @$el = if $(el).is('form') then $(el) else $(el).find 'form'
 
-    @attachFormatters()
-    @attachHandlers()
+      unless @options.container
+        console.log "Please provide a container"
+        return
 
-  attachFormatters: () ->
-    @$numberInput.payment('formatCardNumber')
-    @$expiryInput.payment('formatCardExpiry')
-    @$cvcInput.payment('formatCardCVC')
+      @$container = $(@options.container)
 
-  attachHandlers: () ->
-    @$numberInput
-      .bindVal(
-        @$numberDisplay,
-        validToggler('validateCardNumber'),
-        { fill: false }
-      )
-      .on 'payment.cardType', @handle('setCardType')
+      @render()
+      @attachFormatters()
+      @attachHandlers()
 
-    @$expiryInput
-      .bindVal(
-        @$expiryDisplay,
-        [
-          (val) -> val.replace /(\s+)/g, '',
-          validToggler 'validateCardExpiry'
-        ]
-      )
-      .on 'keydown', @handle('captureTab')
+    render: () ->
+      @$container.append(@template)
 
-    @$cvcInput.bindVal @$cvcDisplay, validToggler 'validateCardCVC'
+      $.each @options.cardSelectors, (name, selector) =>
+        this["$#{name}"] = @$container.find(selector)
 
-    @$cvcInput
-      .on('focus', @handle('flipCard'))
-      .on('blur', @handle('flipCard'))
+      $.each @options.formSelectors, (name, selector) =>
+        this["$#{name}"] = @options[name] || $(selector)
 
-  handle: (fn) ->
-    (e) =>
-      $el = $(e.currentTarget)
-      args = Array.prototype.slice.call arguments
-      args.unshift $el
-      @handlers[fn].apply this, args
+    attachFormatters: () ->
+      @$numberInput.payment('formatCardNumber')
+      @$expiryInput.payment('formatCardExpiry')
+      @$cvcInput.payment('formatCardCVC')
 
-  handlers:
-    setCardType: ($el, e, cardType) ->
-      unless @$card.hasClass(cardType)
-        allTypes = (card.type for card in $.payment.cards)
+    attachHandlers: () ->
+      @$numberInput
+        .bindVal(
+          @$numberDisplay,
+          validToggler('validateCardNumber'),
+          { fill: false }
+        )
+        .on 'payment.cardType', @handle('setCardType')
 
-        @$card.removeClass('unknown')
-        @$card.removeClass(allTypes.join(' '))
+      @$expiryInput
+        .bindVal(
+          @$expiryDisplay,
+          [
+            (val) -> val.replace /(\s+)/g, '',
+            validToggler 'validateCardExpiry'
+          ]
+        )
+        .on 'keydown', @handle('captureTab')
 
-        @$card.addClass(cardType)
-        @$card.toggleClass('identified', cardType isnt 'unknown')
+      @$cvcInput.bindVal @$cvcDisplay, validToggler 'validateCardCVC'
 
-    flipCard: ($el, e) ->
-      @$card.toggleClass('flipped')
+      @$cvcInput
+        .on('focus', @handle('flipCard'))
+        .on('blur', @handle('flipCard'))
 
-    captureTab: ($el, e) ->
-      keyCode = e.keyCode or e.which
-      return if keyCode != 9 or e.shiftKey
-      val = $el.payment('cardExpiryVal')
-      e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
+    handle: (fn) ->
+      (e) =>
+        $el = $(e.currentTarget)
+        args = Array.prototype.slice.call arguments
+        args.unshift $el
+        @handlers[fn].apply this, args
 
-    checkAmex: (val, $el) ->
-      val = "   " + val if $el.hasClass('amex')
+    handlers:
+      setCardType: ($el, e, cardType) ->
+        unless @$card.hasClass(cardType)
+          allTypes = (card.type for card in $.payment.cards)
 
-  $.fn.bindVal = (out, filters, opts) ->
-    opts = opts or { fill: true }
+          @$card.removeClass('unknown')
+          @$card.removeClass(allTypes.join(' '))
 
-    if filters
-      filters = [filters] unless filters instanceof Array
-    else
-      filters = []
+          @$card.addClass(cardType)
+          @$card.toggleClass('identified', cardType isnt 'unknown')
 
-    $el = $(this)
-    outDefaults = (out.eq(i).text() for o, i in out)
+      flipCard: ($el, e) ->
+        @$card.toggleClass('flipped')
 
-    $el.on 'focus', () ->
-      out.addClass 'focused'
+      captureTab: ($el, e) ->
+        keyCode = e.keyCode or e.which
+        return if keyCode != 9 or e.shiftKey
+        val = $el.payment('cardExpiryVal')
+        return unless val.month or val.year
+        e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
 
-    $el.on 'blur', () ->
-      out.removeClass 'focused'
+      checkAmex: (val, $el) ->
+        val = "   " + val if $el.hasClass('amex')
 
-    $el.on 'keyup', (e) ->
-      val = $el.val()
+    $.fn.bindVal = (out, filters, opts) ->
+      opts = opts or { fill: true }
 
-      for filter in filters
-        val = filter(val, $el, out)
+      if filters
+        filters = [filters] unless filters instanceof Array
+      else
+        filters = []
 
-      for o, i in out
-        if opts.fill
-          outVal = val + outDefaults[i].substring(val.length)
-        else
-          outVal = val or outDefaults[i]
+      $el = $(this)
+      outDefaults = (out.eq(i).text() for o, i in out)
 
-        out.eq(i).text(outVal)
+      $el.on 'focus', () ->
+        out.addClass 'focused'
 
-    $el
+      $el.on 'blur', () ->
+        out.removeClass 'focused'
 
-  validToggler = (validatorName) ->
-    return (val, $in, $out) ->
-      $out.toggleClass('valid', $.payment[validatorName](val))
-      val
+      $el.on 'keyup', (e) ->
+        val = $el.val()
 
+        for filter in filters
+          val = filter(val, $el, out)
 
-$.card.fn.construct = (opts) ->
-  return new Card(opts)
+        for o, i in out
+          if opts.fill
+            outVal = val + outDefaults[i].substring(val.length)
+          else
+            outVal = val or outDefaults[i]
 
-$('form').card({})
+          out.eq(i).text(outVal)
+
+      $el
+
+    validToggler = (validatorName) ->
+      return (val, $in, $out) ->
+        $out.toggleClass('valid', $.payment[validatorName](val))
+        val
+
+  $.fn.extend card: (option, args...) ->
+    @each ->
+      $this = $(this)
+      data = $this.data('card')
+ 
+      if !data
+        $this.data 'card', (data = new Card(this, option))
+      if typeof option == 'string'
+        data[option].apply(data, args)
+
+)(window.jQuery, window)

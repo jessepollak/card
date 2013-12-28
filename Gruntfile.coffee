@@ -24,11 +24,6 @@ module.exports = (grunt) ->
                         flatten: true
                     }
                 ]
-
-            jqueryPayment: 
-                src: "src/bower_components/jquery.payment/src/jquery.payment.coffee"
-                dest: "src/bower_components/jquery.payment/lib/jquery.payment.js"
-
         sass:
             compile:
                 options:

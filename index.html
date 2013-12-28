@@ -9,27 +9,9 @@
 
     <div class="row">
         <div class="small-6 columns small-centered">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front">
-                            <div class="logo visa">visa</div>
-                            <div class="logo mastercard">MasterCard</div>
-                            <div class="logo amex"></div>
-                            <div class="logo discover">discover</div>
-                        <div class="lower">
-                            <div class="shiny"></div>
-                            <div class="cvc display">••••</div>
-                            <div class="number display">•••• •••• •••• ••••</div>
-                            <div class="name display">Jesse Pollak</div>
-                            <div class="expiry display">••/••</div>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="bar"></div>
-                        <div class="cvc display">•••</div>
-                        <div class="shiny"></div>
-                    </div>
-                </div>
+
+            <div class="card-wrapper">
+                
             </div>
 
             <div class="form-container">
@@ -63,5 +45,8 @@
     <script src="/src/bower_components/jquery/jquery.js"></script>
     <script src="/src/bower_components/jquery.payment/index.js"></script>
     <script src="/build/js/card.min.js"></script>
+    <script>
+        $('form').card({ container: $('.card-wrapper') })
+    </script>
 </body>
 </html>
