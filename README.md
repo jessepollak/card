@@ -2,7 +2,7 @@
 
 Card will take *any* shitty credit card form and make it the best part of the checkout process (without you changing anything). Created using only CSS and Javascript with **0 images** or canvas elements.
 
-![card](http://gifti.me/i/4SLUJ.gif)
+![card](http://gifti.me/i/CHpVn6QcI.gif)
 
 
 ## Usage
