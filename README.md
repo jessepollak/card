@@ -2,6 +2,10 @@
 
 Card will take your shitty credit card form and make it the best part of the checkout process (without you changing anything). 
 
+![card](http://gifti.me/i/4SLUJ.gif)
+
+Created using only CSS and Javascript with **0 images** or canvas elements.
+
 ## Usage
 
 ```javascript
@@ -12,7 +16,7 @@ $('form').card({
     numberInput: 'input#number', // optional — default input[name="number"]
     expiryInput: 'input#expiry', // optional — default input[name="expiry"]
     cvcInput: 'input#cvc', // optional — default input[name="cvc"]
-    
+
     width: 200, // optional — default 350px
     formatting: true // optional - default true
 });
