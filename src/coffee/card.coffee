@@ -31,6 +31,7 @@ $.fn.card = (opts) ->
     </div>
     """
     defaults:
+      formatting: true
       formSelectors:
         numberInput: 'input[name="number"]'
         expiryInput: 'input[name="expiry"]'
@@ -64,9 +65,10 @@ $.fn.card = (opts) ->
       $.each @options.formSelectors, (name, selector) =>
         this["$#{name}"] = @options[name] || $(selector)
 
-      @$numberInput.payment('formatCardNumber')
-      @$expiryInput.payment('formatCardExpiry')
-      @$cvcInput.payment('formatCardCVC')
+      if @options.formatting
+        @$numberInput.payment('formatCardNumber')
+        @$expiryInput.payment('formatCardExpiry')
+        @$cvcInput.payment('formatCardCVC')
 
       if @options.width
         baseWidth = parseInt @$cardContainer.css('width')
