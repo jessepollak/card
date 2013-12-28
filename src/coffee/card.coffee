@@ -36,6 +36,7 @@ $.fn.card = (opts) ->
         expiryInput: 'input[name="expiry"]'
         cvcInput: 'input[name="cvc"]'
       cardSelectors:
+        cardContainer: '.card-container'
         card: '.card'
         numberDisplay: '.number'
         expiryDisplay: '.expiry'
@@ -66,6 +67,10 @@ $.fn.card = (opts) ->
       @$numberInput.payment('formatCardNumber')
       @$expiryInput.payment('formatCardExpiry')
       @$cvcInput.payment('formatCardCVC')
+
+      if @options.width
+        baseWidth = parseInt @$cardContainer.css('width')
+        @$cardContainer.css "transform", "scale(#{@options.width / baseWidth})"
 
     attachHandlers: () ->
       @$numberInput
