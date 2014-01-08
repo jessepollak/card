@@ -361,8 +361,9 @@ body > *, body > *:before, body > *:after {
   font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
   letter-spacing: 0em;
   position: relative;
-  margin-left: 60px;
-  float: left;
+  float: right;
+  width: 20%;
+  margin-right: 20px;
 }
 .card .front .lower .expiry:before, .card .front .lower .expiry:after {
   font-family: "Helvetica Neue";

@@ -18,7 +18,7 @@ $.fn.card = (opts) ->
                     <div class="shiny"></div>
                     <div class="cvc display">••••</div>
                     <div class="number display">•••• •••• •••• ••••</div>
-                    <div class="name display">Jesse Pollak</div>
+                    <div class="name display">Your Name</div>
                     <div class="expiry display">••/••</div>
                 </div>
             </div>
@@ -36,12 +36,14 @@ $.fn.card = (opts) ->
         numberInput: 'input[name="number"]'
         expiryInput: 'input[name="expiry"]'
         cvcInput: 'input[name="cvc"]'
+        nameInput: 'input[name="name"]'
       cardSelectors:
         cardContainer: '.card-container'
         card: '.card'
         numberDisplay: '.number'
         expiryDisplay: '.expiry'
         cvcDisplay: '.cvc'
+        nameDisplay: '.name'
 
     constructor: (el, opts) ->
       @options = $.extend({}, opts, @defaults)
@@ -78,26 +80,32 @@ $.fn.card = (opts) ->
       @$numberInput
         .bindVal(
           @$numberDisplay,
-          validToggler('validateCardNumber'),
-          { fill: false }
+          {
+            fill: false,
+            filters: validToggler('validateCardNumber')
+          }
         )
         .on 'payment.cardType', @handle('setCardType')
 
       @$expiryInput
         .bindVal(
           @$expiryDisplay,
-          [
-            (val) -> val.replace /(\s+)/g, '',
-            validToggler 'validateCardExpiry'
-          ]
+          {
+            filters: [
+              (val) -> val.replace /(\s+)/g, '',
+              validToggler 'validateCardExpiry'
+            ]
+          }
         )
         .on 'keydown', @handle('captureTab')
 
-      @$cvcInput.bindVal @$cvcDisplay, validToggler 'validateCardCVC'
-
       @$cvcInput
+        .bindVal(@$cvcDisplay, validToggler 'validateCardCVC' )
         .on('focus', @handle('flipCard'))
         .on('blur', @handle('flipCard'))
+
+      @$nameInput
+        .bindVal @$nameDisplay, { fill: false  }
 
     handle: (fn) ->
       (e) =>
@@ -127,13 +135,10 @@ $.fn.card = (opts) ->
         return unless val.month or val.year
         e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
 
-    $.fn.bindVal = (out, filters, opts) ->
-      opts = opts or { fill: true }
-
-      if filters
-        filters = [filters] unless filters instanceof Array
-      else
-        filters = []
+    $.fn.bindVal = (out, opts={}) ->
+      opts.fill = opts.fill || false
+      opts.filters = opts.filters || []
+      opts.filters = [opts.filters] unless opts.filters instanceof Array
 
       $el = $(this)
       outDefaults = (out.eq(i).text() for o, i in out)
@@ -147,7 +152,7 @@ $.fn.card = (opts) ->
       $el.on 'keyup', (e) ->
         val = $el.val()
 
-        for filter in filters
+        for filter in opts.filters
           val = filter(val, $el, out)
 
         for o, i in out

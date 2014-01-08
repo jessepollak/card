@@ -15,6 +15,7 @@ $('form').card({
     numberInput: 'input#number', // optional — default input[name="number"]
     expiryInput: 'input#expiry', // optional — default input[name="expiry"]
     cvcInput: 'input#cvc', // optional — default input[name="cvc"]
+    nameInput: 'input#name', // options - defaults input[name="name"]
 
     width: 200, // optional — default 350px
     formatting: true // optional - default true

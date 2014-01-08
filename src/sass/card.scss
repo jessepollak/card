@@ -139,8 +139,9 @@ body {
                 $label-padding: 5px;
                 letter-spacing: 0em;
                 position: relative;
-                margin-left: 60px;
-                float: left;
+                float: right;
+                width: 20%;
+                margin-right: 20px;
 
                 &:before, &:after {
                     font-family: $card-font-family;
