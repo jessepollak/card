@@ -1968,7 +1968,6 @@ Card = (function() {
     }
     if (navigator && navigator.userAgent) {
       ua = navigator.userAgent.toLowerCase();
-      console.log(ua.indexOf('chrome'));
       if (ua.indexOf('safari') !== -1 && ua.indexOf('chrome') === -1) {
         return this.$card.addClass('no-radial-gradient');
       }

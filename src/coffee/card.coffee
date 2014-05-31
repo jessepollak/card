@@ -80,7 +80,6 @@ class Card
     # safari can't handle transparent radial gradient right now
     if navigator and navigator.userAgent
       ua = navigator.userAgent.toLowerCase()
-      console.log ua.indexOf('chrome')
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
         @$card.addClass 'no-radial-gradient'
 
