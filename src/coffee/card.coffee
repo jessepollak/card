@@ -65,7 +65,7 @@ $.fn.card = (opts) ->
         this["$#{name}"] = @$container.find(selector)
 
       $.each @options.formSelectors, (name, selector) =>
-        this["$#{name}"] = @options[name] || $(selector)
+        this["$#{name}"] = @options[name] || @$el.find(selector)
 
       if @options.formatting
         @$numberInput.payment('formatCardNumber')
@@ -75,6 +75,13 @@ $.fn.card = (opts) ->
       if @options.width
         baseWidth = parseInt @$cardContainer.css('width')
         @$cardContainer.css "transform", "scale(#{@options.width / baseWidth})"
+
+      # safari can't handle transparent radial gradient right now
+      if navigator and navigator.userAgent
+        ua = navigator.userAgent.toLowerCase()
+        console.log ua.indexOf('chrome')
+        if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
+          @$card.addClass 'no-radial-gradient'
 
     attachHandlers: () ->
       @$numberInput
@@ -174,7 +181,7 @@ $.fn.card = (opts) ->
     @each ->
       $this = $(this)
       data = $this.data('card')
- 
+
       if !data
         $this.data 'card', (data = new Card(this, option))
       if typeof option == 'string'

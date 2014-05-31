@@ -2,3 +2,69 @@
     content: " ";
     display: block;
 }
+
+@mixin card-texture($radial-gradient: true) {
+    $b1: rgba(255, 255, 255, 0);
+    $b2: opacify($b1, .03);
+    $b3: opacify($b1, .04);
+    $b4: opacify($b1, .05);
+
+    @if ($radial-gradient) {
+        @include background-image(
+            repeating-linear-gradient(45deg,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+              ),
+            repeating-linear-gradient(135deg,
+              $b4 1px, $b1 2px,
+              $b3 3px, $b2 4px
+            ),
+            repeating-linear-gradient(90deg,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            repeating-linear-gradient(210deg,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            repeating-radial-gradient(circle at 30% 30%,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            repeating-radial-gradient(circle at 70% 70%,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            repeating-radial-gradient(circle at 90% 20%,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            repeating-radial-gradient(circle at 15% 80%,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            linear-gradient(-25deg, $b1 50%, opacify($b1, .2) 70%, $b1 90%)
+        );
+    } @else {
+        @include background-image(
+            repeating-linear-gradient(45deg,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+              ),
+            repeating-linear-gradient(135deg,
+              $b4 1px, $b1 2px,
+              $b3 3px, $b2 4px
+            ),
+            repeating-linear-gradient(90deg,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            repeating-linear-gradient(210deg,
+              $b1 1px, $b2 2px,
+              $b3 3px, $b4 4px
+            ),
+            linear-gradient(-25deg, $b1 50%, opacify($b1, .2) 70%, $b1 90%)
+        );
+    }
+
+}
