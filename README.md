@@ -7,7 +7,7 @@ Card will take *any* credit card form and make it the best part of the checkout 
 
 ## Usage
 
-To use, you'll need to include the corret CSS and Javascript files into your HTML
+To use, you'll need to include the correct CSS and Javascript files into your HTML. You can find the necessary files at `/build/js/card.min.js` and `/build/css/card.min.css` and include them in your HTML like so.
 
 ```html
 <!-- in HEAD -->
@@ -17,7 +17,7 @@ To use, you'll need to include the corret CSS and Javascript files into your HTM
 <script src="/path/to/card.min.js"></script>
 ```
 
-Once you've included those files, you can initialize Card like so:
+Once you've included those files, you can initialize Card.
 
 ```javascript
 $('form').card({
