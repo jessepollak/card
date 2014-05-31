@@ -47,8 +47,8 @@ gulp.task 'browserify', ->
 
 gulp.task 'watch', ['connect'],  ->
   server.listen 35729, ->
-    gulp.watch './static/src/scss/**/*.scss', ['scss']
-    gulp.watch './static/src/coffee/**/*.coffee', ['browserify']
+    gulp.watch './src/scss/**/*.scss', ['scss']
+    gulp.watch './src/coffee/**/*.coffee', ['browserify']
 
 gulp.task 'connect', ->
   connect.server()

@@ -1,3 +1,5 @@
+window.jQuery = window.$ = $ = require 'jquery'
+
 TYPE_INTERVAL = 400
 USER_HAS_TYPED = false
 

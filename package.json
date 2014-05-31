@@ -26,5 +26,8 @@
     "gulp-if": "~1.2.1",
     "gulp-uglify": "~0.3.0",
     "gulp-connect": "~2.0.5"
+  },
+  "dependencies": {
+    "jquery": "~2.1.1"
   }
 }
