@@ -16,7 +16,7 @@ production = process.env.NODE_ENV == 'production'
 transforms = ['coffeeify']
 
 gulp.task 'scss', ->
-  gulp.src ['./src/sass/**/*.scss']
+  gulp.src ['./src/scss/**/*.scss']
   .pipe sass()
   .pipe prefix("> 1%")
   .pipe livereload(server)
