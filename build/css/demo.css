@@ -4961,3 +4961,8 @@ th.hide-for-touch {
       -webkit-box-shadow: none;
       box-shadow: none;
       border-color: #BBB; }
+
+.active p.small {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 0; }

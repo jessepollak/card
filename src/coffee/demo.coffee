@@ -4,11 +4,20 @@ TYPE_INTERVAL = 400
 USER_HAS_TYPED = false
 
 $(document).ready ->
+  check = ->
+    return start() if isScrolledIntoView '.card-wrapper'
+
+  if not check()
+    $(window).on 'scroll', ->
+      $(window).off 'scroll' if check()
+
+start = ->
   $input = $('.active input[name="number"]')
   setTimeout startTyping.bind(null, $input), 1000
   $('.active input').on 'click keyup', (e, data) ->
     if not data or not data.fake
       USER_HAS_TYPED = true
+  true
 
 startTyping = ($input) ->
   type($input, '6545')
@@ -69,3 +78,12 @@ cursorFocus = (elem) ->
   y = window.scrollY
   elem.focus()
   window.scrollTo(x, y)
+
+isScrolledIntoView = (elem) ->
+  docViewTop = $(window).scrollTop()
+  docViewBottom = docViewTop + $(window).height()
+
+  elemTop = $(elem).offset().top
+  elemBottom = elemTop + $(elem).height()
+
+  ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
