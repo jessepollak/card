@@ -1,4 +1,5 @@
 require '../bower_components/jquery.payment/index'
+require 'jquery.payment'
 
 $ = jQuery
 $.card = {}
@@ -19,7 +20,7 @@ class Card
                   <div class="shiny"></div>
                   <div class="cvc display">••••</div>
                   <div class="number display">•••• •••• •••• ••••</div>
-                  <div class="name display">Your Name</div>
+                  <div class="name display">Full name</div>
                   <div class="expiry display">••/••</div>
               </div>
           </div>
@@ -31,6 +32,17 @@ class Card
       </div>
   </div>
   """
+  cardTypes: [
+    'maestro',
+    'dinersclub',
+    'laser',
+    'jcb',
+    'unionpay',
+    'discover',
+    'mastercard',
+    'amex',
+    'visa'
+  ]
   defaults:
     formatting: true
     formSelectors:
@@ -124,10 +136,9 @@ class Card
   handlers:
     setCardType: ($el, e, cardType) ->
       unless @$card.hasClass(cardType)
-        allTypes = (card.type for card in $.payment.cards)
 
         @$card.removeClass('unknown')
-        @$card.removeClass(allTypes.join(' '))
+        @$card.removeClass(@cardTypes.join(' '))
 
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')

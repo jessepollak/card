@@ -28,6 +28,7 @@
     "gulp-connect": "~2.0.5"
   },
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "jquery.payment": "~1.0.3"
   }
 }

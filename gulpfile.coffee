@@ -1,6 +1,6 @@
 gulp = require 'gulp'
 browserify = require 'gulp-browserify'
-sass = require 'gulp-sass'
+scss = require 'gulp-sass'
 prefix = require 'gulp-autoprefixer'
 spawn = require('child_process').spawn
 server = require('tiny-lr')()
@@ -22,8 +22,8 @@ else
   css = 'card.css'
 
 gulp.task 'scss', ->
-  gulp.src ['./src/sass/**/*.scss']
-  .pipe sass()
+  gulp.src ['./src/scss/**/*.scss']
+  .pipe scss()
   .pipe prefix("> 1%")
   .pipe livereload(server)
   .pipe gulp.dest('./build/css')
