@@ -1,4 +1,3 @@
-require '../bower_components/jquery.payment/index'
 require 'jquery.payment'
 
 $ = jQuery

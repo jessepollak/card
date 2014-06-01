@@ -81,7 +81,6 @@
     top: 10px;
     left: 27px;
     background-color: #FFF;
-    background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, #FFF), color-stop(100%, #FF6600));
     background-image: -webkit-radial-gradient(#FFF, #FF6600);
     background-image: radial-gradient(  #FFF, #FF6600);
     content: "network";
@@ -103,7 +102,6 @@
   content: " ";
   display: block;
   background-color: #FF6600;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FF6600), color-stop(50%, #ffa166), color-stop(100%, #FF6600));
   background-image: -webkit-linear-gradient(#FF6600, #ffa166, #FF6600);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FF6600), color-stop(#ffa166), to(#FF6600));
   background-image: linear-gradient(#FF6600, #ffa166, #FF6600);
@@ -336,7 +334,6 @@ body {
     transform: rotateY(180deg); }
     .card .back .bar {
       background-color: #444;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444), color-stop(100%, #333));
       background-image: -webkit-linear-gradient(#444, #333);
       background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#333));
       background-image: linear-gradient(#444, #333);
@@ -348,7 +345,6 @@ body {
       content: " ";
       display: block;
       background-color: #FFF;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFF), color-stop(100%, #FFF));
       background-image: -webkit-linear-gradient(#FFF, #FFF);
       background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
       background-image: linear-gradient(#FFF, #FFF);

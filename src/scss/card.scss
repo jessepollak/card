@@ -1,10 +1,10 @@
-@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon";
-@import "_mixins";
+@import "bourbon/dist/bourbon";
+@import "mixins";
 
-@import "cards/_amex";
-@import "cards/_discover";
-@import "cards/_visa";
-@import "cards/_mastercard";
+@import "cards/amex";
+@import "cards/discover";
+@import "cards/visa";
+@import "cards/mastercard";
 
 body {
     font-family: $card-font-family;

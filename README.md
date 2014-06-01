@@ -7,14 +7,14 @@ Card will take *any* credit card form and make it the best part of the checkout 
 
 ## Usage
 
-To use, you'll need to include the correct CSS and Javascript files into your HTML. You can find the necessary files at `/build/js/card.min.js` and `/build/css/card.min.css` and include them in your HTML like so.
+To use, you'll need to include the correct CSS and Javascript files into your HTML. You can find the necessary files at `/build/js/card.js` and `/build/css/card.css` and include them in your HTML like so.
 
 ```html
 <!-- in HEAD -->
-<link rel="stylesheet" href="/path/to/card.min.css">
+<link rel="stylesheet" href="/path/to/card.css">
 <!-- at the end of BODY -->
 <script src="/path/to/jquery.js"></script>
-<script src="/path/to/card.min.js"></script>
+<script src="/path/to/card.js"></script>
 ```
 
 Once you've included those files, you can initialize Card.
@@ -42,7 +42,6 @@ To contribute, follow this steps:
 $ git clone git@github.com:jessepollak/card.git
 $ cd card
 $ npm install
-$ bower install
 $ gulp watch
 ```
 

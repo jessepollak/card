@@ -1,7 +1,0 @@
-{
-  "name": "Card",
-  "directory": "src/bower_components",
-  "dependencies": {
-    "foundation": "*"
-  }
-}
