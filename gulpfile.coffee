@@ -7,9 +7,6 @@ server = require('tiny-lr')()
 livereload = require('gulp-livereload')
 rename = require 'gulp-rename'
 clean = require 'gulp-clean'
-gulpif = require 'gulp-if'
-uglify = require 'gulp-uglify'
-minify = require 'gulp-minify-css'
 connect = require 'gulp-connect'
 open = require 'gulp-open'
 
@@ -34,7 +31,7 @@ gulp.task 'browserify', ->
     .pipe rename({ extname: '.js' })
     .pipe gulp.dest('./lib/js')
 
-gulp.task 'watch', ['connect'],  ->
+gulp.task 'watch', ['build', 'connect'],  ->
   server.listen 35729, ->
     gulp.watch './src/scss/**/*.scss', ['scss']
     gulp.watch './src/coffee/**/*.coffee', ['browserify']

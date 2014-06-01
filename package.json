@@ -23,8 +23,6 @@
     "gulp-rename": "~1.2.0",
     "gulp-changed": "~0.3.0",
     "gulp-clean": "~0.3.0",
-    "gulp-if": "~1.2.1",
-    "gulp-uglify": "~0.3.0",
     "gulp-connect": "~2.0.5",
     "gulp-open": "~0.2.8"
   },
