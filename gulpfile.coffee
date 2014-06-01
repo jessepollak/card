@@ -14,12 +14,6 @@ connect = require 'gulp-connect'
 
 production = process.env.NODE_ENV == 'production'
 transforms = ['coffeeify']
-if production
-  js = 'card.min.js'
-  css = 'card.min.css'
-else
-  js = 'card.js'
-  css = 'card.css'
 
 gulp.task 'scss', ->
   gulp.src ['./src/sass/**/*.scss']
@@ -27,23 +21,17 @@ gulp.task 'scss', ->
   .pipe prefix("> 1%")
   .pipe livereload(server)
   .pipe gulp.dest('./build/css')
-  .pipe gulpif(production, minify())
-  .pipe gulpif(production, rename({ suffix: '.min'}))
-  .pipe gulpif(production, gulp.dest('./build/css'))
 
 gulp.task 'browserify', ->
   gulp.src './src/coffee/**/*.coffee', read: false
     .pipe browserify
       insertGlobals: true
       debug: !production
-      transform: transforms
+      transform: ['coffeeify']
       extensions: ['.coffee']
     .pipe livereload(server)
     .pipe rename({ extname: '.js' })
     .pipe gulp.dest('./build/js')
-    .pipe gulpif(production, rename({ suffix: '.min'}))
-    .pipe gulpif(production, uglify())
-    .pipe gulpif(production, gulp.dest('./build/js'))
 
 gulp.task 'watch', ['connect'],  ->
   server.listen 35729, ->

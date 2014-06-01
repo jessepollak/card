@@ -2,8 +2,6 @@
   "name": "Card",
   "directory": "src/bower_components",
   "dependencies": {
-    "jquery": "~2.0.3",
-    "foundation": "*",
-    "jquery.payment": "https://raw.github.com/jessepollak/jquery.payment/master/lib/jquery.payment.js"
+    "foundation": "*"
   }
 }
