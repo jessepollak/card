@@ -4939,6 +4939,8 @@ th.hide-for-touch {
     .demo-wrapper .explainer-container p {
       font-size: 15px;
       line-height: 17px; }
+  .demo-wrapper .get-started {
+    width: 100%; }
 
 .card-wrapper {
   width: 100%;
