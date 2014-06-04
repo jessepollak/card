@@ -2,7 +2,7 @@ $logo-height: 36px;
 $logo-width: 60px;
 
 .logo {
-    &, & * {
+    &, &:before, &:after {
         box-sizing: border-box;
     }
     height: $logo-height;
