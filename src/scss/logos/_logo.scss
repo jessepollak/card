@@ -2,6 +2,7 @@ $logo-height: 36px;
 $logo-width: 60px;
 
 .logo {
+    box-sizing: border-box;
     height: $logo-height;
     width: $logo-width;
     font-style: italic;
