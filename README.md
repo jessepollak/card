@@ -7,7 +7,7 @@ Card will take *any* credit card form and make it the best part of the checkout 
 
 ## Usage
 
-To use, you'll need to include the correct CSS and Javascript files into your HTML. You can find the necessary files at `/build/js/card.js` and `/build/css/card.css` and include them in your HTML like so.
+To use, you'll need to include the correct CSS and Javascript files into your HTML. You can find the necessary files at `/lib/js/card.js` and `/lib/css/card.css` and include them in your HTML like so.
 
 ```html
 <!-- in HEAD -->
