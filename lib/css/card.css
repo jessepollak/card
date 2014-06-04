@@ -1,10 +1,11 @@
 .logo {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   height: 36px;
   width: 60px;
   font-style: italic; }
+  .logo, .logo * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
 .logo.amex {
   text-transform: uppercase;
@@ -48,12 +49,13 @@
   opacity: 1; }
 
 .logo {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   height: 36px;
   width: 60px;
   font-style: italic; }
+  .logo, .logo * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
 .logo.discover {
   background: #FF6600;
@@ -122,12 +124,13 @@
   box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
 .logo {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   height: 36px;
   width: 60px;
   font-style: italic; }
+  .logo, .logo * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
 .logo.visa.visa {
   background: white;
@@ -154,12 +157,13 @@
   opacity: 1; }
 
 .logo {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   height: 36px;
   width: 60px;
   font-style: italic; }
+  .logo, .logo * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
 .logo.mastercard {
   color: white;
