@@ -6,7 +6,10 @@
     "Jesse Pollak <jpollak92@gmail.com>"
   ],
   "description": "Card let's you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
-  "main": "['lib/js/card.js', 'lib/css/card.css']",
+  "main": [
+    "lib/js/card.js",
+    "lib/css/card.css"
+  ],
   "keywords": [
     "card",
     "credit",
