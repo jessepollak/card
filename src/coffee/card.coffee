@@ -77,7 +77,13 @@ class Card
       this["$#{name}"] = @$container.find(selector)
 
     $.each @options.formSelectors, (name, selector) =>
-      this["$#{name}"] = @options[name] || @$el.find(selector)
+      if @options[name]
+        obj = $(@options[name])
+      else
+        obj = @$el.find(selector)
+
+      console.error "Card can't find a #{name} in your form." if !obj.length
+      this["$#{name}"] = obj
 
     if @options.formatting
       @$numberInput.payment('formatCardNumber')
