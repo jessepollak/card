@@ -58,6 +58,7 @@ body {
             top: 0;
             left: 0;
             opacity: 0;
+            border-radius: 10px;
             @include transition(all $card-transition-time ease);
         }
 
