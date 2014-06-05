@@ -11,7 +11,6 @@ connect = require 'gulp-connect'
 open = require 'gulp-open'
 
 development = process.env.NODE_ENV == 'development'
-console.log development
 
 gulp.task 'scss', ->
   gulp.src ['./src/scss/**/*.scss']

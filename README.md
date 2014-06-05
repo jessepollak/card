@@ -27,7 +27,7 @@ $('form').card({
     numberInput: 'input#number', // optional — default input[name="number"]
     expiryInput: 'input#expiry', // optional — default input[name="expiry"]
     cvcInput: 'input#cvc', // optional — default input[name="cvc"]
-    nameInput: 'input#name', // options - defaults input[name="name"]
+    nameInput: 'input#name', // optional - defaults input[name="name"]
 
     width: 200, // optional — default 350px
     formatting: true // optional - default true
@@ -44,7 +44,7 @@ $ cd card
 $ git submodule init
 $ git submodule update
 $ npm install
-$ gulp watch
+$ npm start 
 ```
 
 Now, if you go to localhost:8080/example in your browser, you should see the demo page.
