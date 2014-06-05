@@ -70,7 +70,7 @@ class Card
     @render()
     @attachHandlers()
 
-  render: () ->
+  render: ->
     @$container.append(@template)
 
     $.each @options.cardSelectors, (name, selector) =>
@@ -89,12 +89,12 @@ class Card
       @$cardContainer.css "transform", "scale(#{@options.width / baseWidth})"
 
     # safari can't handle transparent radial gradient right now
-    if navigator and navigator.userAgent
+    if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
         @$card.addClass 'no-radial-gradient'
 
-  attachHandlers: () ->
+  attachHandlers: ->
     @$numberInput
       .bindVal(
         @$numberDisplay,
@@ -160,10 +160,10 @@ class Card
     $el = $(this)
     outDefaults = (out.eq(i).text() for o, i in out)
 
-    $el.on 'focus', () ->
+    $el.on 'focus', ->
       out.addClass 'focused'
 
-    $el.on 'blur', () ->
+    $el.on 'blur', ->
       out.removeClass 'focused'
 
     $el.on 'keyup', (e) ->
