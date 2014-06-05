@@ -59,7 +59,7 @@ class Card
 
   constructor: (el, opts) ->
     @options = $.extend({}, @defaults, opts)
-    @$el = if $(el).is('form') then $(el) else $(el).find 'form'
+    @$el = $(el)
 
     unless @options.container
       console.log "Please provide a container"
