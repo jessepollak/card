@@ -9,6 +9,9 @@
       "email": "jpollak92@gmail.com"
     }
   ],
+  "scripts": {
+    "start": "gulp watch"
+  },
   "devDependencies": {
     "bower": "~1.2.8",
     "coffee-script": "~1.7.1",
