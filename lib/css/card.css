@@ -340,10 +340,10 @@ body {
     .card .front .lower .name {
       text-transform: uppercase;
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
-      float: left;
       font-size: 20px;
-      position: relative;
-      top: 5px; }
+      position: absolute;
+      bottom: 0;
+      width: 190px; }
   .card .back {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
