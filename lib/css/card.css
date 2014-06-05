@@ -256,6 +256,7 @@ body {
       top: 0;
       left: 0;
       opacity: 0;
+      border-radius: 10px;
       -webkit-transition: all 400ms ease;
       transition: all 400ms ease; }
     .card .front:after, .card .back:after {
