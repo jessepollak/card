@@ -11,6 +11,9 @@ $(document).ready ->
     $(window).on 'scroll', ->
       $(window).off 'scroll' if check()
 
+  $('form').submit (e) ->
+    e.preventDefault()
+
 start = ->
   $input = $('.active input[name="number"]')
   setTimeout startTyping.bind(null, $input), 1000
