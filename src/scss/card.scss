@@ -172,10 +172,10 @@ body {
             .name {
                 text-transform: uppercase;
                 font-family: $card-monospace-font-family;
-                float: left;
                 font-size: 20px;
-                position: relative;
-                top: 5px;
+                position: absolute;
+                bottom: 0;
+                width: 190px;
             }
         }
     }
