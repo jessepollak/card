@@ -12,7 +12,7 @@
   "devDependencies": {
     "bower": "~1.2.8",
     "coffee-script": "~1.7.1",
-    "gulp": "~3.6.2",
+    "gulp": "^3.7.0",
     "gulp-browserify": "~0.5.0",
     "gulp-sass": "~0.7.1",
     "gulp-autoprefixer": "0.0.7",
