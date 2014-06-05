@@ -172,7 +172,7 @@ class Card
     $el.on 'blur', () ->
       out.removeClass 'focused'
 
-    $el.on 'keyup', (e) ->
+    $el.on 'keyup change', (e) ->
       val = $el.val()
 
       for filter in opts.filters
