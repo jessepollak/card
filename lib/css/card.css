@@ -342,6 +342,9 @@ body {
       text-transform: uppercase;
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       position: absolute;
       bottom: 0;
       width: 190px; }
