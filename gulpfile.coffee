@@ -9,6 +9,7 @@ rename = require 'gulp-rename'
 clean = require 'gulp-clean'
 connect = require 'gulp-connect'
 open = require 'gulp-open'
+runs = require 'run-sequence'
 
 development = process.env.NODE_ENV == 'development'
 
@@ -30,7 +31,7 @@ gulp.task 'browserify', ->
     .pipe rename({ extname: '.js' })
     .pipe gulp.dest('./lib/js')
 
-gulp.task 'watch', ['build', 'connect'],  ->
+gulp.task 'watch', ['scss', 'browserify', 'connect'],  ->
   server.listen 35729, ->
     gulp.watch './src/scss/**/*.scss', ['scss']
     gulp.watch './src/coffee/**/*.coffee', ['browserify']
@@ -46,6 +47,8 @@ gulp.task 'clean', ->
     .pipe clean()
 
 # Default task call every tasks created so far.
-gulp.task 'build', ['clean'], ->
-  gulp.start 'scss', 'browserify'
-gulp.task 'default', ['build']
+gulp.task 'default', (cb) ->
+  runs(
+    'clean'
+    ['scss', 'browserify']
+    cb)
