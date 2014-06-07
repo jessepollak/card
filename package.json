@@ -27,7 +27,8 @@
     "gulp-changed": "~0.3.0",
     "gulp-clean": "~0.3.0",
     "gulp-connect": "~2.0.5",
-    "gulp-open": "~0.2.8"
+    "gulp-open": "~0.2.8",
+    "run-sequence": "^0.3.6"
   },
   "dependencies": {
     "jquery": "~2.1.1",
