@@ -56,6 +56,10 @@ class Card
       expiryDisplay: '.expiry'
       cvcDisplay: '.cvc'
       nameDisplay: '.name'
+    captions:
+      validDate: 'valid\Athru'
+      monthYear: 'month/year'
+      fullName: 'Full Name'
 
   constructor: (el, opts) ->
     @options = $.extend({}, @defaults, opts)
@@ -84,6 +88,17 @@ class Card
 
       console.error "Card can't find a #{name} in your form." if !obj.length
       this["$#{name}"] = obj
+
+    stringRelations = {
+      validDate: '.expiry.display:after'
+      monthYear: '.expiry.display:before'
+      fullName: '.name.display'
+    }
+
+    $.each @options.captions, (name, string) =>
+      if @options.captions[name] != @defaults.captions[name]
+        document.styleSheets[0].addRule(stringRelations[name],'content: "'+string+'" !important;');
+        @$container.find(stringRelations[name]).text string
 
     if @options.formatting
       @$numberInput.payment('formatCardNumber')

@@ -31,6 +31,13 @@ $('form').card({
 
     width: 200, // optional — default 350px
     formatting: true // optional - default true
+
+    // Strings for translate - optional
+    captions: {
+        validDate: 'valid\Adate', // optional - default 'valid\Athru'
+        monthYear: 'mm/yyyy', // optional - default 'month/year'
+        fullName: 'Say my name' // optional - default 'Full Name'
+    }
 });
 ```
 
@@ -44,7 +51,7 @@ $ cd card
 $ git submodule init
 $ git submodule update
 $ npm install
-$ npm start 
+$ npm start
 ```
 
 Now, if you go to localhost:8080/example in your browser, you should see the demo page.
