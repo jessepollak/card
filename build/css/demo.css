@@ -5002,7 +5002,7 @@ th.hide-for-touch {
   margin-bottom: 0;
   color: #aaa; }
 
-.twitter-share-button {
+a.twitter-share-button {
   font-size: 16px;
   position: relative;
   top: -4px;
