@@ -131,3 +131,31 @@ $width: 350px;
     left: 10px;
 }
 
+#fusionads {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    margin: 5px 10px;
+    .fusion-img {
+    }
+    .fusion-text {
+        font-size: 12px;
+        line-height: 16px;
+        color: #333;
+        display: block;
+        margin: 10px 0;
+    }
+    .fusion-poweredby {
+        margin: 0;
+        line-height: 100%;
+        font-size: 11px;
+        color: #aaa;
+        clear: both;
+        display: block;
+    }
+    @media (max-width: 800px) {
+      display: none;
+    }
+}
+
