@@ -9,11 +9,31 @@ $width: 350px;
         margin-left: 5%;
         input {
             display: block;
+            width: 98%;
+            border-right: 1px solid #eee;
+        }
+        .row {
+            width: 90%;
+            .columns {
+                width: 100%;
+            }
         }
         .card-wrapper {
             transform: scale(.7);
             margin: 0;
-            margin-left: -30px;
+            // margin-left: -30px;
+        }
+        .demo-container {
+            .form-container {
+                margin-top: 20px;
+                width: 100%;
+                &.active {
+                    margin-top: 0;
+                }
+                p.small {
+                    text-align: center;
+                }
+            }
         }
     }
     width: 450px;

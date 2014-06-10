@@ -4928,13 +4928,25 @@ th.hide-for-touch {
       width: 90%;
       margin-left: 5%; }
       .demo-wrapper input {
-        display: block; }
+        display: block;
+        width: 98%;
+        border-right: 1px solid #eee; }
+      .demo-wrapper .row {
+        width: 90%; }
+        .demo-wrapper .row .columns {
+          width: 100%; }
       .demo-wrapper .card-wrapper {
         -webkit-transform: scale(0.7);
         -ms-transform: scale(0.7);
         transform: scale(0.7);
-        margin: 0;
-        margin-left: -30px; } }
+        margin: 0; }
+      .demo-wrapper .demo-container .form-container {
+        margin-top: 20px;
+        width: 100%; }
+        .demo-wrapper .demo-container .form-container.active {
+          margin-top: 0; }
+        .demo-wrapper .demo-container .form-container p.small {
+          text-align: center; } }
   .demo-wrapper h1 {
     margin: 0; }
   .demo-wrapper a {
