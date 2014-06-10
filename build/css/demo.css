@@ -4923,6 +4923,18 @@ th.hide-for-touch {
 .demo-wrapper {
   width: 450px;
   margin: 5px auto; }
+  @media (max-width: 450px) {
+    .demo-wrapper {
+      width: 90%;
+      margin-left: 5%; }
+      .demo-wrapper input {
+        display: block; }
+      .demo-wrapper .card-wrapper {
+        -webkit-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+        margin: 0;
+        margin-left: -30px; } }
   .demo-wrapper h1 {
     margin: 0; }
   .demo-wrapper a {

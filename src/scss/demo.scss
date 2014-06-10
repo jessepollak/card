@@ -4,6 +4,18 @@
 $width: 350px;
 
 .demo-wrapper {
+    @media (max-width: 450px) {
+        width: 90%;
+        margin-left: 5%;
+        input {
+            display: block;
+        }
+        .card-wrapper {
+            transform: scale(.7);
+            margin: 0;
+            margin-left: -30px;
+        }
+    }
     width: 450px;
     margin: 5px auto;
     h1 {
