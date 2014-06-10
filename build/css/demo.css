@@ -4930,7 +4930,7 @@ th.hide-for-touch {
       .demo-wrapper input {
         display: block;
         width: 98%;
-        border-right: 1px solid #eee; }
+        border-right: 1px solid #ccc !important; }
       .demo-wrapper .row {
         width: 90%; }
         .demo-wrapper .row .columns {
