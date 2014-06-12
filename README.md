@@ -51,7 +51,7 @@ Now, if you go to localhost:8080/example in your browser, you should see the dem
 
 ## Places using Card
 
-Card is used in the wild in these places:
+Card is used in the wild in these following places:
 
 * [InspectAll](http://www.inspectall.com/)
 
