@@ -6,15 +6,6 @@
 @import "cards/visa";
 @import "cards/mastercard";
 
-body {
-    font-family: $card-font-family;
-
-    & > *, & > *:before, & > *:after {
-        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-        font-family: inherit;
-    }
-}
-
 .card-container {
     @include perspective(1000px);
     width: $card-width;
@@ -25,10 +16,16 @@ body {
 }
 
 .card {
+    font-family: $card-font-family;
     position: relative;
     width: 100%;
     height: 100%;
     border-radius: $card-border-radius;
+
+    & > *, & > *:before, & > *:after {
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        font-family: inherit;
+    }
 
     @include transform-style(preserve-3d);
     @include transition(all $card-transition-time linear);

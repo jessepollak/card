@@ -198,14 +198,6 @@
 .card.mastercard.identified .logo.mastercard {
   opacity: 1; }
 
-body {
-  font-family: "Helvetica Neue"; }
-  body > *, body > *:before, body > *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: inherit; }
-
 .card-container {
   -webkit-perspective: 1000px;
   perspective: 1000px;
@@ -216,6 +208,7 @@ body {
   position: relative; }
 
 .card {
+  font-family: "Helvetica Neue";
   position: relative;
   width: 100%;
   height: 100%;
@@ -226,6 +219,11 @@ body {
   transform-style: preserve-3d;
   -webkit-transition: all 400ms linear;
   transition: all 400ms linear; }
+  .card > *, .card > *:before, .card > *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: inherit; }
   .card.flipped {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
