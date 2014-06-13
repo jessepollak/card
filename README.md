@@ -34,6 +34,14 @@ $('form').card({
 });
 ```
 
+### Separate first and last name inputs
+
+Card is compatible with separate first and last name fields. To use this feature, pass in `firstNameInput` and `lastNameInput` options and no `nameInput`.
+
+### Separate month and year expiry inputs
+
+Card is compatible with separate month and year expiry fields. To use this feature, pass in `expiryMonthInput` and `expiryYearInput` options and no `expiryInput` option.
+
 ## Development
 
 To contribute, follow this steps:
