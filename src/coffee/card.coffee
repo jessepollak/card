@@ -69,6 +69,7 @@ class Card
 
     @render()
     @attachHandlers()
+    @handleInitialValues()
 
   render: ->
     @$container.append(@template)
@@ -102,25 +103,17 @@ class Card
 
   attachHandlers: ->
     @$numberInput
-      .bindVal(
-        @$numberDisplay,
-        {
-          fill: false,
-          filters: validToggler('validateCardNumber')
-        }
-      )
+      .bindVal @$numberDisplay,
+        fill: false,
+        filters: validToggler('validateCardNumber')
       .on 'payment.cardType', @handle('setCardType')
 
     @$expiryInput
-      .bindVal(
-        @$expiryDisplay,
-        {
-          filters: [
-            (val) -> val.replace /(\s+)/g, '',
-            validToggler 'validateCardExpiry'
-          ]
-        }
-      )
+      .bindVal @$expiryDisplay,
+        filters: [
+          (val) -> val.replace /(\s+)/g, '',
+          validToggler 'validateCardExpiry'
+        ]
       .on 'keydown', @handle('captureTab')
 
     @$cvcInput
@@ -130,6 +123,17 @@ class Card
 
     @$nameInput
       .bindVal @$nameDisplay, { fill: false  }
+
+  handleInitialValues: ->
+    $.each @options.formSelectors, (name, selector) =>
+      el = this["$#{name}"]
+      if el.val()
+        console.log 'hi'
+        # if the input has a value, we want to trigger a refresh
+        el.trigger 'paste'
+        # set a timeout because `jquery.payment` does the reset of the val
+        # in a timeout
+        setTimeout -> el.trigger 'keyup'
 
   handle: (fn) ->
     (e) =>
@@ -172,7 +176,7 @@ class Card
     $el.on 'blur', ->
       out.removeClass 'focused'
 
-    $el.on 'keyup change', (e) ->
+    $el.on 'keyup change paste', (e) ->
       val = $el.val()
 
       for filter in opts.filters
