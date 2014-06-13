@@ -82,13 +82,28 @@ class Card
       else
         obj = @$el.find(selector)
 
+      if !obj.length
+        if name == "nameInput"
+          fn = @options['firstNameInput']
+          ln = @options['lastNameInput']
+          if fn and ln
+            obj = $.merge $(fn), $(ln)
+        else if name = "expiryInput"
+          em = @options['expiryMonthInput']
+          ey = @options['expiryYearInput']
+          if em and ey
+            obj = $.merge $(em), $(ey)
+
       console.error "Card can't find a #{name} in your form." if !obj.length
       this["$#{name}"] = obj
 
     if @options.formatting
       @$numberInput.payment('formatCardNumber')
-      @$expiryInput.payment('formatCardExpiry')
       @$cvcInput.payment('formatCardCVC')
+
+      # we can only format if there's only one expiry input
+      if @$expiryInput.length == 1
+        @$expiryInput.payment('formatCardExpiry')
 
     if @options.width
       baseWidth = parseInt @$cardContainer.css('width')
@@ -111,17 +126,16 @@ class Card
       )
       .on 'payment.cardType', @handle('setCardType')
 
+    expiryFilters = [(val) -> val.replace /(\s+)/g, '']
+    if @$expiryInput.length == 1
+      expiryFilters.push 'validateCardExpiry'
+      @$expiryInput.on 'keydown', @handle('captureTab')
+
     @$expiryInput
-      .bindVal(
-        @$expiryDisplay,
-        {
-          filters: [
-            (val) -> val.replace /(\s+)/g, '',
-            validToggler 'validateCardExpiry'
-          ]
-        }
-      )
-      .on 'keydown', @handle('captureTab')
+      .bindVal @$expiryDisplay,
+        join: (text) ->
+          if text[0].length == 2 or text[1] then "/" else ""
+        filters: expiryFilters
 
     @$cvcInput
       .bindVal(@$cvcDisplay, validToggler 'validateCardCVC' )
@@ -129,7 +143,9 @@ class Card
       .on('blur', @handle('flipCard'))
 
     @$nameInput
-      .bindVal @$nameDisplay, { fill: false  }
+      .bindVal @$nameDisplay,
+        fill: false
+        join: ' '
 
   handle: (fn) ->
     (e) =>
@@ -163,6 +179,11 @@ class Card
     opts.filters = opts.filters || []
     opts.filters = [opts.filters] unless opts.filters instanceof Array
 
+    opts.join = opts.join || ""
+    if !(typeof(opts.join) == "function")
+      joiner = opts.join
+      opts.join = () -> joiner
+
     $el = $(this)
     outDefaults = (out.eq(i).text() for o, i in out)
 
@@ -172,8 +193,11 @@ class Card
     $el.on 'blur', ->
       out.removeClass 'focused'
 
-    $el.on 'keyup change', (e) ->
-      val = $el.val()
+    $el.on 'keyup change paste', (e) ->
+      val = $el.map(-> $(this).val()).get()
+      val = val.join(opts.join(val))
+
+      val = "" if val == opts.join
 
       for filter in opts.filters
         val = filter(val, $el, out)
