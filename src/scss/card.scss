@@ -94,7 +94,8 @@
                 width: 70%;
                 height: $height;
                 border-top-right-radius: $radius;
-                border-bottom-right-radius: $radius;                    background: lighten($color, 5%);
+                border-bottom-right-radius: $radius;
+                background: lighten($color, 5%);
                 position: absolute;
                 top: (100% - $height) / 2
             }
@@ -150,7 +151,7 @@
                 }
 
                 &:before {
-                    content: "month/year";
+                    content: attr(data-before);
                     margin-bottom: $label-padding - 3px;
                     font-size: 7px;
                     text-transform: uppercase;
@@ -158,7 +159,7 @@
 
                 &:after {
                     position: absolute;
-                    content: "valid\Athru";
+                    content: attr(data-after);
                     text-align: right;
                     right: 100%;
                     margin-right: $label-padding;

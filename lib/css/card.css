@@ -324,13 +324,13 @@
         display: block;
         opacity: 0.5; }
       .card .front .lower .expiry:before {
-        content: "month/year";
+        content: attr(data-before);
         margin-bottom: 2px;
         font-size: 7px;
         text-transform: uppercase; }
       .card .front .lower .expiry:after {
         position: absolute;
-        content: "valid\Athru";
+        content: attr(data-after);
         text-align: right;
         right: 100%;
         margin-right: 5px;
