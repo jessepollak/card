@@ -82,18 +82,6 @@ class Card
       else
         obj = @$el.find(selector)
 
-      if !obj.length
-        if name == "nameInput"
-          fn = @options['firstNameInput']
-          ln = @options['lastNameInput']
-          if fn and ln
-            obj = $.merge $(fn), $(ln)
-        else if name = "expiryInput"
-          em = @options['expiryMonthInput']
-          ey = @options['expiryYearInput']
-          if em and ey
-            obj = $.merge $(em), $(ey)
-
       console.error "Card can't find a #{name} in your form." if !obj.length
       this["$#{name}"] = obj
 
@@ -195,9 +183,10 @@ class Card
 
     $el.on 'keyup change paste', (e) ->
       val = $el.map(-> $(this).val()).get()
-      val = val.join(opts.join(val))
+      join = opts.join(val)
 
-      val = "" if val == opts.join
+      val = val.join(join)
+      val = "" if val == join
 
       for filter in opts.filters
         val = filter(val, $el, out)
