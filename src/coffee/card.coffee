@@ -69,6 +69,7 @@ class Card
 
     @render()
     @attachHandlers()
+    @handleInitialValues()
 
   render: ->
     @$container.append(@template)
@@ -105,13 +106,9 @@ class Card
 
   attachHandlers: ->
     @$numberInput
-      .bindVal(
-        @$numberDisplay,
-        {
-          fill: false,
-          filters: validToggler('validateCardNumber')
-        }
-      )
+      .bindVal @$numberDisplay,
+        fill: false,
+        filters: validToggler('validateCardNumber')
       .on 'payment.cardType', @handle('setCardType')
 
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
@@ -134,6 +131,17 @@ class Card
       .bindVal @$nameDisplay,
         fill: false
         join: ' '
+
+  handleInitialValues: ->
+    $.each @options.formSelectors, (name, selector) =>
+      el = this["$#{name}"]
+      if el.val()
+        console.log 'hi'
+        # if the input has a value, we want to trigger a refresh
+        el.trigger 'paste'
+        # set a timeout because `jquery.payment` does the reset of the val
+        # in a timeout
+        setTimeout -> el.trigger 'keyup'
 
   handle: (fn) ->
     (e) =>

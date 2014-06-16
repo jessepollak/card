@@ -1,5 +1,5 @@
 # Card - check out the **[demo](https://jessepollak.github.io/card)**
-### a better credit card form in one line of code
+### A better credit card form in one line of code
 
 Card will take *any* credit card form and make it the best part of the checkout process (without you changing anything). Everything is created with pure CSS, HTML, and Javascript — no images required.
 
@@ -74,4 +74,4 @@ Card is used in the wild in these places:
 
 * [InspectAll](http://www.inspectall.com/)
 
-Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right awawy!
+Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
