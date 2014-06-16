@@ -7,7 +7,7 @@ $.fn.card = (opts) ->
   $.card.fn.construct.apply(this, opts)
 
 class Card
-  template: """
+  cardTemplate: """
   <div class="card-container">
       <div class="card">
           <div class="front">
@@ -19,8 +19,8 @@ class Card
                   <div class="shiny"></div>
                   <div class="cvc display">&bull;&bull;&bull;&bull;</div>
                   <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
-                  <div class="name display">Full name</div>
-                  <div class="expiry display">••/••</div>
+                  <div class="name display">{{fullName}}</div>
+                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">••/••</div>
               </div>
           </div>
           <div class="back">
@@ -31,6 +31,9 @@ class Card
       </div>
   </div>
   """
+  template: (tpl, data) ->
+    tpl.replace /\{\{(.*?)\}\}/g, (match, key, str) ->
+      data[key]
   cardTypes: [
     'maestro',
     'dinersclub',
@@ -56,9 +59,15 @@ class Card
       expiryDisplay: '.expiry'
       cvcDisplay: '.cvc'
       nameDisplay: '.name'
+    messages:
+      validDate: 'valid\nthru'
+      monthYear: 'month/year'
+      fullName: 'Full Name'
 
   constructor: (el, opts) ->
     @options = $.extend({}, @defaults, opts)
+    $.extend @options.messages, $.card.messages
+
     @$el = $(el)
 
     unless @options.container
@@ -72,7 +81,7 @@ class Card
     @handleInitialValues()
 
   render: ->
-    @$container.append(@template)
+    @$container.append @template(@cardTemplate, @options.messages)
 
     $.each @options.cardSelectors, (name, selector) =>
       this["$#{name}"] = @$container.find(selector)

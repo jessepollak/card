@@ -31,6 +31,13 @@ $('form').card({
 
     width: 200, // optional — default 350px
     formatting: true // optional - default true
+
+    // Strings for translation - optional
+    messages: {
+        validDate: 'valid\ndate', // optional - default 'valid\nthru'
+        monthYear: 'mm/yyyy', // optional - default 'month/year'
+        fullName: 'Say my name' // optional - default 'Full Name'
+    }
 });
 ```
 
@@ -48,8 +55,57 @@ Card can be used in forms where you have multiple inputs that render to a single
 </form>
 <script>
 $('form').card({
+    container: '.card-wrapper',
     nameInput: 'input[name="first-name"], input[name="last-name"]'
 });
+</script>
+```
+
+### Translation
+
+To render the card with the strings in a different language, you can either pass in a `messages` object or set `$.card.messages` before initializing `card`. 
+
+#### messages object method
+
+```html
+<script src="/path/to/card.js"></script>
+<form>
+    <input type="text" name="number">
+    <input type="text" name="name"/>
+    <input type="text" name="expiry"/>
+    <input type="text" name="cvc"/>
+</form>
+<script>
+$('form').card({
+    container: '.card-wrapper',
+    messages: {
+        validDate: 'expire\ndate',
+        monthYear: 'mm/yy',
+        fullName: 'Your name'
+    }
+});
+</script>
+```
+
+#### `$.card.messages` method
+
+```html
+<script>
+</script>
+<script src="/path/to/card.js"></script>
+<form>
+    <input type="text" name="number">
+    <input type="text" name="name"/>
+    <input type="text" name="expiry"/>
+    <input type="text" name="cvc"/>
+</form>
+<script>
+$.card.messages = {
+    validDate: 'expire\ndate',
+    monthYear: 'mm/yy',
+    fullName: 'Your name'
+}
+$('form').card();
 </script>
 ```
 
