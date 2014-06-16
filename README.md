@@ -73,5 +73,6 @@ Now, if you go to localhost:8080/example in your browser, you should see the dem
 Card is used in the wild in these places:
 
 * [InspectAll](http://www.inspectall.com/)
+* [PennyWhale](https://www.pennywhale.com/)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
