@@ -31,6 +31,13 @@ $('form').card({
 
     width: 200, // optional — default 350px
     formatting: true // optional - default true
+
+    // Strings for translate - optional
+    captions: {
+        validDate: 'valid\Adate', // optional - default 'valid\Athru'
+        monthYear: 'mm/yyyy', // optional - default 'month/year'
+        fullName: 'Say my name' // optional - default 'Full Name'
+    }
 });
 ```
 
