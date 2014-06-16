@@ -122,7 +122,7 @@ class Card
 
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
     if @$expiryInput.length == 1
-      expiryFilters.push 'validateCardExpiry'
+      expiryFilters.push validToggler('validateCardExpiry')
       @$expiryInput.on 'keydown', @handle('captureTab')
 
     @$expiryInput
