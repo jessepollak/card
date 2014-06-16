@@ -17,8 +17,8 @@ class Card
                   <div class="logo discover">discover</div>
               <div class="lower">
                   <div class="shiny"></div>
-                  <div class="cvc display">••••</div>
-                  <div class="number display">•••• •••• •••• ••••</div>
+                  <div class="cvc display">&bull;&bull;&bull;&bull;</div>
+                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
                   <div class="name display">Full name</div>
                   <div class="expiry display">••/••</div>
               </div>
