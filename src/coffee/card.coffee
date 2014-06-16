@@ -136,7 +136,6 @@ class Card
     $.each @options.formSelectors, (name, selector) =>
       el = this["$#{name}"]
       if el.val()
-        console.log 'hi'
         # if the input has a value, we want to trigger a refresh
         el.trigger 'paste'
         # set a timeout because `jquery.payment` does the reset of the val
