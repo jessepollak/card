@@ -88,8 +88,11 @@ class Card
 
     if @options.formatting
       @$numberInput.payment('formatCardNumber')
-      @$expiryInput.payment('formatCardExpiry')
       @$cvcInput.payment('formatCardCVC')
+
+      # we can only format if there's only one expiry input
+      if @$expiryInput.length == 1
+        @$expiryInput.payment('formatCardExpiry')
 
     if @options.width
       baseWidth = parseInt @$cardContainer.css('width')
@@ -108,13 +111,16 @@ class Card
         filters: validToggler('validateCardNumber')
       .on 'payment.cardType', @handle('setCardType')
 
+    expiryFilters = [(val) -> val.replace /(\s+)/g, '']
+    if @$expiryInput.length == 1
+      expiryFilters.push 'validateCardExpiry'
+      @$expiryInput.on 'keydown', @handle('captureTab')
+
     @$expiryInput
       .bindVal @$expiryDisplay,
-        filters: [
-          (val) -> val.replace /(\s+)/g, '',
-          validToggler 'validateCardExpiry'
-        ]
-      .on 'keydown', @handle('captureTab')
+        join: (text) ->
+          if text[0].length == 2 or text[1] then "/" else ""
+        filters: expiryFilters
 
     @$cvcInput
       .bindVal(@$cvcDisplay, validToggler 'validateCardCVC' )
@@ -122,7 +128,9 @@ class Card
       .on('blur', @handle('flipCard'))
 
     @$nameInput
-      .bindVal @$nameDisplay, { fill: false  }
+      .bindVal @$nameDisplay,
+        fill: false
+        join: ' '
 
   handleInitialValues: ->
     $.each @options.formSelectors, (name, selector) =>
@@ -167,6 +175,11 @@ class Card
     opts.filters = opts.filters || []
     opts.filters = [opts.filters] unless opts.filters instanceof Array
 
+    opts.join = opts.join || ""
+    if !(typeof(opts.join) == "function")
+      joiner = opts.join
+      opts.join = () -> joiner
+
     $el = $(this)
     outDefaults = (out.eq(i).text() for o, i in out)
 
@@ -177,7 +190,11 @@ class Card
       out.removeClass 'focused'
 
     $el.on 'keyup change paste', (e) ->
-      val = $el.val()
+      val = $el.map(-> $(this).val()).get()
+      join = opts.join(val)
+
+      val = val.join(join)
+      val = "" if val == join
 
       for filter in opts.filters
         val = filter(val, $el, out)

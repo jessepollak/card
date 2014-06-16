@@ -34,6 +34,25 @@ $('form').card({
 });
 ```
 
+### Using multiple inputs for one field
+
+Card can be used in forms where you have multiple inputs that render to a single field (i.e. you have a first and last name input). To use Card with this functionality, just pass in a jQuery selector that selects the fields in the correct order. For example,
+
+```html
+<form>
+    <input type="text" name="number">
+    <input type="text" name="first-name"/>
+    <input type="text" name="last-name"/>
+    <input type="text" name="expiry"/>
+    <input type="text" name="cvc"/>
+</form>
+<script>
+$('form').card({
+    nameInput: 'input[name="first-name"], input[name="last-name"]'
+});
+</script>
+```
+
 ## Development
 
 To contribute, follow this steps:
