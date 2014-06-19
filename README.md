@@ -114,10 +114,8 @@ $('form').card();
 To contribute, follow this steps:
 
 ```bash
-$ git clone git@github.com:jessepollak/card.git
+$ git clone --recursive https://github.com/jessepollak/card.git
 $ cd card
-$ git submodule init
-$ git submodule update
 $ npm install
 $ npm start
 ```
