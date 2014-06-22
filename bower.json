@@ -19,7 +19,7 @@
   "dependencies": {
     "jquery": ">=1.5"
   },
-  "license": "MIT",
+  "license": "SNPL",
   "ignore": [
     "**/.*",
     "node_modules",
