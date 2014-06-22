@@ -1,4 +1,4 @@
-﻿require 'jquery.payment'
+require 'jquery.payment'
 
 $ = jQuery
 $.card = {}
@@ -18,7 +18,7 @@ class Card
               <div class="lower">
                   <div class="shiny"></div>
                   <div class="cvc display">&bull;&bull;&bull;&bull;</div>
-                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
+                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
                   <div class="name display">{{fullName}}</div>
                   <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">••/••</div>
               </div>
@@ -218,17 +218,7 @@ class Card
     $el
 
   validToggler = (validatorName) ->
-    if validatorName == "validateCardExpiry"
-      return (val, $in, $out) ->
-        val = $in.payment('cardExpiryVal')
-        $in.toggleClass('valid', $.payment.validateCardExpiry(val.month , val.year))
-        val
-    else if validatorName == "validateCardNumber"
-      return (val, $in, $out) ->
-        $in.toggleClass('valid', $.payment.validateCardNumber(val))
-        val
-    else
-      return (val, $in, $out) ->
+    return (val, $in, $out) ->
       $out.toggleClass('valid', $.payment[validatorName](val))
       val
 
