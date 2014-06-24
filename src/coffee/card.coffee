@@ -20,7 +20,7 @@ class Card
                   <div class="cvc display">&bull;&bull;&bull;&bull;</div>
                   <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
                   <div class="name display">{{fullName}}</div>
-                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">••/{{yearFormat}}</div>
+                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">{{dateFormat}}</div>
               </div>
           </div>
           <div class="back">
@@ -60,7 +60,7 @@ class Card
       cvcDisplay: '.cvc'
       nameDisplay: '.name'
     messages:
-      yearFormat: '••'
+      dateFormat: '••/••'
       validDate: 'valid\nthru'
       monthYear: 'month/year'
       fullName: 'Full Name'
