@@ -132,18 +132,16 @@ class Card
 
     @$cvcInput
       .bindVal @$cvcDisplay,
-      filters: validToggler( 'validateCardCVC' )
+        filters: validToggler( 'validateCardCVC' )
       .on('focus', @handle('flipCard'))
       .on('blur', @handle('flipCard'))
-
-
 
     @$nameInput
       .bindVal @$nameDisplay,
         fill:false
         filters: validToggler('validateCardHolder')
-        @$nameInput.on 'keydown', @handle('captureName')
-        join: ' '
+      .on 'keydown', @handle('captureName')
+      join: ' '
 
   handleInitialValues: ->
     $.each @options.formSelectors, (name, selector) =>
@@ -161,9 +159,6 @@ class Card
       args = Array.prototype.slice.call arguments
       args.unshift $el
       @handlers[fn].apply this, args
-  
-  cvcCardType = ""
-  banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
 
   handlers:
     setCardType: ($el, e, cardType) ->
@@ -171,7 +166,8 @@ class Card
 
         @$card.removeClass('unknown')
         @$card.removeClass(@cardTypes.join(' '))
-        cvcCardType = cardType
+        $el.data("cardType",cardType)
+        @$cvcInput.data("cardType",cardType)
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')
 
@@ -179,15 +175,15 @@ class Card
       @$card.toggleClass('flipped')
 
     captureTab: ($el, e) ->
+      val = $el.payment('cardExpiryVal')
       keyCode = e.keyCode or e.which
       return if keyCode != 9 or e.shiftKey
-      val = $el.payment('cardExpiryVal')
       return unless val.month or val.year
       e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
 
-
     captureName: ($el, e) ->
-      e.preventDefault() if banKeyCodes.indexOf(e.which) != -1
+      banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
+      e.preventDefault() if banKeyCodes.indexOf(e.which or e.keyCode) != -1
        
       
   $.fn.bindVal = (out, opts={}) ->
@@ -234,24 +230,25 @@ class Card
       return (val, $in, $out) ->
         format = val
         val = $in.payment('cardExpiryVal')
-        $in.toggleClass('card-valid', $.payment.validateCardExpiry(val.month , val.year))
-        $in.toggleClass('card-invalid', !$.payment.validateCardExpiry(val.month , val.year))
+        toggleValidClass($in,$.payment.validateCardExpiry(val.month , val.year))
+        $in.data("expiryDate",val)
         format
     else if validatorName == "validateCardCVC"
       return (val, $in, $out) ->
-        $in.toggleClass('card-valid', $.payment.validateCardCVC(val,cvcCardType))
-        $in.toggleClass('card-invalid', !$.payment.validateCardCVC(val,cvcCardType))
+        toggleValidClass($in,$.payment.validateCardCVC(val,$in.data("cardType")))
         val
     else if validatorName == "validateCardNumber"
       return (val, $in, $out) ->
-        $in.toggleClass('card-valid', $.payment.validateCardNumber(val))
-        $in.toggleClass('card-invalid', !$.payment.validateCardNumber(val))
+        toggleValidClass($in,$.payment.validateCardNumber(val))
         val
     else if validatorName == "validateCardHolder"
       return (val, $in, $out) ->
-        $in.toggleClass('card-valid', val!="")
-        $in.toggleClass('card-invalid', val=="")
+        toggleValidClass($in,val!="")
         val
+
+  toggleValidClass = (ele,test) ->
+    ele.toggleClass('card-valid', test)
+    ele.toggleClass('card-invalid', !test)
 
 $.fn.extend card: (option, args...) ->
   @each ->
