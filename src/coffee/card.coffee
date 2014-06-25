@@ -1,4 +1,4 @@
-require 'jquery.payment'
+﻿require 'jquery.payment'
 
 $ = jQuery
 $.card = {}
@@ -7,6 +7,7 @@ $.fn.card = (opts) ->
   $.card.fn.construct.apply(this, opts)
 
 class Card
+
   cardTemplate: """
   <div class="card-container">
       <div class="card">
@@ -18,14 +19,14 @@ class Card
               <div class="lower">
                   <div class="shiny"></div>
                   <div class="cvc display">&bull;&bull;&bull;&bull;</div>
-                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
+                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
                   <div class="name display">{{fullName}}</div>
-                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">••/••</div>
+                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">&bull;&bull;/&bull;&bull;</div>
               </div>
           </div>
           <div class="back">
               <div class="bar"></div>
-              <div class="cvc display">•••</div>
+              <div class="cvc display">&bull;&bull;&bull;</div>
               <div class="shiny"></div>
           </div>
       </div>
@@ -67,7 +68,6 @@ class Card
   constructor: (el, opts) ->
     @options = $.extend({}, @defaults, opts)
     $.extend @options.messages, $.card.messages
-
     @$el = $(el)
 
     unless @options.container
@@ -75,7 +75,6 @@ class Card
       return
 
     @$container = $(@options.container)
-
     @render()
     @attachHandlers()
     @handleInitialValues()
@@ -132,14 +131,17 @@ class Card
         filters: expiryFilters
 
     @$cvcInput
-      .bindVal(@$cvcDisplay, validToggler 'validateCardCVC' )
+      .bindVal @$cvcDisplay,
+        filters: validToggler( 'validateCardCVC' )
       .on('focus', @handle('flipCard'))
       .on('blur', @handle('flipCard'))
 
     @$nameInput
       .bindVal @$nameDisplay,
         fill: false
-        join: ' '
+        filters: validToggler('validateCardHolder')
+      .on 'keydown', @handle('captureName')
+      join: ' '
 
   handleInitialValues: ->
     $.each @options.formSelectors, (name, selector) =>
@@ -161,10 +163,10 @@ class Card
   handlers:
     setCardType: ($el, e, cardType) ->
       unless @$card.hasClass(cardType)
-
         @$card.removeClass('unknown')
         @$card.removeClass(@cardTypes.join(' '))
-
+        $el.data("cardType", cardType)
+        @$cvcInput.data("cardType", cardType)
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')
 
@@ -178,6 +180,11 @@ class Card
       return unless val.month or val.year
       e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
 
+    captureName: ($el, e) ->
+      banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
+      e.preventDefault() if banKeyCodes.indexOf(e.which or e.keyCode) != -1
+       
+      
   $.fn.bindVal = (out, opts={}) ->
     opts.fill = opts.fill || false
     opts.filters = opts.filters || []
@@ -218,9 +225,29 @@ class Card
     $el
 
   validToggler = (validatorName) ->
-    return (val, $in, $out) ->
-      $out.toggleClass('valid', $.payment[validatorName](val))
-      val
+    if validatorName == "validateCardExpiry"
+      return (val, $in, $out) ->
+        format = val
+        val = $in.payment('cardExpiryVal')
+        toggleValidClass($in,$.payment.validateCardExpiry(val.month , val.year))
+        $in.data("expiryDate",val)
+        format
+    else if validatorName == "validateCardCVC"
+      return (val, $in, $out) ->
+        toggleValidClass($in,$.payment.validateCardCVC(val,$in.data("cardType")))
+        val
+    else if validatorName == "validateCardNumber"
+      return (val, $in, $out) ->
+        toggleValidClass($in,$.payment.validateCardNumber(val))
+        val
+    else if validatorName == "validateCardHolder"
+      return (val, $in, $out) ->
+        toggleValidClass($in,val!="")
+        val
+
+  toggleValidClass = (ele,test) ->
+    ele.toggleClass('card-valid', test)
+    ele.toggleClass('card-invalid', !test)
 
 $.fn.extend card: (option, args...) ->
   @each ->
