@@ -1,13 +1,13 @@
-.logo {
+.card-logo {
   height: 36px;
   width: 60px;
   font-style: italic; }
-  .logo, .logo:before, .logo:after {
+  .card-logo, .card-logo:before, .card-logo:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
-.logo.amex {
+.card-logo.amex {
   text-transform: uppercase;
   font-size: 4px;
   font-weight: bold;
@@ -16,12 +16,12 @@
   background-image: repeating-radial-gradient(circle at center, #FFF 1px, #999 2px);
   background-image: repeating-radial-gradient(circle at center, #FFF 1px, #999 2px);
   border: 1px solid #EEE; }
-  .logo.amex:before, .logo.amex:after {
+  .card-logo.amex:before, .card-logo.amex:after {
     width: 28px;
     display: block;
     position: absolute;
     left: 16px; }
-  .logo.amex:before {
+  .card-logo.amex:before {
     height: 28px;
     content: "american";
     top: 3px;
@@ -29,7 +29,7 @@
     padding-left: 2px;
     padding-top: 11px;
     background: #267AC3; }
-  .logo.amex:after {
+  .card-logo.amex:after {
     content: "express";
     bottom: 11px;
     text-align: right;
@@ -41,23 +41,23 @@
   transform: none; }
 .card.amex.identified .front:before, .card.amex.identified .back:before {
   background-color: #108168; }
-.card.amex.identified .front .logo.amex {
+.card.amex.identified .front .card-logo.amex {
   opacity: 1; }
 .card.amex.identified .front .cvc {
   visibility: visible; }
 .card.amex.identified .front:after {
   opacity: 1; }
 
-.logo {
+.card-logo {
   height: 36px;
   width: 60px;
   font-style: italic; }
-  .logo, .logo:before, .logo:after {
+  .card-logo, .card-logo:before, .card-logo:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
-.logo.discover {
+.card-logo.discover {
   background: #FF6600;
   color: #111;
   text-transform: uppercase;
@@ -70,11 +70,11 @@
   padding-top: 9px;
   letter-spacing: 0.03em;
   border: 1px solid #EEE; }
-  .logo.discover:before, .logo.discover:after {
+  .card-logo.discover:before, .card-logo.discover:after {
     content: " ";
     display: block;
     position: absolute; }
-  .logo.discover:before {
+  .card-logo.discover:before {
     background: white;
     width: 200px;
     height: 200px;
@@ -82,7 +82,7 @@
     bottom: -5%;
     right: -80%;
     z-index: -1; }
-  .logo.discover:after {
+  .card-logo.discover:after {
     width: 8px;
     height: 8px;
     border-radius: 4px;
@@ -96,13 +96,13 @@
     line-height: 24px;
     text-indent: -7px; }
 
-.card .front .logo.discover {
+.card .front .card-logo.discover {
   right: 12%;
   top: 18%; }
 
 .card.discover.identified .front:before, .card.discover.identified .back:before {
   background-color: #86B8CF; }
-.card.discover.identified .logo.discover {
+.card.discover.identified .card-logo.discover {
   opacity: 1; }
 .card.discover.identified .front:after {
   -webkit-transition: 400ms;
@@ -123,49 +123,49 @@
   -webkit-box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
-.logo {
+.card-logo {
   height: 36px;
   width: 60px;
   font-style: italic; }
-  .logo, .logo:before, .logo:after {
+  .card-logo, .card-logo:before, .card-logo:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
-.logo.visa.visa {
+.card-logo.visa.visa {
   background: white;
   text-transform: uppercase;
   color: #1A1876;
   text-align: center;
   font-weight: bold;
   font-size: 15px; }
-  .logo.visa.visa:before, .logo.visa.visa:after {
+  .card-logo.visa.visa:before, .card-logo.visa.visa:after {
     content: " ";
     display: block;
     width: 100%;
     height: 25%; }
-  .logo.visa.visa:before {
+  .card-logo.visa.visa:before {
     background: #1A1876;
     bottom: 100%; }
-  .logo.visa.visa:after {
+  .card-logo.visa.visa:after {
     background: #E79800;
     top: 100%; }
 
 .card.visa.identified .front:before, .card.visa.identified .back:before {
   background-color: #191278; }
-.card.visa.identified .logo.visa {
+.card.visa.identified .card-logo.visa {
   opacity: 1; }
 
-.logo {
+.card-logo {
   height: 36px;
   width: 60px;
   font-style: italic; }
-  .logo, .logo:before, .logo:after {
+  .card-logo, .card-logo:before, .card-logo:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
-.logo.mastercard {
+.card-logo.mastercard {
   color: white;
   font-weight: bold;
   text-align: center;
@@ -173,7 +173,7 @@
   line-height: 36px;
   z-index: 1;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  .logo.mastercard:before, .logo.mastercard:after {
+  .card-logo.mastercard:before, .card-logo.mastercard:after {
     content: " ";
     display: block;
     width: 36px;
@@ -181,21 +181,21 @@
     position: absolute;
     height: 36px;
     border-radius: 18px; }
-  .logo.mastercard:before {
+  .card-logo.mastercard:before {
     left: 0;
     background: #FF0000;
     z-index: -1; }
-  .logo.mastercard:after {
+  .card-logo.mastercard:after {
     right: 0;
     background: #FFAB00;
     z-index: -2; }
 
-.card.mastercard.identified .front .logo.mastercard, .card.mastercard.identified .back .logo.mastercard {
+.card.mastercard.identified .front .card-logo.mastercard, .card.mastercard.identified .back .card-logo.mastercard {
   -webkit-box-shadow: none;
   box-shadow: none; }
 .card.mastercard.identified .front:before, .card.mastercard.identified .back:before {
   background-color: #0061A8; }
-.card.mastercard.identified .logo.mastercard {
+.card.mastercard.identified .card-logo.mastercard {
   opacity: 1; }
 
 .card-container {
@@ -288,7 +288,7 @@
         background: #d9d9d9;
         position: absolute;
         top: 20%; }
-  .card .front .logo {
+  .card .front .card-logo {
     position: absolute;
     opacity: 0;
     right: 5%;
@@ -403,7 +403,7 @@
       background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(30% 30%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(70% 70%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(90% 20%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(15% 80%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       opacity: 1; }
-    .card.identified .front .logo, .card.identified .back .logo {
+    .card.identified .front .card-logo, .card.identified .back .card-logo {
       -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
       box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3); }
     .card.identified.no-radial-gradient .front:before, .card.identified.no-radial-gradient .back:before {
