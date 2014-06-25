@@ -15,7 +15,7 @@
   "devDependencies": {
     "bower": "~1.2.8",
     "coffee-script": "~1.7.1",
-    "gulp": "^3.7.0",
+    "gulp": "~3.7.0",
     "gulp-browserify": "~0.5.0",
     "gulp-sass": "~0.7.1",
     "gulp-autoprefixer": "0.0.7",
@@ -28,7 +28,7 @@
     "gulp-clean": "~0.3.0",
     "gulp-connect": "~2.0.5",
     "gulp-open": "~0.2.8",
-    "run-sequence": "^0.3.6"
+    "run-sequence": "~0.3.6"
   },
   "dependencies": {
     "jquery": "~2.1.1",
