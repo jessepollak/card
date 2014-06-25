@@ -138,7 +138,7 @@ class Card
 
     @$nameInput
       .bindVal @$nameDisplay,
-        fill:false
+        fill: false
         filters: validToggler('validateCardHolder')
       .on 'keydown', @handle('captureName')
       join: ' '
@@ -163,11 +163,10 @@ class Card
   handlers:
     setCardType: ($el, e, cardType) ->
       unless @$card.hasClass(cardType)
-
         @$card.removeClass('unknown')
         @$card.removeClass(@cardTypes.join(' '))
-        $el.data("cardType",cardType)
-        @$cvcInput.data("cardType",cardType)
+        $el.data("cardType", cardType)
+        @$cvcInput.data("cardType", cardType)
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')
 
@@ -175,9 +174,9 @@ class Card
       @$card.toggleClass('flipped')
 
     captureTab: ($el, e) ->
-      val = $el.payment('cardExpiryVal')
       keyCode = e.keyCode or e.which
       return if keyCode != 9 or e.shiftKey
+      val = $el.payment('cardExpiryVal')
       return unless val.month or val.year
       e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
 
