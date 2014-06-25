@@ -36,7 +36,10 @@ $('form').card({
     messages: {
         validDate: 'valid\ndate', // optional - default 'valid\nthru'
         monthYear: 'mm/yyyy', // optional - default 'month/year'
-        fullName: 'Say my name' // optional - default 'Full Name'
+        fullName: 'Say my name', // optional - default 'Full Name'
+        cardFormat: '1234 5678 1234 5678', // optional - default '&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;'
+        expiryFormat: 'mm/yyyy', // optional - default '&bull;&bull;/&bull;&bull;'
+        cvcFormat: '123' // optional - default '&bull;&bull;&bull;'
     }
 });
 ```
@@ -63,7 +66,7 @@ $('form').card({
 
 ### Translation
 
-To render the card with the strings in a different language, you can either pass in a `messages` object or set `$.card.messages` before initializing `card`. 
+To render the card with the strings in a different language, you can either pass in a `messages` object or set `$.card.messages` before initializing `card`.
 
 #### messages object method
 

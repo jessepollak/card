@@ -18,14 +18,14 @@ class Card
               <div class="lower">
                   <div class="shiny"></div>
                   <div class="cvc display">&bull;&bull;&bull;&bull;</div>
-                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
+                  <div class="number display">{{cardFormat}}</div>
                   <div class="name display">{{fullName}}</div>
-                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">{{dateFormat}}</div>
+                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiryFormat}}</div>
               </div>
           </div>
           <div class="back">
               <div class="bar"></div>
-              <div class="cvc display">•••</div>
+              <div class="cvc display">{{cvcFormat}}</div>
               <div class="shiny"></div>
           </div>
       </div>
@@ -60,10 +60,12 @@ class Card
       cvcDisplay: '.cvc'
       nameDisplay: '.name'
     messages:
-      dateFormat: '••/••'
       validDate: 'valid\nthru'
       monthYear: 'month/year'
       fullName: 'Full Name'
+      expiryFormat: '&bull;&bull;/&bull;&bull;'
+      cardFormat: '&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;'
+      cvcFormat: '&bull;&bull;&bull;'
 
   constructor: (el, opts) ->
     @options = $.extend({}, @defaults, opts)
