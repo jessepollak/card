@@ -11,10 +11,10 @@ class Card
   <div class="card-container">
       <div class="card">
           <div class="front">
-                  <div class="logo visa">visa</div>
-                  <div class="logo mastercard">MasterCard</div>
-                  <div class="logo amex"></div>
-                  <div class="logo discover">discover</div>
+                  <div class="card-logo visa">visa</div>
+                  <div class="card-logo mastercard">MasterCard</div>
+                  <div class="card-logo amex"></div>
+                  <div class="card-logo discover">discover</div>
               <div class="lower">
                   <div class="shiny"></div>
                   <div class="cvc display">&bull;&bull;&bull;&bull;</div>

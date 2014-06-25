@@ -5,7 +5,7 @@ $fill-color: #86B8CF;
 $highlight-color: #FF6600;
 
 .card {
-    .front .logo.discover {
+    .front .card-logo.discover {
         right: 12%;
         top: 18%;
     }
@@ -19,7 +19,7 @@ $highlight-color: #FF6600;
                 background-color: $fill-color;
             }
         }
-        .logo.discover {
+        .card-logo.discover {
             opacity: 1;
         }
 

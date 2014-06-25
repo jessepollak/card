@@ -6,14 +6,14 @@ $fill-color: #0061A8;
 .card.mastercard {
     &.identified {
         .front, .back {
-            .logo.mastercard {
+            .card-logo.mastercard {
                 box-shadow: none;
             }
             &:before {
                 background-color: $fill-color;
             }
         }
-        .logo.mastercard {
+        .card-logo.mastercard {
             opacity: 1;
         }
     }
