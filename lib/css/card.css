@@ -202,6 +202,7 @@
   -webkit-perspective: 1000px;
   perspective: 1000px;
   width: 350px;
+  max-width: 100%;
   height: 200px;
   margin: auto;
   z-index: 1;
@@ -300,6 +301,10 @@
     position: absolute;
     left: 10%;
     bottom: 30px; }
+    @media only screen and (max-device-width: 480px) {
+      .card .front .lower {
+        width: 90%;
+        left: 5%; } }
     .card .front .lower .cvc {
       visibility: hidden;
       float: right;

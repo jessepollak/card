@@ -9,6 +9,7 @@
 .card-container {
     @include perspective(1000px);
     width: $card-width;
+    max-width: 100%;
     height: $card-height;
     margin: auto;
     z-index: 1;
@@ -118,6 +119,11 @@
             position: absolute;
             left: (100% - $width) / 2;
             bottom: 30px;
+
+            @media only screen and (max-device-width : 480px) {
+                width: 90%;
+                left: 5%;
+            }
 
             .cvc {
                 visibility: hidden;
