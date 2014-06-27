@@ -36,10 +36,14 @@ $('form').card({
     messages: {
         validDate: 'valid\ndate', // optional - default 'valid\nthru'
         monthYear: 'mm/yyyy', // optional - default 'month/year'
-        fullName: 'Say my name', // optional - default 'Full Name'
-        cardFormat: '1234 5678 1234 5678', // optional - default '&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;'
-        expiryFormat: 'mm/yyyy', // optional - default '&bull;&bull;/&bull;&bull;'
-        cvcFormat: '123' // optional - default '&bull;&bull;&bull;'
+    },
+
+    // Default values for rendered fields - options
+    values: {
+        number: '•••• •••• •••• ••••',
+        name: 'Full Name',
+        expiry: '••/••',
+        cvc: '•••'
     }
 });
 ```
