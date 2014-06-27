@@ -1,6 +1,10 @@
 @import "bourbon/dist/bourbon";
 @import "mixins";
 
+// browser specific hacks
+@import "browsers/safari";
+@import "browsers/ie-10";
+
 @import "cards/amex";
 @import "cards/discover";
 @import "cards/visa";

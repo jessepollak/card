@@ -1,0 +1,9 @@
+.card.safari {
+   &.identified {
+        .front, .back {
+            &:before {
+                @include card-texture($radial-gradient: false);
+            }
+        }
+    }
+}

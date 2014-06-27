@@ -1,0 +1,28 @@
+.card.ie-10 {
+    &.flipped {
+        @include transform(0deg);
+        .front {
+            @include transform(rotateY(0deg));
+        }
+        .back {
+            @include transform(rotateY(0deg));
+
+            &:after {
+               left: 18%;
+            }
+
+            .cvc {
+                @include transform(rotateY(180deg));
+                left: 5%;
+            }
+
+            .shiny  {
+                left: 84%;
+                &:after {
+                    left: -480%;
+                    @include transform(rotateY(180deg));
+                }
+            }
+        }
+    }
+}
