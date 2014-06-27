@@ -25,7 +25,7 @@ class Card
           </div>
           <div class="back">
               <div class="bar"></div>
-              <div class="cvc display">{{cvcFormat}}</div>
+              <div class="cvc display">{{cvc}}</div>
               <div class="shiny"></div>
           </div>
       </div>
