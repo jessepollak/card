@@ -17,15 +17,15 @@ class Card
                   <div class="card-logo discover">discover</div>
               <div class="lower">
                   <div class="shiny"></div>
-                  <div class="cvc display">&bull;&bull;&bull;&bull;</div>
-                  <div class="number display">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
-                  <div class="name display">{{fullName}}</div>
-                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">••/••</div>
+                  <div class="cvc display">{{cvc}}</div>
+                  <div class="number display">{{number}}</div>
+                  <div class="name display">{{name}}</div>
+                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
               </div>
           </div>
           <div class="back">
               <div class="bar"></div>
-              <div class="cvc display">•••</div>
+              <div class="cvc display">{{cvc}}</div>
               <div class="shiny"></div>
           </div>
       </div>
@@ -62,11 +62,16 @@ class Card
     messages:
       validDate: 'valid\nthru'
       monthYear: 'month/year'
-      fullName: 'Full Name'
+    values:
+      number: '&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;'
+      cvc: '&bull;&bull;&bull;'
+      expiry: '&bull;&bull;/&bull;&bull;'
+      name: 'Full Name'
 
   constructor: (el, opts) ->
-    @options = $.extend({}, @defaults, opts)
+    @options = $.extend(true, {}, @defaults, opts)
     $.extend @options.messages, $.card.messages
+    $.extend @options.values, $.card.values
 
     @$el = $(el)
 
@@ -81,7 +86,10 @@ class Card
     @handleInitialValues()
 
   render: ->
-    @$container.append @template(@cardTemplate, @options.messages)
+    @$container.append(@template(
+      @cardTemplate,
+      $.extend({}, @options.messages, @options.values)
+    ))
 
     $.each @options.cardSelectors, (name, selector) =>
       this["$#{name}"] = @$container.find(selector)
