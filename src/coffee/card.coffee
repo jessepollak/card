@@ -111,7 +111,9 @@ class Card
     if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
-        @$card.addClass 'no-radial-gradient'
+        @$card.addClass 'safari'
+    if (new Function("/*@cc_on return @_jscript_version; @*/")())
+      @$card.addClass 'ie-10'
 
   attachHandlers: ->
     @$numberInput

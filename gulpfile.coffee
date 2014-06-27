@@ -15,7 +15,7 @@ development = process.env.NODE_ENV == 'development'
 
 gulp.task 'scss', ->
   gulp.src ['./src/scss/**/*.scss']
-  .pipe scss()
+  .pipe scss().on('error', console.log)
   .pipe prefix("> 1%")
   .pipe livereload(server)
   .pipe gulp.dest('./lib/css')
