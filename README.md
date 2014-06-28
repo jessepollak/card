@@ -30,7 +30,7 @@ $('form').card({
     nameInput: 'input#name', // optional - defaults input[name="name"]
 
     width: 200, // optional — default 350px
-    formatting: true // optional - default true
+    formatting: true, // optional - default true
 
     // Strings for translation - optional
     messages: {
