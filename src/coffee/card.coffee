@@ -1,4 +1,4 @@
-require 'jquery.payment'
+﻿require 'jquery.payment'
 
 $ = jQuery
 $.card = {}
@@ -7,6 +7,7 @@ $.fn.card = (opts) ->
   $.card.fn.construct.apply(this, opts)
 
 class Card
+
   cardTemplate: """
   <div class="card-container">
       <div class="card">
@@ -67,6 +68,9 @@ class Card
       cvc: '&bull;&bull;&bull;'
       expiry: '&bull;&bull;/&bull;&bull;'
       name: 'Full Name'
+    classes:
+      valid: 'card-valid'
+      invalid: 'card-invalid'
 
   constructor: (el, opts) ->
     @options = $.extend(true, {}, @defaults, opts)
@@ -127,12 +131,12 @@ class Card
     @$numberInput
       .bindVal @$numberDisplay,
         fill: false,
-        filters: validToggler('validateCardNumber')
+        filters: @validToggler('cardNumber')
       .on 'payment.cardType', @handle('setCardType')
 
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
     if @$expiryInput.length == 1
-      expiryFilters.push validToggler('validateCardExpiry')
+      expiryFilters.push @validToggler('cardExpiry')
       @$expiryInput.on 'keydown', @handle('captureTab')
 
     @$expiryInput
@@ -142,14 +146,17 @@ class Card
         filters: expiryFilters
 
     @$cvcInput
-      .bindVal(@$cvcDisplay, validToggler 'validateCardCVC' )
+      .bindVal @$cvcDisplay,
+        filters: @validToggler('cardCVC')
       .on('focus', @handle('flipCard'))
       .on('blur', @handle('flipCard'))
 
     @$nameInput
       .bindVal @$nameDisplay,
         fill: false
+        filters: @validToggler('cardHolderName')
         join: ' '
+      .on 'keydown', @handle('captureName')
 
   handleInitialValues: ->
     $.each @options.formSelectors, (name, selector) =>
@@ -168,25 +175,46 @@ class Card
       args.unshift $el
       @handlers[fn].apply this, args
 
+  validToggler: (validatorName) ->
+    if validatorName == "cardExpiry"
+      isValid = (val) ->
+        objVal = $.payment.cardExpiryVal val
+        $.payment.validateCardExpiry objVal.month, objVal.year
+    else if validatorName == "cardCVC"
+      isValid = (val) => $.payment.validateCardCVC val, @cardType
+    else if validatorName == "cardNumber"
+      isValid = (val) -> $.payment.validateCardNumber val
+    else if validatorName == "cardHolderName"
+      isValid = (val) -> val != ""
+
+    (val, $in, $out) =>
+      result = isValid val
+      @toggleValidClass $in, result
+      @toggleValidClass $out, result
+      val
+  toggleValidClass: (el, test) ->
+    el.toggleClass @options.classes.valid, test
+    el.toggleClass @options.classes.invalid, !test
+
   handlers:
     setCardType: ($el, e, cardType) ->
       unless @$card.hasClass(cardType)
-
         @$card.removeClass('unknown')
         @$card.removeClass(@cardTypes.join(' '))
-
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')
-
+        @cardType = cardType
     flipCard: ($el, e) ->
       @$card.toggleClass('flipped')
-
     captureTab: ($el, e) ->
       keyCode = e.keyCode or e.which
       return if keyCode != 9 or e.shiftKey
       val = $el.payment('cardExpiryVal')
       return unless val.month or val.year
       e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
+    captureName: ($el, e) ->
+      banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
+      e.preventDefault() if banKeyCodes.indexOf(e.which or e.keyCode) != -1
 
   $.fn.bindVal = (out, opts={}) ->
     opts.fill = opts.fill || false
@@ -226,11 +254,6 @@ class Card
         out.eq(i).text(outVal)
 
     $el
-
-  validToggler = (validatorName) ->
-    return (val, $in, $out) ->
-      $out.toggleClass('valid', $.payment[validatorName](val))
-      val
 
 $.fn.extend card: (option, args...) ->
   @each ->
