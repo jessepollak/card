@@ -155,8 +155,8 @@ class Card
       .bindVal @$nameDisplay,
         fill: false
         filters: @validToggler('cardHolderName')
+        join: ' '
       .on 'keydown', @handle('captureName')
-      join: ' '
 
   handleInitialValues: ->
     $.each @options.formSelectors, (name, selector) =>
