@@ -81,15 +81,6 @@
 .card.amex.identified .front:after {
   opacity: 1; }
 
-.card-logo {
-  height: 36px;
-  width: 60px;
-  font-style: italic; }
-  .card-logo, .card-logo:before, .card-logo:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
 .card-logo.discover {
   background: #FF6600;
   color: #111;
@@ -156,15 +147,6 @@
   -webkit-box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
-.card-logo {
-  height: 36px;
-  width: 60px;
-  font-style: italic; }
-  .card-logo, .card-logo:before, .card-logo:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
 .card-logo.visa.visa {
   background: white;
   text-transform: uppercase;
@@ -188,15 +170,6 @@
   background-color: #191278; }
 .card.visa.identified .card-logo.visa {
   opacity: 1; }
-
-.card-logo {
-  height: 36px;
-  width: 60px;
-  font-style: italic; }
-  .card-logo, .card-logo:before, .card-logo:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
 
 .card-logo.mastercard {
   color: white;

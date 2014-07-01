@@ -1,5 +1,5 @@
-@import "../cards/_card";
-@import "../logos/_amex";
+@import "card";
+@import "../logos/amex";
 
 $fill-color: #108168;
 
@@ -8,7 +8,7 @@ $fill-color: #108168;
     &.flipped{
         @include transform(none);
     }
-    
+
     &.identified {
         .front, .back {
             &:before {

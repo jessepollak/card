@@ -1,3 +1,14 @@
+
+// only import a module once
+// https://github.com/wilsonpage/sass-import-once
+$modules: () !default;
+@mixin exports($name) {
+  @if (index($modules, $name) == false) {
+    $modules: append($modules, $name);
+    @content;
+  }
+}
+
 @mixin shape() {
     content: " ";
     display: block;
@@ -66,5 +77,4 @@
             linear-gradient(-25deg, $b1 50%, opacify($b1, .2) 70%, $b1 90%)
         );
     }
-
 }
