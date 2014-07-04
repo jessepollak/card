@@ -251,6 +251,62 @@ var card = (function(){
 			Object.getOwnPropertyNames(settings.cardSelectors).forEach(function(el){
 				cardSelectors[el] = document.querySelectorAll(settings.cardSelectors[el]);
 			});
+		},
+
+		attachHandlers: function(){
+
+		},
+
+		bindVal: function(thisElement, outElement, options){
+
+			var joiner, outDefaults, outherEventsHandlers,
+				el = document.querySelectorAll(thisElement)[0];
+
+			if (!options) {
+				options = {};
+			}
+
+			options.fill = options.fill || false;
+			options.filters = options.filters || [];
+			options.join = options.join || '';
+
+			if (!Array.isArray(options.filters)) {
+				options.filters = [options.filters];
+			}
+
+			if (typeof options.join !== 'function') {
+				joiner = options.join;
+				options.join = function() {
+					return joiner;
+				};
+			}
+
+			// Take the default values of settings.values
+			outDefaults = (function() {
+				var arrayOfDefault = [];
+
+				Object.getOwnPropertyNames(settings.values).forEach(function(el){
+					arrayOfDefault.push(settings.values[el]);
+				});
+
+				return arrayOfDefault;
+			})();
+
+			el.addEventListener('focus', function(){
+				this.classList.add('focused');
+			});
+
+			el.addEventListener('blur', function(){
+				this.classList.remove('focused');
+			});
+
+			// Input replace keyup, change AND paste
+			el.addEventListener('input', function(ev){
+
+			});
+
+			return el;
+
 		}
 
 	};
