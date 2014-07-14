@@ -1,4 +1,4 @@
-﻿require 'jquery.payment'
+﻿require 'payment'
 
 $ = jQuery
 $.card = {}
@@ -7,7 +7,6 @@ $.fn.card = (opts) ->
   $.card.fn.construct.apply(this, opts)
 
 class Card
-
   cardTemplate: """
   <div class="card-container">
       <div class="card">
