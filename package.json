@@ -32,6 +32,6 @@
   },
   "dependencies": {
     "jquery": "~2.1.1",
-    "payment": "~0.0.2"
+    "payment": "0.0.3"
   }
 }
