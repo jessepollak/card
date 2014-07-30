@@ -9,6 +9,7 @@
 @import "cards/discover";
 @import "cards/visa";
 @import "cards/mastercard";
+@import "cards/jcb";
 
 .card-container {
     @include perspective(1000px);

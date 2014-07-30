@@ -1,0 +1,45 @@
+@import "logo";
+
+.card-logo.jcb {
+  $blue:#045b9d;
+  $red:#b41233;
+  $green:#007f47;
+  $white: #ffffff;
+  &:before {
+    -webkit-border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-topleft: 30px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0px;
+    background-color: $blue;
+    content: "J";
+  }
+  &:before,&:after {
+    -webkit-border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-topleft: 30px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0px;
+    background-color: $red;
+    content: "C";
+  }
+  &:after {
+
+    -webkit-border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-topleft: 30px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0px;
+    background-color: $green;
+    content: "B";
+  }
+}

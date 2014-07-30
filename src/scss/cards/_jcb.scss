@@ -1,0 +1,20 @@
+@import "card";
+@import "../logos/jcb";
+
+$fill-color: #ffffff;
+
+.card.jcb {
+  &.identified {
+    .front, .back {
+      .card-logo.jcb {
+        box-shadow: none;
+      }
+      &:before {
+        background-color: $fill-color;
+      }
+    }
+    .card-logo.mastercard {
+      opacity: 1;
+    }
+  }
+}
