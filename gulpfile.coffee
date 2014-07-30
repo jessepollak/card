@@ -6,7 +6,7 @@ spawn = require('child_process').spawn
 server = require('tiny-lr')()
 livereload = require('gulp-livereload')
 rename = require 'gulp-rename'
-clean = require 'gulp-clean'
+rimraf = require 'gulp-rimraf'
 connect = require 'gulp-connect'
 open = require 'gulp-open'
 runs = require 'run-sequence'
@@ -44,7 +44,7 @@ gulp.task 'connect', ->
 
 gulp.task 'clean', ->
   gulp.src 'build'
-    .pipe clean()
+    .pipe rimraf()
 
 # Default task call every tasks created so far.
 gulp.task 'default', (cb) ->
