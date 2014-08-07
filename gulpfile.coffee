@@ -27,6 +27,7 @@ gulp.task 'browserify', ->
       debug: development
       transform: ['coffeeify']
       extensions: ['.coffee']
+      standalone: 'card'
     .pipe livereload(server)
     .pipe rename({ extname: '.js' })
     .pipe gulp.dest('./lib/js')
