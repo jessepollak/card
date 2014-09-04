@@ -216,6 +216,7 @@
 
 .card {
   font-family: "Helvetica Neue";
+  line-height: 1;
   position: relative;
   width: 100%;
   height: 100%;
