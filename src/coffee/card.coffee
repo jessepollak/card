@@ -137,7 +137,6 @@ class Card
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
     if @$expiryInput.length == 1
       expiryFilters.push @validToggler('cardExpiry')
-      @$expiryInput.on 'keydown', @handle('captureTab')
 
     @$expiryInput
       .bindVal @$expiryDisplay,
@@ -206,12 +205,6 @@ class Card
         @cardType = cardType
     flipCard: ($el, e) ->
       @$card.toggleClass('flipped')
-    captureTab: ($el, e) ->
-      keyCode = e.keyCode or e.which
-      return if keyCode != 9 or e.shiftKey
-      val = $el.payment('cardExpiryVal')
-      return unless val.month or val.year
-      e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
     captureName: ($el, e) ->
       keyCode = e.which or e.keyCode
       banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
