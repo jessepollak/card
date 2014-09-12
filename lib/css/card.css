@@ -31,6 +31,9 @@
         -ms-transform: rotateY(180deg);
         transform: rotateY(180deg); }
 
+.card.ie-10.amex .back {
+  display: none; }
+
 .card-logo {
   height: 36px;
   width: 60px;
