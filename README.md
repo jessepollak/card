@@ -160,5 +160,6 @@ Card is used in the wild in these places:
 * [PennyWhale](https://www.pennywhale.com/)
 * [MakeSpace &ndash; Your Closet in the Cloud](https://www.makespace.com/)
 * [Blumpa](http://www.blumpa.com/)
+* [CourseLoads &ndash; Clean Clothes, Delivered to your Door.](http://www.courseloads.com/)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
