@@ -271,3 +271,7 @@
         }
     }
 }
+.card.identified .front, .card.identified .back {
+	background-color: #000000;
+	background-color: rgba(0, 0, 0, 0.5);
+}
