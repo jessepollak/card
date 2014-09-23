@@ -248,6 +248,8 @@
 
     &.identified {
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.5);
 
         .front, .back {
             &:before {
@@ -270,8 +272,4 @@
             }
         }
     }
-}
-.card.identified .front, .card.identified .back {
-	background-color: #000000;
-	background-color: rgba(0, 0, 0, 0.5);
 }
