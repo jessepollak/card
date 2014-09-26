@@ -163,3 +163,7 @@ Card is used in the wild in these places:
 * [CourseLoads &ndash; Clean Clothes, Delivered to your Door.](http://www.courseloads.com/)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
+
+## Acknowledgements
+
+This library depends on, and bundles, [Stripe's jquery.payment library](https://github.com/stripe/jquery.payment) — thanks [Stripe](https://stripe.com)!
