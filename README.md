@@ -167,3 +167,7 @@ Are you using Card in production? If so, we'd love to link to you from this page
 ## Acknowledgements
 
 This library depends on, and bundles, [Stripe's jquery.payment library](https://github.com/stripe/jquery.payment) — thanks [Stripe](https://stripe.com)!
+
+## Donations
+
+If you'd like to donate to help support development of Card, send Bitcoin directly to `17NUKd3v7GWben18kGhmFafa4ZpWrXpQSC` or through Coinbase [here](https://coinbase.com/jessepollak).
