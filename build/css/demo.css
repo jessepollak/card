@@ -4954,8 +4954,6 @@ th.hide-for-touch {
     font-weight: bold; }
     .demo-wrapper a:hover {
       text-decoration: underline; }
-  .demo-wrapper .header {
-    margin-top: 40px; }
   .demo-wrapper .code-container, .demo-wrapper .demo-container, .demo-wrapper .explainer-container {
     padding: 10px;
     margin: 10px 0; }
@@ -5032,25 +5030,72 @@ a.twitter-share-button {
   top: -4px;
   left: 10px; }
 
-#fusionads {
+.sponsored {
   position: absolute;
   top: 0;
   left: 0;
-  width: 130px;
+  width: 150px;
   margin: 5px 10px; }
-  #fusionads .fusion-text {
+  .sponsored .fusion-text {
     font-size: 12px;
     line-height: 16px;
     color: #333;
     display: block;
     margin: 10px 0; }
-  #fusionads .fusion-poweredby {
+  .sponsored .fusion-poweredby {
     margin: 0;
     line-height: 100%;
     font-size: 11px;
     color: #aaa;
     clear: both;
     display: block; }
-  @media (max-width: 800px) {
-    #fusionads {
-      display: none; } }
+  .sponsored a {
+    font-weight: bold; }
+  .sponsored h6 {
+    font-size: 12px;
+    margin: 0; }
+  .sponsored img {
+    background: white;
+    margin: 5px 0 3px 0; }
+  .sponsored p {
+    font-size: 10px;
+    line-height: 12px;
+    margin: 0; }
+  .sponsored .sponsor {
+    font-size: 10px;
+    color: #ccc;
+    text-align: underline; }
+    .sponsored .sponsor:hover {
+      color: #bbb; }
+
+.sponsored-mobile {
+  padding: 10px;
+  border: 1px solid #eee;
+  margin: 20px 0;
+  display: none; }
+  .sponsored-mobile a.img {
+    float: left;
+    width: 75px;
+    margin-right: 5%;
+    width: 20%; }
+  .sponsored-mobile h6, .sponsored-mobile p {
+    margin: 0;
+    float: left;
+    width: 70%; }
+  .sponsored-mobile h6 {
+    font-size: 14px;
+    margin-bottom: 3px; }
+  .sponsored-mobile p {
+    font-size: 12px;
+    line-height: 14px; }
+  .sponsored-mobile .clear {
+    display: block;
+    clear: both; }
+
+@media (max-width: 840px) {
+  .sponsored {
+    display: none; }
+  .sponsored-mobile {
+    display: block; }
+  .header {
+    margin-top: 0; } }

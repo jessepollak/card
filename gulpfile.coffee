@@ -7,9 +7,6 @@ server = require('tiny-lr')()
 livereload = require('gulp-livereload')
 rename = require 'gulp-rename'
 clean = require 'gulp-clean'
-gulpif = require 'gulp-if'
-uglify = require 'gulp-uglify'
-minify = require 'gulp-minify-css'
 connect = require 'gulp-connect'
 
 production = process.env.NODE_ENV == 'production'
