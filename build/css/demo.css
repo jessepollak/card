@@ -5053,10 +5053,12 @@ a.twitter-share-button {
     font-weight: bold; }
   .sponsored h6 {
     font-size: 12px;
-    margin: 0; }
+    margin: 0;
+    font-weight: bold; }
   .sponsored img {
-    background: white;
-    margin: 5px 0 3px 0; }
+    background: #62B7D2;
+    margin: 5px 0;
+    padding: 10px; }
   .sponsored p {
     font-size: 10px;
     line-height: 12px;
@@ -5077,14 +5079,17 @@ a.twitter-share-button {
     float: left;
     width: 75px;
     margin-right: 5%;
-    width: 20%; }
+    width: 20%;
+    background: #62B7D2;
+    padding: 10px; }
   .sponsored-mobile h6, .sponsored-mobile p {
     margin: 0;
     float: left;
     width: 70%; }
   .sponsored-mobile h6 {
     font-size: 14px;
-    margin-bottom: 3px; }
+    margin-bottom: 3px;
+    font-weight: bold; }
   .sponsored-mobile p {
     font-size: 12px;
     line-height: 14px; }

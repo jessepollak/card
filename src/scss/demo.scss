@@ -189,10 +189,12 @@ a.twitter-share-button {
     h6 {
         font-size: 12px;
         margin: 0;
+        font-weight: bold;
     }
     img {
-        background: white;
-        margin: 5px 0 3px 0;
+        background: #62B7D2;
+        margin: 5px 0;
+        padding: 10px;
     }
     p {
         font-size: 10px;
@@ -219,6 +221,8 @@ a.twitter-share-button {
         width: 75px;
         margin-right: 5%;
         width: 20%;
+        background: #62B7D2;
+        padding: 10px;
     }
     h6, p {
         margin: 0;
@@ -228,6 +232,7 @@ a.twitter-share-button {
     h6 {
         font-size: 14px;
         margin-bottom: 3px;
+        font-weight: bold;
     }
     p {
         font-size: 12px;
