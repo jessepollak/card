@@ -71,6 +71,7 @@ class Card
     classes:
       valid: 'card-valid'
       invalid: 'card-invalid'
+    debug: false
 
   constructor: (el, opts) ->
     @options = $.extend(true, {}, @defaults, opts)
@@ -104,7 +105,7 @@ class Card
       else
         obj = @$el.find(selector)
 
-      console.error "Card can't find a #{name} in your form." if !obj.length
+      console.error "Card can't find a #{name} in your form." if !obj.length and @options.debug
       this["$#{name}"] = obj
 
     if @options.formatting

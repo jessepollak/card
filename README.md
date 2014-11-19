@@ -44,7 +44,9 @@ $('form').card({
         name: 'Full Name',
         expiry: '••/••',
         cvc: '•••'
-    }
+    },
+
+    debug: false // if true, will log helpful messages for setting up Card
 });
 ```
 
