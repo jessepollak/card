@@ -126,7 +126,7 @@ class Card
         @$card.addClass 'safari'
     if (new Function("/*@cc_on return @_jscript_version; @*/")())
       @$card.addClass 'ie-10'
-    # ie 11 does not support conditional compilation, use user agent instead  
+    # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
       @$card.addClass 'ie-11'
 
@@ -151,7 +151,7 @@ class Card
       .bindVal @$cvcDisplay,
         filters: @validToggler('cardCVC')
       .on('focus', @handle('flipCard'))
-      .on('blur', @handle('flipCard'))
+      .on('blur', @handle('unflipCard'))
 
     @$nameInput
       .bindVal @$nameDisplay,
@@ -206,8 +206,10 @@ class Card
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')
         @cardType = cardType
-    flipCard: ($el, e) ->
-      @$card.toggleClass('flipped')
+    flipCard: ->
+      @$card.addClass('flipped')
+    unflipCard: ->
+      @$card.removeClass('flipped')
     captureName: ($el, e) ->
       keyCode = e.which or e.keyCode
       banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
