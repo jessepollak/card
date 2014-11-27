@@ -156,18 +156,17 @@
   color: #1A1876;
   text-align: center;
   font-weight: bold;
-  font-size: 15px; }
+  font-size: 15px;
+  line-height: 18px; }
   .card-logo.visa.visa:before, .card-logo.visa.visa:after {
     content: " ";
     display: block;
     width: 100%;
     height: 25%; }
   .card-logo.visa.visa:before {
-    background: #1A1876;
-    bottom: 100%; }
+    background: #1A1876; }
   .card-logo.visa.visa:after {
-    background: #E79800;
-    top: 100%; }
+    background: #E79800; }
 
 .card.visa.identified .front:before, .card.visa.identified .back:before {
   background-color: #191278; }
