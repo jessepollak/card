@@ -1,6 +1,6 @@
 {
   "name": "card",
-  "version": "0.0.5",
+  "version": "0.1.4",
   "homepage": "https://github.com/jessepollak/card",
   "authors": [
     "Jesse Pollak <jpollak92@gmail.com>"
@@ -24,7 +24,6 @@
     "**/.*",
     "node_modules",
     "example",
-    "src",
     "test",
     "tests"
   ]

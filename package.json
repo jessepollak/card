@@ -1,8 +1,9 @@
 {
-  "name": "Card",
-  "version": "0.0.5",
+  "name": "card",
+  "version": "0.1.4",
   "author": "Jesse Pollak <jpollak92@gmail.com>",
-  "description": "A better way to enter credit card information.",
+  "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
+  "main": "lib/js/card.js",
   "contributors": [
     {
       "name": "Jesse Pollak",
@@ -15,7 +16,7 @@
   "devDependencies": {
     "bower": "~1.2.8",
     "coffee-script": "~1.7.1",
-    "gulp": "~3.7.0",
+    "gulp": "~3.8.5",
     "gulp-browserify": "~0.5.0",
     "gulp-sass": "~0.7.1",
     "gulp-autoprefixer": "0.0.7",
@@ -25,13 +26,13 @@
     "coffeeify": "~0.6.0",
     "gulp-rename": "~1.2.0",
     "gulp-changed": "~0.3.0",
-    "gulp-clean": "~0.3.0",
+    "gulp-rimraf": "~0.1.0",
     "gulp-connect": "~2.0.5",
     "gulp-open": "~0.2.8",
-    "run-sequence": "~0.3.6"
+    "run-sequence": "~0.3.6",
+    "jquery": "~2.1.1"
   },
   "dependencies": {
-    "jquery": "~2.1.1",
     "payment": "0.0.3"
   }
 }

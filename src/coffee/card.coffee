@@ -70,6 +70,7 @@ class Card
     classes:
       valid: 'card-valid'
       invalid: 'card-invalid'
+    debug: false
 
   constructor: (el, opts) ->
     @options = $.extend(true, {}, @defaults, opts)
@@ -103,7 +104,7 @@ class Card
       else
         obj = @$el.find(selector)
 
-      console.error "Card can't find a #{name} in your form." if !obj.length
+      console.error "Card can't find a #{name} in your form." if !obj.length and @options.debug
       this["$#{name}"] = obj
 
     if @options.formatting
@@ -125,6 +126,9 @@ class Card
         @$card.addClass 'safari'
     if (new Function("/*@cc_on return @_jscript_version; @*/")())
       @$card.addClass 'ie-10'
+    # ie 11 does not support conditional compilation, use user agent instead
+    if (/rv:11.0/i.test(navigator.userAgent))
+      @$card.addClass 'ie-11'
 
   attachHandlers: ->
     @$numberInput
@@ -136,7 +140,6 @@ class Card
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
     if @$expiryInput.length == 1
       expiryFilters.push @validToggler('cardExpiry')
-      @$expiryInput.on 'keydown', @handle('captureTab')
 
     @$expiryInput
       .bindVal @$expiryDisplay,
@@ -148,7 +151,7 @@ class Card
       .bindVal @$cvcDisplay,
         filters: @validToggler('cardCVC')
       .on('focus', @handle('flipCard'))
-      .on('blur', @handle('flipCard'))
+      .on('blur', @handle('unflipCard'))
 
     @$nameInput
       .bindVal @$nameDisplay,
@@ -203,17 +206,26 @@ class Card
         @$card.addClass(cardType)
         @$card.toggleClass('identified', cardType isnt 'unknown')
         @cardType = cardType
-    flipCard: ($el, e) ->
-      @$card.toggleClass('flipped')
-    captureTab: ($el, e) ->
-      keyCode = e.keyCode or e.which
-      return if keyCode != 9 or e.shiftKey
-      val = $el.payment('cardExpiryVal')
-      return unless val.month or val.year
-      e.preventDefault() if !$.payment.validateCardExpiry(val.month, val.year)
+    flipCard: ->
+      @$card.addClass('flipped')
+    unflipCard: ->
+      @$card.removeClass('flipped')
     captureName: ($el, e) ->
+      keyCode = e.which or e.keyCode
       banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
-      e.preventDefault() if banKeyCodes.indexOf(e.which or e.keyCode) != -1
+
+      # Allow special symbols:
+      #   - hyphen
+      #   - dot
+      #   - apostrophe
+      allowedSymbols = [
+        189, 109 # hyphen (when not using shiftKey)
+        190, 110 # dot (when not using shiftKey)
+        222 # apostrophe (when not using shiftKey)
+      ]
+
+      if banKeyCodes.indexOf(keyCode) != -1 and not (!e.shiftKey and keyCode in allowedSymbols)
+        e.preventDefault()
 
   $.fn.bindVal = (out, opts={}) ->
     opts.fill = opts.fill || false

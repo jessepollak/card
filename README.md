@@ -44,7 +44,9 @@ $('form').card({
         name: 'Full Name',
         expiry: '••/••',
         cvc: '•••'
-    }
+    },
+
+    debug: false // if true, will log helpful messages for setting up Card
 });
 ```
 
@@ -145,6 +147,7 @@ To contribute, follow this steps:
 ```bash
 $ git clone --recursive https://github.com/jessepollak/card.git
 $ cd card
+$ git submodule init && git submodule update
 $ npm install
 $ npm start
 ```
@@ -157,5 +160,16 @@ Card is used in the wild in these places:
 
 * [InspectAll](http://www.inspectall.com/)
 * [PennyWhale](https://www.pennywhale.com/)
+* [MakeSpace &ndash; Your Closet in the Cloud](https://www.makespace.com/)
+* [Blumpa](http://www.blumpa.com/)
+* [CourseLoads &ndash; Clean Clothes, Delivered to your Door.](http://www.courseloads.com/)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
+
+## Acknowledgements
+
+This library depends on, and bundles, [Stripe's jquery.payment library](https://github.com/stripe/jquery.payment) — thanks [Stripe](https://stripe.com)!
+
+## Donations
+
+If you'd like to donate to help support development of Card, send Bitcoin directly to `17NUKd3v7GWben18kGhmFafa4ZpWrXpQSC` or through Coinbase [here](https://coinbase.com/jessepollak).
