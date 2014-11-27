@@ -3,14 +3,14 @@
 
 $fill-color: #191278;
 
-.card.visa {
-    &.identified {
-        .front, .back {
+.card.card-visa {
+    &.card-identified {
+        .card-front, .card-back {
             &:before {
                 background-color: $fill-color;
             }
         }
-        .card-logo.visa {
+        .card-logo.card-visa {
             opacity: 1;
         }
     }

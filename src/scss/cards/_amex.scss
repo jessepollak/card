@@ -3,26 +3,26 @@
 
 $fill-color: #108168;
 
-.card.amex {
+.card.card-amex {
 
-    &.flipped{
+    &.card-flipped{
         @include transform(none);
     }
 
-    &.identified {
-        .front, .back {
+    &.card-identified {
+        .card-front, .card-back {
             &:before {
                 background-color: $fill-color;
             }
         }
 
-        .front {
+        .card-front {
 
-            .card-logo.amex {
+            .card-logo.card-amex {
                 opacity: 1;
             }
 
-            .cvc {
+            .card-cvc {
                 visibility: visible;
             }
 

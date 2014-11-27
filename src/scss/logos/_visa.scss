@@ -1,7 +1,7 @@
 @import "logo";
 
-.card-logo.visa {
-    &.visa {
+.card-logo.card-visa {
+    &.card-visa {
         // display: none;
         $blue: #1A1876;
         $yellow: #E79800;
@@ -11,6 +11,9 @@
         text-align: center;
         font-weight: bold;
         font-size: 15px;
+        line-height: 18px;
+
+
         &:before, &:after {
             content: " ";
             display: block;
@@ -20,12 +23,10 @@
 
         &:before {
             background: $blue;
-            bottom: 100%;
         }
 
         &:after {
             background: $yellow;
-            top: 100%;
         }
     }
 }

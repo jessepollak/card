@@ -1,22 +1,22 @@
-.card.ie-10, .card.ie-11 {
-    &.flipped {
+.card.card-ie-10, .card.card-ie-11 {
+    &.card-flipped {
         @include transform(0deg);
-        .front {
+        .card-front {
             @include transform(rotateY(0deg));
         }
-        .back {
+        .card-back {
             @include transform(rotateY(0deg));
 
             &:after {
                left: 18%;
             }
 
-            .cvc {
+            .card-cvc {
                 @include transform(rotateY(180deg));
                 left: 5%;
             }
 
-            .shiny  {
+            .card-shiny  {
                 left: 84%;
                 &:after {
                     left: -480%;
@@ -26,6 +26,6 @@
         }
     }
 }
-.card.ie-10.amex .back, .card.ie-11.amex .back {
+.card.card-ie-10.card-amex .card-back, .card.card-ie-11.card-amex .card-back {
     display: none;
 }

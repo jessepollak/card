@@ -1,3 +1,6 @@
 [submodule "src/scss/bourbon"]
 	path = src/scss/bourbon
 	url = https://github.com/thoughtbot/bourbon.git
+[submodule "src/coffee/payment"]
+	path = src/coffee/payment
+	url = https://github.com/jessepollak/payment

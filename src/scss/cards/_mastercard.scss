@@ -3,17 +3,17 @@
 
 $fill-color: #0061A8;
 
-.card.mastercard {
-    &.identified {
-        .front, .back {
-            .card-logo.mastercard {
+.card.card-mastercard {
+    &.card-identified {
+        .card-front, .card-back {
+            .card-logo.card-mastercard {
                 box-shadow: none;
             }
             &:before {
                 background-color: $fill-color;
             }
         }
-        .card-logo.mastercard {
+        .card-logo.card-mastercard {
             opacity: 1;
         }
     }

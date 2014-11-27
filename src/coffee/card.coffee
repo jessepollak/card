@@ -1,33 +1,30 @@
-﻿require 'jquery.payment'
+require '../../lib/css/card.css'
 
-$ = jQuery
-$.card = {}
-$.card.fn = {}
-$.fn.card = (opts) ->
-  $.card.fn.construct.apply(this, opts)
+QJ = require 'qj'
+payment = require './payment/src/payment.coffee'
+extend = require 'node.extend'
 
 class Card
-
   cardTemplate: """
   <div class="card-container">
       <div class="card">
-          <div class="front">
-                  <div class="card-logo visa">visa</div>
-                  <div class="card-logo mastercard">MasterCard</div>
-                  <div class="card-logo amex"></div>
-                  <div class="card-logo discover">discover</div>
-              <div class="lower">
-                  <div class="shiny"></div>
-                  <div class="cvc display">{{cvc}}</div>
-                  <div class="number display">{{number}}</div>
-                  <div class="name display">{{name}}</div>
-                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
+          <div class="card-front">
+                  <div class="card-logo card-visa">visa</div>
+                  <div class="card-logo card-mastercard">MasterCard</div>
+                  <div class="card-logo card-amex"></div>
+                  <div class="card-logo card-discover">discover</div>
+              <div class="card-lower">
+                  <div class="card-shiny"></div>
+                  <div class="card-cvc card-display">{{cvc}}</div>
+                  <div class="card-number card-display">{{number}}</div>
+                  <div class="card-name card-display">{{name}}</div>
+                  <div class="card-expiry card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
               </div>
           </div>
-          <div class="back">
-              <div class="bar"></div>
-              <div class="cvc display">{{cvc}}</div>
-              <div class="shiny"></div>
+          <div class="card-back">
+              <div class="card-bar"></div>
+              <div class="card-cvc card-display">{{cvc}}</div>
+              <div class="card-shiny"></div>
           </div>
       </div>
   </div>
@@ -36,15 +33,15 @@ class Card
     tpl.replace /\{\{(.*?)\}\}/g, (match, key, str) ->
       data[key]
   cardTypes: [
-    'maestro',
-    'dinersclub',
-    'laser',
-    'jcb',
-    'unionpay',
-    'discover',
-    'mastercard',
-    'amex',
-    'visa'
+    'card-maestro',
+    'card-dinersclub',
+    'card-laser',
+    'card-jcb',
+    'card-unionpay',
+    'card-discover',
+    'card-mastercard',
+    'card-amex',
+    'card-visa'
   ]
   defaults:
     formatting: true
@@ -56,10 +53,10 @@ class Card
     cardSelectors:
       cardContainer: '.card-container'
       card: '.card'
-      numberDisplay: '.number'
-      expiryDisplay: '.expiry'
-      cvcDisplay: '.cvc'
-      nameDisplay: '.name'
+      numberDisplay: '.card-number'
+      expiryDisplay: '.card-expiry'
+      cvcDisplay: '.card-cvc'
+      nameDisplay: '.card-name'
     messages:
       validDate: 'valid\nthru'
       monthYear: 'month/year'
@@ -74,119 +71,113 @@ class Card
     debug: false
 
   constructor: (el, opts) ->
-    @options = $.extend(true, {}, @defaults, opts)
-    $.extend @options.messages, $.card.messages
-    $.extend @options.values, $.card.values
+    @options = extend(true, {}, @defaults, opts)
+    extend @options.messages, @defaults.messages
+    extend @options.values, @defaults.values
 
-    @$el = $(el)
+    @$el = el
 
     unless @options.container
       console.log "Please provide a container"
       return
 
-    @$container = $(@options.container)
+    @$container = QJ(@options.container)
 
     @render()
     @attachHandlers()
     @handleInitialValues()
 
   render: ->
-    @$container.append(@template(
+    @$container.insertAdjacentHTML('beforeend', @template(
       @cardTemplate,
-      $.extend({}, @options.messages, @options.values)
+      extend({}, @options.messages, @options.values)
     ))
 
-    $.each @options.cardSelectors, (name, selector) =>
-      this["$#{name}"] = @$container.find(selector)
+    for name, selector of @options.cardSelectors
+      this["$#{name}"] = @$container.querySelectorAll(selector)
 
-    $.each @options.formSelectors, (name, selector) =>
+    for name, selector of @options.formSelectors
       if @options[name]
-        obj = $(@options[name])
+        obj = QJ(@options[name])
       else
-        obj = @$el.find(selector)
+        obj = @$el.querySelectorAll(selector)
 
       console.error "Card can't find a #{name} in your form." if !obj.length and @options.debug
       this["$#{name}"] = obj
 
     if @options.formatting
-      @$numberInput.payment('formatCardNumber')
-      @$cvcInput.payment('formatCardCVC')
+      Payment.formatCardNumber(@$numberInput[0])
+      Payment.formatCardCVC(@$cvcInput[0])
 
       # we can only format if there's only one expiry input
       if @$expiryInput.length == 1
-        @$expiryInput.payment('formatCardExpiry')
+        Payment.formatCardExpiry(@$expiryInput[0])
 
     if @options.width
       baseWidth = parseInt @$cardContainer.css('width')
-      @$cardContainer.css "transform", "scale(#{@options.width / baseWidth})"
+      @$cardContainer.style.transform = "scale(#{@options.width / baseWidth})"
 
     # safari can't handle transparent radial gradient right now
     if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
-        @$card.addClass 'safari'
+        QJ.addClass @$card, 'card-safari'
     if (new Function("/*@cc_on return @_jscript_version; @*/")())
-      @$card.addClass 'ie-10'
+      QJ.addClass @$card,'card-ie-10'
     # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
-      @$card.addClass 'ie-11'
+      QJ.addClass @$card, 'card-ie-11'
 
   attachHandlers: ->
-    @$numberInput
-      .bindVal @$numberDisplay,
-        fill: false,
-        filters: @validToggler('cardNumber')
-      .on 'payment.cardType', @handle('setCardType')
+    bindVal @$numberInput, @$numberDisplay,
+      fill: false,
+      filters: @validToggler('cardNumber')
+    QJ.on @$numberInput, 'payment.cardType', @handle('setCardType')
 
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
     if @$expiryInput.length == 1
       expiryFilters.push @validToggler('cardExpiry')
 
-    @$expiryInput
-      .bindVal @$expiryDisplay,
+    bindVal @$expiryInput, @$expiryDisplay,
         join: (text) ->
           if text[0].length == 2 or text[1] then "/" else ""
         filters: expiryFilters
 
-    @$cvcInput
-      .bindVal @$cvcDisplay,
-        filters: @validToggler('cardCVC')
-      .on('focus', @handle('flipCard'))
-      .on('blur', @handle('unflipCard'))
+    bindVal @$cvcInput, @$cvcDisplay, filters: @validToggler('cardCVC')
+    QJ.on @$cvcInput, 'focus', @handle('flipCard')
+    QJ.on @$cvcInput, 'blur', @handle('unflipCard')
 
-    @$nameInput
-      .bindVal @$nameDisplay,
+    bindVal @$nameInput, @$nameDisplay,
         fill: false
         filters: @validToggler('cardHolderName')
         join: ' '
-      .on 'keydown', @handle('captureName')
+    QJ.on @$nameInput, 'keydown', @handle('captureName')
 
   handleInitialValues: ->
-    $.each @options.formSelectors, (name, selector) =>
+    for name, selector of @options.formSelectors
       el = this["$#{name}"]
-      if el.val()
+      if QJ.val(el)
         # if the input has a value, we want to trigger a refresh
-        el.trigger 'paste'
+        QJ.trigger el, 'paste'
         # set a timeout because `jquery.payment` does the reset of the val
         # in a timeout
-        setTimeout -> el.trigger 'keyup'
+        setTimeout -> QJ.trigger el, 'keyup'
 
   handle: (fn) ->
     (e) =>
-      $el = $(e.currentTarget)
       args = Array.prototype.slice.call arguments
-      args.unshift $el
+      args.unshift e.target
       @handlers[fn].apply this, args
 
   validToggler: (validatorName) ->
     if validatorName == "cardExpiry"
       isValid = (val) ->
-        objVal = $.payment.cardExpiryVal val
-        $.payment.validateCardExpiry objVal.month, objVal.year
+        objVal = Payment.fns.cardExpiryVal val
+        Payment.fns.validateCardExpiry objVal.month, objVal.year
     else if validatorName == "cardCVC"
-      isValid = (val) => $.payment.validateCardCVC val, @cardType
+      isValid = (val) => Payment.fns.validateCardCVC val, @cardType
     else if validatorName == "cardNumber"
-      isValid = (val) -> $.payment.validateCardNumber val
+      isValid = (val) -> Payment.fns.validateCardNumber val
     else if validatorName == "cardHolderName"
       isValid = (val) -> val != ""
 
@@ -196,21 +187,22 @@ class Card
       @toggleValidClass $out, result
       val
   toggleValidClass: (el, test) ->
-    el.toggleClass @options.classes.valid, test
-    el.toggleClass @options.classes.invalid, !test
+    QJ.toggleClass el, @options.classes.valid, test
+    QJ.toggleClass el ,@options.classes.invalid, !test
 
   handlers:
-    setCardType: ($el, e, cardType) ->
-      unless @$card.hasClass(cardType)
-        @$card.removeClass('unknown')
-        @$card.removeClass(@cardTypes.join(' '))
-        @$card.addClass(cardType)
-        @$card.toggleClass('identified', cardType isnt 'unknown')
+    setCardType: ($el, e) ->
+      cardType = e.data
+      unless QJ.hasClass @$card, cardType
+        QJ.removeClass @$card, 'card-unknown'
+        QJ.removeClass @$card, @cardTypes.join(' ')
+        QJ.addClass @$card, "card-#{cardType}"
+        QJ.toggleClass @$card, 'card-identified', (cardType isnt 'unknown')
         @cardType = cardType
     flipCard: ->
-      @$card.addClass('flipped')
+      QJ.addClass @$card, 'card-flipped'
     unflipCard: ->
-      @$card.removeClass('flipped')
+      QJ.removeClass @$card, 'card-flipped'
     captureName: ($el, e) ->
       keyCode = e.which or e.keyCode
       banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
@@ -228,7 +220,7 @@ class Card
       if banKeyCodes.indexOf(keyCode) != -1 and not (!e.shiftKey and keyCode in allowedSymbols)
         e.preventDefault()
 
-  $.fn.bindVal = (out, opts={}) ->
+  bindVal = (el, out, opts={}) ->
     opts.fill = opts.fill || false
     opts.filters = opts.filters || []
     opts.filters = [opts.filters] unless opts.filters instanceof Array
@@ -238,41 +230,33 @@ class Card
       joiner = opts.join
       opts.join = () -> joiner
 
-    $el = $(this)
-    outDefaults = (out.eq(i).text() for o, i in out)
+    outDefaults = (o.textContent for o in out)
 
-    $el.on 'focus', ->
-      out.addClass 'focused'
+    QJ.on el, 'focus', ->
+      QJ.addClass out, 'card-focused'
 
-    $el.on 'blur', ->
-      out.removeClass 'focused'
+    QJ.on el, 'blur', ->
+      QJ.removeClass el, 'card-focused'
 
-    $el.on 'keyup change paste', (e) ->
-      val = $el.map(-> $(this).val()).get()
+    QJ.on el, 'keyup change paste', (e) ->
+      val = (QJ.val(elem) for elem in el)
+
       join = opts.join(val)
 
       val = val.join(join)
       val = "" if val == join
 
       for filter in opts.filters
-        val = filter(val, $el, out)
+        val = filter(val, el, out)
 
-      for o, i in out
+      for outEl, i in out
         if opts.fill
           outVal = val + outDefaults[i].substring(val.length)
         else
           outVal = val or outDefaults[i]
 
-        out.eq(i).text(outVal)
+        outEl.textContent = outVal
 
-    $el
+    el
 
-$.fn.extend card: (option, args...) ->
-  @each ->
-    $this = $(this)
-    data = $this.data('card')
-
-    if !data
-      $this.data 'card', (data = new Card(this, option))
-    if typeof option == 'string'
-      data[option].apply(data, args)
+module.exports = Card

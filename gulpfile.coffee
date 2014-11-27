@@ -21,16 +21,16 @@ gulp.task 'scss', ->
   .pipe gulp.dest('./lib/css')
 
 gulp.task 'browserify', ->
-  gulp.src './src/coffee/**/*.coffee', read: false
+  gulp.src './src/coffee/*.coffee', read: false
     .pipe browserify
       insertGlobals: false
       debug: development
-      transform: ['coffeeify']
+      transform: ['coffeeify', 'cssify']
       extensions: ['.coffee']
       standalone: 'card'
-    .pipe livereload(server)
     .pipe rename({ extname: '.js' })
     .pipe gulp.dest('./lib/js')
+    .pipe livereload(server)
 
 gulp.task 'watch', ['scss', 'browserify', 'connect'],  ->
   server.listen 35729, ->
