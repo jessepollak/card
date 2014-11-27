@@ -1,3 +1,5 @@
+require '../../lib/css/card.css'
+
 QJ = require 'qj'
 payment = require './payment/src/payment.coffee'
 extend = require 'node.extend'
