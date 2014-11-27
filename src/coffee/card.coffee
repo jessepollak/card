@@ -6,23 +6,23 @@ class Card
   cardTemplate: """
   <div class="card-container">
       <div class="card">
-          <div class="front">
-                  <div class="card-logo visa">visa</div>
-                  <div class="card-logo mastercard">MasterCard</div>
-                  <div class="card-logo amex"></div>
-                  <div class="card-logo discover">discover</div>
-              <div class="lower">
-                  <div class="shiny"></div>
-                  <div class="cvc display">{{cvc}}</div>
-                  <div class="number display">{{number}}</div>
-                  <div class="name display">{{name}}</div>
-                  <div class="expiry display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
+          <div class="card-front">
+                  <div class="card-logo card-visa">visa</div>
+                  <div class="card-logo card-mastercard">MasterCard</div>
+                  <div class="card-logo card-amex"></div>
+                  <div class="card-logo card-discover">discover</div>
+              <div class="card-lower">
+                  <div class="card-shiny"></div>
+                  <div class="card-cvc card-display">{{cvc}}</div>
+                  <div class="card-number card-display">{{number}}</div>
+                  <div class="card-name card-display">{{name}}</div>
+                  <div class="card-expiry card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
               </div>
           </div>
-          <div class="back">
-              <div class="bar"></div>
-              <div class="cvc display">{{cvc}}</div>
-              <div class="shiny"></div>
+          <div class="card-back">
+              <div class="card-bar"></div>
+              <div class="card-cvc card-display">{{cvc}}</div>
+              <div class="card-shiny"></div>
           </div>
       </div>
   </div>
@@ -31,15 +31,15 @@ class Card
     tpl.replace /\{\{(.*?)\}\}/g, (match, key, str) ->
       data[key]
   cardTypes: [
-    'maestro',
-    'dinersclub',
-    'laser',
-    'jcb',
-    'unionpay',
-    'discover',
-    'mastercard',
-    'amex',
-    'visa'
+    'card-maestro',
+    'card-dinersclub',
+    'card-laser',
+    'card-jcb',
+    'card-unionpay',
+    'card-discover',
+    'card-mastercard',
+    'card-amex',
+    'card-visa'
   ]
   defaults:
     formatting: true
@@ -51,10 +51,10 @@ class Card
     cardSelectors:
       cardContainer: '.card-container'
       card: '.card'
-      numberDisplay: '.number'
-      expiryDisplay: '.expiry'
-      cvcDisplay: '.cvc'
-      nameDisplay: '.name'
+      numberDisplay: '.card-number'
+      expiryDisplay: '.card-expiry'
+      cvcDisplay: '.card-cvc'
+      nameDisplay: '.card-name'
     messages:
       validDate: 'valid\nthru'
       monthYear: 'month/year'
@@ -119,12 +119,12 @@ class Card
     if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
-        QJ.addClass @$card, 'safari'
+        QJ.addClass @$card, 'card-safari'
     if (new Function("/*@cc_on return @_jscript_version; @*/")())
-      QJ.addClass @$card,'ie-10'
+      QJ.addClass @$card,'card-ie-10'
     # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
-      QJ.addClass @$card, 'ie-11'
+      QJ.addClass @$card, 'card-ie-11'
 
   attachHandlers: ->
     bindVal @$numberInput, @$numberDisplay,
@@ -192,15 +192,15 @@ class Card
     setCardType: ($el, e) ->
       cardType = e.data
       unless QJ.hasClass @$card, cardType
-        QJ.removeClass @$card, 'unknown'
+        QJ.removeClass @$card, 'card-unknown'
         QJ.removeClass @$card, @cardTypes.join(' ')
-        QJ.addClass @$card, cardType
-        QJ.toggleClass @$card, 'identified', (cardType isnt 'unknown')
+        QJ.addClass @$card, "card-#{cardType}"
+        QJ.toggleClass @$card, 'card-identified', (cardType isnt 'unknown')
         @cardType = cardType
     flipCard: ->
-      QJ.addClass @$card, 'flipped'
+      QJ.addClass @$card, 'card-flipped'
     unflipCard: ->
-      QJ.removeClass @$card, 'flipped'
+      QJ.removeClass @$card, 'card-flipped'
     captureName: ($el, e) ->
       keyCode = e.which or e.keyCode
       banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
@@ -231,10 +231,10 @@ class Card
     outDefaults = (o.textContent for o in out)
 
     QJ.on el, 'focus', ->
-      QJ.addClass out, 'focused'
+      QJ.addClass out, 'card-focused'
 
     QJ.on el, 'blur', ->
-      QJ.removeClass el, 'focused'
+      QJ.removeClass el, 'card-focused'
 
     QJ.on el, 'keyup change paste', (e) ->
       val = (QJ.val(elem) for elem in el)

@@ -1,37 +1,37 @@
-.card.safari.identified .front:before, .card.safari.identified .back:before {
+.card.card-safari.card-identified .card-front:before, .card.card-safari.card-identified .card-back:before {
   background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
   background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
   background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
   background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%); }
 
-.card.ie-10.flipped, .card.ie-11.flipped {
+.card.card-ie-10.card-flipped, .card.card-ie-11.card-flipped {
   -webkit-transform: 0deg;
   -ms-transform: 0deg;
   transform: 0deg; }
-  .card.ie-10.flipped .front, .card.ie-11.flipped .front {
+  .card.card-ie-10.card-flipped .card-front, .card.card-ie-11.card-flipped .card-front {
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg); }
-  .card.ie-10.flipped .back, .card.ie-11.flipped .back {
+  .card.card-ie-10.card-flipped .card-back, .card.card-ie-11.card-flipped .card-back {
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg); }
-    .card.ie-10.flipped .back:after, .card.ie-11.flipped .back:after {
+    .card.card-ie-10.card-flipped .card-back:after, .card.card-ie-11.card-flipped .card-back:after {
       left: 18%; }
-    .card.ie-10.flipped .back .cvc, .card.ie-11.flipped .back .cvc {
+    .card.card-ie-10.card-flipped .card-back .card-cvc, .card.card-ie-11.card-flipped .card-back .card-cvc {
       -webkit-transform: rotateY(180deg);
       -ms-transform: rotateY(180deg);
       transform: rotateY(180deg);
       left: 5%; }
-    .card.ie-10.flipped .back .shiny, .card.ie-11.flipped .back .shiny {
+    .card.card-ie-10.card-flipped .card-back .card-shiny, .card.card-ie-11.card-flipped .card-back .card-shiny {
       left: 84%; }
-      .card.ie-10.flipped .back .shiny:after, .card.ie-11.flipped .back .shiny:after {
+      .card.card-ie-10.card-flipped .card-back .card-shiny:after, .card.card-ie-11.card-flipped .card-back .card-shiny:after {
         left: -480%;
         -webkit-transform: rotateY(180deg);
         -ms-transform: rotateY(180deg);
         transform: rotateY(180deg); }
 
-.card.ie-10.amex .back, .card.ie-11.amex .back {
+.card.card-ie-10.card-amex .card-back, .card.card-ie-11.card-amex .card-back {
   display: none; }
 
 .card-logo {
@@ -43,7 +43,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
-.card-logo.amex {
+.card-logo.card-amex {
   text-transform: uppercase;
   font-size: 4px;
   font-weight: bold;
@@ -52,12 +52,12 @@
   background-image: repeating-radial-gradient(circle at center, #FFF 1px, #999 2px);
   background-image: repeating-radial-gradient(circle at center, #FFF 1px, #999 2px);
   border: 1px solid #EEE; }
-  .card-logo.amex:before, .card-logo.amex:after {
+  .card-logo.card-amex:before, .card-logo.card-amex:after {
     width: 28px;
     display: block;
     position: absolute;
     left: 16px; }
-  .card-logo.amex:before {
+  .card-logo.card-amex:before {
     height: 28px;
     content: "american";
     top: 3px;
@@ -65,26 +65,26 @@
     padding-left: 2px;
     padding-top: 11px;
     background: #267AC3; }
-  .card-logo.amex:after {
+  .card-logo.card-amex:after {
     content: "express";
     bottom: 11px;
     text-align: right;
     padding-right: 2px; }
 
-.card.amex.flipped {
+.card.card-amex.card-flipped {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none; }
-.card.amex.identified .front:before, .card.amex.identified .back:before {
+.card.card-amex.card-identified .card-front:before, .card.card-amex.card-identified .card-back:before {
   background-color: #108168; }
-.card.amex.identified .front .card-logo.amex {
+.card.card-amex.card-identified .card-front .card-logo.card-amex {
   opacity: 1; }
-.card.amex.identified .front .cvc {
+.card.card-amex.card-identified .card-front .card-cvc {
   visibility: visible; }
-.card.amex.identified .front:after {
+.card.card-amex.card-identified .card-front:after {
   opacity: 1; }
 
-.card-logo.discover {
+.card-logo.card-discover {
   background: #FF6600;
   color: #111;
   text-transform: uppercase;
@@ -97,11 +97,11 @@
   padding-top: 9px;
   letter-spacing: 0.03em;
   border: 1px solid #EEE; }
-  .card-logo.discover:before, .card-logo.discover:after {
+  .card-logo.card-discover:before, .card-logo.card-discover:after {
     content: " ";
     display: block;
     position: absolute; }
-  .card-logo.discover:before {
+  .card-logo.card-discover:before {
     background: white;
     width: 200px;
     height: 200px;
@@ -109,7 +109,7 @@
     bottom: -5%;
     right: -80%;
     z-index: -1; }
-  .card-logo.discover:after {
+  .card-logo.card-discover:after {
     width: 8px;
     height: 8px;
     border-radius: 4px;
@@ -123,15 +123,15 @@
     line-height: 24px;
     text-indent: -7px; }
 
-.card .front .card-logo.discover {
+.card .card-front .card-logo.card-discover {
   right: 12%;
   top: 18%; }
 
-.card.discover.identified .front:before, .card.discover.identified .back:before {
+.card.card-discover.card-identified .card-front:before, .card.card-discover.card-identified .card-back:before {
   background-color: #86B8CF; }
-.card.discover.identified .card-logo.discover {
+.card.card-discover.card-identified .card-logo.card-discover {
   opacity: 1; }
-.card.discover.identified .front:after {
+.card.card-discover.card-identified .card-front:after {
   -webkit-transition: 400ms;
   transition: 400ms;
   content: " ";
@@ -150,7 +150,7 @@
   -webkit-box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5); }
 
-.card-logo.visa.visa {
+.card-logo.card-visa.card-visa {
   background: white;
   text-transform: uppercase;
   color: #1A1876;
@@ -158,22 +158,22 @@
   font-weight: bold;
   font-size: 15px;
   line-height: 18px; }
-  .card-logo.visa.visa:before, .card-logo.visa.visa:after {
+  .card-logo.card-visa.card-visa:before, .card-logo.card-visa.card-visa:after {
     content: " ";
     display: block;
     width: 100%;
     height: 25%; }
-  .card-logo.visa.visa:before {
+  .card-logo.card-visa.card-visa:before {
     background: #1A1876; }
-  .card-logo.visa.visa:after {
+  .card-logo.card-visa.card-visa:after {
     background: #E79800; }
 
-.card.visa.identified .front:before, .card.visa.identified .back:before {
+.card.card-visa.card-identified .card-front:before, .card.card-visa.card-identified .card-back:before {
   background-color: #191278; }
-.card.visa.identified .card-logo.visa {
+.card.card-visa.card-identified .card-logo.card-visa {
   opacity: 1; }
 
-.card-logo.mastercard {
+.card-logo.card-mastercard {
   color: white;
   font-weight: bold;
   text-align: center;
@@ -181,7 +181,7 @@
   line-height: 36px;
   z-index: 1;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  .card-logo.mastercard:before, .card-logo.mastercard:after {
+  .card-logo.card-mastercard:before, .card-logo.card-mastercard:after {
     content: " ";
     display: block;
     width: 36px;
@@ -189,21 +189,21 @@
     position: absolute;
     height: 36px;
     border-radius: 18px; }
-  .card-logo.mastercard:before {
+  .card-logo.card-mastercard:before {
     left: 0;
     background: #FF0000;
     z-index: -1; }
-  .card-logo.mastercard:after {
+  .card-logo.card-mastercard:after {
     right: 0;
     background: #FFAB00;
     z-index: -2; }
 
-.card.mastercard.identified .front .card-logo.mastercard, .card.mastercard.identified .back .card-logo.mastercard {
+.card.card-mastercard.card-identified .card-front .card-logo.card-mastercard, .card.card-mastercard.card-identified .card-back .card-logo.card-mastercard {
   -webkit-box-shadow: none;
   box-shadow: none; }
-.card.mastercard.identified .front:before, .card.mastercard.identified .back:before {
+.card.card-mastercard.card-identified .card-front:before, .card.card-mastercard.card-identified .card-back:before {
   background-color: #0061A8; }
-.card.mastercard.identified .card-logo.mastercard {
+.card.card-mastercard.card-identified .card-logo.card-mastercard {
   opacity: 1; }
 
 .card-container {
@@ -235,11 +235,11 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: inherit; }
-  .card.flipped {
+  .card.card-flipped {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg); }
-  .card .front, .card .back {
+  .card .card-front, .card .card-back {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
@@ -256,7 +256,7 @@
     overflow: hidden;
     border-radius: 10px;
     background: #DDD; }
-    .card .front:before, .card .back:before {
+    .card .card-front:before, .card .card-back:before {
       content: " ";
       display: block;
       position: absolute;
@@ -268,28 +268,28 @@
       border-radius: 10px;
       -webkit-transition: all 400ms ease;
       transition: all 400ms ease; }
-    .card .front:after, .card .back:after {
+    .card .card-front:after, .card .card-back:after {
       content: " ";
       display: block; }
-    .card .front .display, .card .back .display {
+    .card .card-front .card-display, .card .card-back .card-display {
       color: white;
       font-weight: normal;
       opacity: 0.5;
       -webkit-transition: opacity 400ms linear;
       transition: opacity 400ms linear; }
-      .card .front .display.focused, .card .back .display.focused {
+      .card .card-front .card-display.card-focused, .card .card-back .card-display.card-focused {
         opacity: 1;
         font-weight: 700; }
-    .card .front .cvc, .card .back .cvc {
+    .card .card-front .card-cvc, .card .card-back .card-cvc {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 14px; }
-    .card .front .shiny, .card .back .shiny {
+    .card .card-front .card-shiny, .card .card-back .card-shiny {
       width: 50px;
       height: 35px;
       border-radius: 5px;
       background: #CCC;
       position: relative; }
-      .card .front .shiny:before, .card .back .shiny:before {
+      .card .card-front .card-shiny:before, .card .card-back .card-shiny:before {
         content: " ";
         display: block;
         width: 70%;
@@ -299,51 +299,51 @@
         background: #d9d9d9;
         position: absolute;
         top: 20%; }
-  .card .front .card-logo {
+  .card .card-front .card-logo {
     position: absolute;
     opacity: 0;
     right: 5%;
     top: 8%;
     -webkit-transition: 400ms;
     transition: 400ms; }
-  .card .front .lower {
+  .card .card-front .card-lower {
     width: 80%;
     position: absolute;
     left: 10%;
     bottom: 30px; }
     @media only screen and (max-width: 480px) {
-      .card .front .lower {
+      .card .card-front .card-lower {
         width: 90%;
         left: 5%; } }
-    .card .front .lower .cvc {
+    .card .card-front .card-lower .card-cvc {
       visibility: hidden;
       float: right;
       position: relative;
       bottom: 5px; }
-    .card .front .lower .number {
+    .card .card-front .card-lower .card-number {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 24px;
       clear: both;
       margin-bottom: 30px; }
-    .card .front .lower .expiry {
+    .card .card-front .card-lower .card-expiry {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       letter-spacing: 0em;
       position: relative;
       float: right;
       width: 25%; }
-      .card .front .lower .expiry:before, .card .front .lower .expiry:after {
+      .card .card-front .card-lower .card-expiry:before, .card .card-front .card-lower .card-expiry:after {
         font-family: "Helvetica Neue";
         font-weight: bold;
         font-size: 7px;
         white-space: pre;
         display: block;
         opacity: 0.5; }
-      .card .front .lower .expiry:before {
+      .card .card-front .card-lower .card-expiry:before {
         content: attr(data-before);
         margin-bottom: 2px;
         font-size: 7px;
         text-transform: uppercase; }
-      .card .front .lower .expiry:after {
+      .card .card-front .card-lower .card-expiry:after {
         position: absolute;
         content: attr(data-after);
         text-align: right;
@@ -351,7 +351,7 @@
         margin-right: 5px;
         margin-top: 2px;
         bottom: 0; }
-    .card .front .lower .name {
+    .card .card-front .card-lower .card-name {
       text-transform: uppercase;
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 20px;
@@ -363,11 +363,11 @@
       -webkit-box-orient: horizontal;
       overflow: hidden;
       text-overflow: ellipsis; }
-  .card .back {
+  .card .card-back {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg); }
-    .card .back .bar {
+    .card .card-back .card-bar {
       background-color: #444;
       background-image: -webkit-linear-gradient(#444, #333);
       background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#333));
@@ -376,7 +376,7 @@
       height: 20%;
       position: absolute;
       top: 10%; }
-    .card .back:after {
+    .card .card-back:after {
       content: " ";
       display: block;
       background-color: #FFF;
@@ -388,17 +388,17 @@
       position: absolute;
       top: 40%;
       left: 2%; }
-    .card .back .cvc {
+    .card .card-back .card-cvc {
       position: absolute;
       top: 40%;
       left: 85%;
       -webkit-transition-delay: 600ms;
       transition-delay: 600ms; }
-    .card .back .shiny {
+    .card .card-back .card-shiny {
       position: absolute;
       top: 66%;
       left: 2%; }
-      .card .back .shiny:after {
+      .card .card-back .card-shiny:after {
         content: "This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free.\AIt comes with no warranty.\A For support issues, please visit: github.com/jessepollak/card.";
         position: absolute;
         left: 120%;
@@ -407,13 +407,13 @@
         font-size: 7px;
         width: 230px;
         opacity: 0.5; }
-  .card.identified {
+  .card.card-identified {
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
-    .card.identified .front, .card.identified .back {
+    .card.card-identified .card-front, .card.card-identified .card-back {
       background-color: #000;
       background-color: rgba(0, 0, 0, 0.5); }
-      .card.identified .front:before, .card.identified .back:before {
+      .card.card-identified .card-front:before, .card.card-identified .card-back:before {
         -webkit-transition: all 400ms ease;
         transition: all 400ms ease;
         background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(30% 30%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(70% 70%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(90% 20%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(15% 80%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
@@ -421,10 +421,10 @@
         background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(30% 30%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(70% 70%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(90% 20%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(15% 80%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
         background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
         opacity: 1; }
-      .card.identified .front .card-logo, .card.identified .back .card-logo {
+      .card.card-identified .card-front .card-logo, .card.card-identified .card-back .card-logo {
         -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3); }
-    .card.identified.no-radial-gradient .front:before, .card.identified.no-radial-gradient .back:before {
+    .card.card-identified.no-radial-gradient .card-front:before, .card.card-identified.no-radial-gradient .card-back:before {
       background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
