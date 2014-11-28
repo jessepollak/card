@@ -48,8 +48,12 @@ gulp.task 'clean', ->
     .pipe rimraf()
 
 # Default task call every tasks created so far.
-gulp.task 'default', (cb) ->
+gulp.task 'build', (cb) ->
   runs(
     'clean'
-    ['scss', 'browserify']
-    cb)
+    'scss',
+    'browserify',
+    cb
+  )
+
+gulp.task 'default', ['build']

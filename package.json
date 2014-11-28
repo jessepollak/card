@@ -34,7 +34,7 @@
     "cssify": "~0.6.0"
   },
   "dependencies": {
-    "qj": "0.0.3",
+    "qj": "0.0.4",
     "node.extend": "~1.1.3"
   }
 }
