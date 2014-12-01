@@ -30,7 +30,7 @@ $('form').card({
         expiryInput: 'input#expiry', // optional — default input[name="expiry"]
         cvcInput: 'input#cvc', // optional — default input[name="cvc"]
         nameInput: 'input#name' // optional - defaults input[name="name"]
-    }
+    },
 
     width: 200, // optional — default 350px
     formatting: true, // optional - default true
