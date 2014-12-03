@@ -45,29 +45,26 @@
 
 .card-logo.amex {
   text-transform: uppercase;
-  font-size: 4px;
+  font-size: 7px;
   font-weight: bold;
-  color: white;
-  background-image: -webkit-repeating-radial-gradient(center, circle, #FFF 1px, #999 2px);
-  background-image: repeating-radial-gradient(circle at center, #FFF 1px, #999 2px);
-  background-image: repeating-radial-gradient(circle at center, #FFF 1px, #999 2px);
-  border: 1px solid #EEE; }
+  color: white; }
   .card-logo.amex:before, .card-logo.amex:after {
-    width: 28px;
+    width: 46px;
     display: block;
     position: absolute;
-    left: 16px; }
+    left: 7px; }
   .card-logo.amex:before {
-    height: 28px;
+    height: 46px;
     content: "american";
-    top: 3px;
+    top: -6px;
     text-align: left;
     padding-left: 2px;
-    padding-top: 11px;
-    background: #267AC3; }
+    padding-top: 17px;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #7dcdee), color-stop(33%, #016cb4));
+    background: -webkit-linear-gradient(-45deg, #7dcdee 0%, #016cb4 33%); }
   .card-logo.amex:after {
     content: "express";
-    bottom: 11px;
+    bottom: 10px;
     text-align: right;
     padding-right: 2px; }
 
@@ -156,18 +153,26 @@
   color: #1A1876;
   text-align: center;
   font-weight: bold;
-  font-size: 15px; }
+  padding-top: 7px;
+  font-size: 22px; }
   .card-logo.visa.visa:before, .card-logo.visa.visa:after {
     content: " ";
     display: block;
-    width: 100%;
-    height: 25%; }
+    position: absolute; }
   .card-logo.visa.visa:before {
-    background: #1A1876;
-    bottom: 100%; }
+    width: 20px;
+    height: 10px;
+    border-top-right-radius: 55%;
+    top: 10px;
+    z-index: 1;
+    left: -9px;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 45%, #ffffff 46%, #ffffff 91%, #1a1876 91%, #1a1876 100%); }
   .card-logo.visa.visa:after {
-    background: #E79800;
-    top: 100%; }
+    width: 9px;
+    height: 4px;
+    top: 10px;
+    left: 3px;
+    background-color: #e59703; }
 
 .card.visa.identified .front:before, .card.visa.identified .back:before {
   background-color: #191278; }
@@ -425,6 +430,9 @@
       .card.identified .front .card-logo, .card.identified .back .card-logo {
         -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3); }
+      .card.identified .front .card-logo.amex, .card.identified .back .card-logo.amex {
+        -webkit-box-shadow: none;
+        box-shadow: none; }
     .card.identified.no-radial-gradient .front:before, .card.identified.no-radial-gradient .back:before {
       background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
