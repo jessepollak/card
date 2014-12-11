@@ -125,7 +125,7 @@ class Card
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
         @$card.addClass 'safari'
-    if (new Function("/*@cc_on return @_jscript_version; @*/")())
+    if (/Trident\/6.0/i.test(navigator.userAgent))
       @$card.addClass 'ie-10'
     # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
