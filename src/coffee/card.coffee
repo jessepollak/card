@@ -10,7 +10,7 @@ class Card
 
   cardTemplate: """
   <div class="card-container">
-      <div class="card">
+      <div class="creditcard">
           <div class="front">
                   <div class="card-logo visa">visa</div>
                   <div class="card-logo mastercard">MasterCard</div>
@@ -55,7 +55,7 @@ class Card
       nameInput: 'input[name="name"]'
     cardSelectors:
       cardContainer: '.card-container'
-      card: '.card'
+      card: '.creditcard'
       numberDisplay: '.number'
       expiryDisplay: '.expiry'
       cvcDisplay: '.cvc'
