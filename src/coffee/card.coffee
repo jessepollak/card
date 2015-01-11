@@ -71,9 +71,7 @@ class Card
     debug: false
 
   constructor: (opts) ->
-    @options = extend(true, {}, @defaults, opts)
-    extend @options.messages, @defaults.messages
-    extend @options.values, @defaults.values
+    @options = extend(true, @defaults, opts)
 
     unless @options.form
       console.log "Please provide a form"
