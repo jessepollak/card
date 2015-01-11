@@ -15,6 +15,7 @@ $.fn.extend card: (option, args...) ->
       $.each option, (key, value) =>
         if value instanceof jQuery
           option[key] = value[0]
+      option['form'] = this
       $this.data 'card', (data = new Card(this, option))
     if typeof option == 'string'
       data[option].apply(data, args)
