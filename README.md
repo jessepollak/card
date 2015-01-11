@@ -24,10 +24,13 @@ $('form').card({
     // a selector or jQuery object for the container
     // where you want the card to appear
     container: '.card-wrapper', // *required*
-    numberInput: 'input#number', // optional — default input[name="number"]
-    expiryInput: 'input#expiry', // optional — default input[name="expiry"]
-    cvcInput: 'input#cvc', // optional — default input[name="cvc"]
-    nameInput: 'input#name', // optional - defaults input[name="name"]
+
+    formSelectors: {
+        numberInput: 'input#number', // optional — default input[name="number"]
+        expiryInput: 'input#expiry', // optional — default input[name="expiry"]
+        cvcInput: 'input#cvc', // optional — default input[name="cvc"]
+        nameInput: 'input#name' // optional - defaults input[name="name"]
+    },
 
     width: 200, // optional — default 350px
     formatting: true, // optional - default true
@@ -75,7 +78,10 @@ Card can be used in forms where you have multiple inputs that render to a single
 <script>
 $('form').card({
     container: '.card-wrapper',
-    nameInput: 'input[name="first-name"], input[name="last-name"]'
+    
+    formSelectors: {
+        nameInput: 'input[name="first-name"], input[name="last-name"]'
+    }
 });
 </script>
 ```
