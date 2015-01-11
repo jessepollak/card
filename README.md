@@ -49,7 +49,17 @@ $('form').card({
     debug: false // if true, will log helpful messages for setting up Card
 });
 ```
+### Installing card from npm
 
+If you're using npm, you can install card.js with:
+
+    npm install --save card
+
+	var $ = require("jquery");
+    // The current card.js code does not explictly require jQuery, but instead uses the global, so this line is needed.
+    window.jQuery = $;
+    var card = require("card");
+    
 ### Using multiple inputs for one field
 
 Card can be used in forms where you have multiple inputs that render to a single field (i.e. you have a first and last name input). To use Card with this functionality, just pass in a jQuery selector that selects the fields in the correct order. For example,
