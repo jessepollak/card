@@ -1,4 +1,4 @@
-.card.ie-10, .card.ie-11 {
+.creditcard.ie-10, .creditcard.ie-11 {
     &.flipped {
         @include transform(0deg);
         .front {
@@ -26,6 +26,6 @@
         }
     }
 }
-.card.ie-10.amex .back, .card.ie-11.amex .back {
+.creditcard.ie-10.amex .back, .creditcard.ie-11.amex .back {
     display: none;
 }

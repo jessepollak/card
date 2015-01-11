@@ -1,37 +1,37 @@
-.card.safari.identified .front:before, .card.safari.identified .back:before {
+.creditcard.safari.identified .front:before, .creditcard.safari.identified .back:before {
   background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
   background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
   background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
   background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%); }
 
-.card.ie-10.flipped, .card.ie-11.flipped {
+.creditcard.ie-10.flipped, .creditcard.ie-11.flipped {
   -webkit-transform: 0deg;
   -ms-transform: 0deg;
   transform: 0deg; }
-  .card.ie-10.flipped .front, .card.ie-11.flipped .front {
+  .creditcard.ie-10.flipped .front, .creditcard.ie-11.flipped .front {
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg); }
-  .card.ie-10.flipped .back, .card.ie-11.flipped .back {
+  .creditcard.ie-10.flipped .back, .creditcard.ie-11.flipped .back {
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg); }
-    .card.ie-10.flipped .back:after, .card.ie-11.flipped .back:after {
+    .creditcard.ie-10.flipped .back:after, .creditcard.ie-11.flipped .back:after {
       left: 18%; }
-    .card.ie-10.flipped .back .cvc, .card.ie-11.flipped .back .cvc {
+    .creditcard.ie-10.flipped .back .cvc, .creditcard.ie-11.flipped .back .cvc {
       -webkit-transform: rotateY(180deg);
       -ms-transform: rotateY(180deg);
       transform: rotateY(180deg);
       left: 5%; }
-    .card.ie-10.flipped .back .shiny, .card.ie-11.flipped .back .shiny {
+    .creditcard.ie-10.flipped .back .shiny, .creditcard.ie-11.flipped .back .shiny {
       left: 84%; }
-      .card.ie-10.flipped .back .shiny:after, .card.ie-11.flipped .back .shiny:after {
+      .creditcard.ie-10.flipped .back .shiny:after, .creditcard.ie-11.flipped .back .shiny:after {
         left: -480%;
         -webkit-transform: rotateY(180deg);
         -ms-transform: rotateY(180deg);
         transform: rotateY(180deg); }
 
-.card.ie-10.amex .back, .card.ie-11.amex .back {
+.creditcard.ie-10.amex .back, .creditcard.ie-11.amex .back {
   display: none; }
 
 .card-logo {
@@ -217,7 +217,7 @@
   z-index: 1;
   position: relative; }
 
-.card {
+.jp-card {
   font-family: "Helvetica Neue";
   line-height: 1;
   position: relative;
@@ -231,16 +231,16 @@
   transform-style: preserve-3d;
   -webkit-transition: all 400ms linear;
   transition: all 400ms linear; }
-  .card > *, .card > *:before, .card > *:after {
+  .jp-card > *, .jp-card > *:before, .jp-card > *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: inherit; }
-  .card.flipped {
+  .jp-card.flipped {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg); }
-  .card .front, .card .back {
+  .jp-card .front, .jp-card .back {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
@@ -257,7 +257,7 @@
     overflow: hidden;
     border-radius: 10px;
     background: #DDD; }
-    .card .front:before, .card .back:before {
+    .jp-card .front:before, .jp-card .back:before {
       content: " ";
       display: block;
       position: absolute;
@@ -269,28 +269,28 @@
       border-radius: 10px;
       -webkit-transition: all 400ms ease;
       transition: all 400ms ease; }
-    .card .front:after, .card .back:after {
+    .jp-card .front:after, .jp-card .back:after {
       content: " ";
       display: block; }
-    .card .front .display, .card .back .display {
+    .jp-card .front .display, .jp-card .back .display {
       color: white;
       font-weight: normal;
       opacity: 0.5;
       -webkit-transition: opacity 400ms linear;
       transition: opacity 400ms linear; }
-      .card .front .display.focused, .card .back .display.focused {
+      .jp-card .front .display.focused, .jp-card .back .display.focused {
         opacity: 1;
         font-weight: 700; }
-    .card .front .cvc, .card .back .cvc {
+    .jp-card .front .cvc, .jp-card .back .cvc {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 14px; }
-    .card .front .shiny, .card .back .shiny {
+    .jp-card .front .shiny, .jp-card .back .shiny {
       width: 50px;
       height: 35px;
       border-radius: 5px;
       background: #CCC;
       position: relative; }
-      .card .front .shiny:before, .card .back .shiny:before {
+      .jp-card .front .shiny:before, .jp-card .back .shiny:before {
         content: " ";
         display: block;
         width: 70%;
@@ -300,51 +300,51 @@
         background: #d9d9d9;
         position: absolute;
         top: 20%; }
-  .card .front .card-logo {
+  .jp-card .front .card-logo {
     position: absolute;
     opacity: 0;
     right: 5%;
     top: 8%;
     -webkit-transition: 400ms;
     transition: 400ms; }
-  .card .front .lower {
+  .jp-card .front .lower {
     width: 80%;
     position: absolute;
     left: 10%;
     bottom: 30px; }
     @media only screen and (max-width: 480px) {
-      .card .front .lower {
+      .jp-card .front .lower {
         width: 90%;
         left: 5%; } }
-    .card .front .lower .cvc {
+    .jp-card .front .lower .cvc {
       visibility: hidden;
       float: right;
       position: relative;
       bottom: 5px; }
-    .card .front .lower .number {
+    .jp-card .front .lower .number {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 24px;
       clear: both;
       margin-bottom: 30px; }
-    .card .front .lower .expiry {
+    .jp-card .front .lower .expiry {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       letter-spacing: 0em;
       position: relative;
       float: right;
       width: 25%; }
-      .card .front .lower .expiry:before, .card .front .lower .expiry:after {
+      .jp-card .front .lower .expiry:before, .jp-card .front .lower .expiry:after {
         font-family: "Helvetica Neue";
         font-weight: bold;
         font-size: 7px;
         white-space: pre;
         display: block;
         opacity: 0.5; }
-      .card .front .lower .expiry:before {
+      .jp-card .front .lower .expiry:before {
         content: attr(data-before);
         margin-bottom: 2px;
         font-size: 7px;
         text-transform: uppercase; }
-      .card .front .lower .expiry:after {
+      .jp-card .front .lower .expiry:after {
         position: absolute;
         content: attr(data-after);
         text-align: right;
@@ -352,7 +352,7 @@
         margin-right: 5px;
         margin-top: 2px;
         bottom: 0; }
-    .card .front .lower .name {
+    .jp-card .front .lower .name {
       text-transform: uppercase;
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 20px;
@@ -364,11 +364,11 @@
       -webkit-box-orient: horizontal;
       overflow: hidden;
       text-overflow: ellipsis; }
-  .card .back {
+  .jp-card .back {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg); }
-    .card .back .bar {
+    .jp-card .back .bar {
       background-color: #444;
       background-image: -webkit-linear-gradient(#444, #333);
       background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#333));
@@ -377,7 +377,7 @@
       height: 20%;
       position: absolute;
       top: 10%; }
-    .card .back:after {
+    .jp-card .back:after {
       content: " ";
       display: block;
       background-color: #FFF;
@@ -389,17 +389,17 @@
       position: absolute;
       top: 40%;
       left: 2%; }
-    .card .back .cvc {
+    .jp-card .back .cvc {
       position: absolute;
       top: 40%;
       left: 85%;
       -webkit-transition-delay: 600ms;
       transition-delay: 600ms; }
-    .card .back .shiny {
+    .jp-card .back .shiny {
       position: absolute;
       top: 66%;
       left: 2%; }
-      .card .back .shiny:after {
+      .jp-card .back .shiny:after {
         content: "This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free.\AIt comes with no warranty.\A For support issues, please visit: github.com/jessepollak/card.";
         position: absolute;
         left: 120%;
@@ -408,13 +408,13 @@
         font-size: 7px;
         width: 230px;
         opacity: 0.5; }
-  .card.identified {
+  .jp-card.identified {
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
-    .card.identified .front, .card.identified .back {
+    .jp-card.identified .front, .jp-card.identified .back {
       background-color: #000;
       background-color: rgba(0, 0, 0, 0.5); }
-      .card.identified .front:before, .card.identified .back:before {
+      .jp-card.identified .front:before, .jp-card.identified .back:before {
         -webkit-transition: all 400ms ease;
         transition: all 400ms ease;
         background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(30% 30%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(70% 70%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(90% 20%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(15% 80%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
@@ -422,10 +422,10 @@
         background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(30% 30%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(70% 70%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(90% 20%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-radial-gradient(15% 80%, circle, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
         background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
         opacity: 1; }
-      .card.identified .front .card-logo, .card.identified .back .card-logo {
+      .jp-card.identified .front .card-logo, .jp-card.identified .back .card-logo {
         -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3); }
-    .card.identified.no-radial-gradient .front:before, .card.identified.no-radial-gradient .back:before {
+    .jp-card.identified.no-radial-gradient .front:before, .jp-card.identified.no-radial-gradient .back:before {
       background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
       background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(315deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), -webkit-repeating-linear-gradient(0deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-repeating-linear-gradient(240deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(115deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
