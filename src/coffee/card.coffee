@@ -153,7 +153,6 @@ class Card
         fill: false
         filters: @validToggler('cardHolderName')
         join: ' '
-    QJ.on @$nameInput, 'keydown', @handle('captureName')
 
   handleInitialValues: ->
     for name, selector of @options.formSelectors
@@ -205,22 +204,6 @@ class Card
       QJ.addClass @$card, 'card-flipped'
     unflipCard: ->
       QJ.removeClass @$card, 'card-flipped'
-    captureName: ($el, e) ->
-      keyCode = e.which or e.keyCode
-      banKeyCodes = [48,49,50,51,52,53,54,55,56,57,106,107,109,110,111,186,187,188,189,190,191,192,219,220,221,222]
-
-      # Allow special symbols:
-      #   - hyphen
-      #   - dot
-      #   - apostrophe
-      allowedSymbols = [
-        189, 109 # hyphen (when not using shiftKey)
-        190, 110 # dot (when not using shiftKey)
-        222 # apostrophe (when not using shiftKey)
-      ]
-
-      if banKeyCodes.indexOf(keyCode) != -1 and not (!e.shiftKey and keyCode in allowedSymbols)
-        e.preventDefault()
 
   bindVal = (el, out, opts={}) ->
     opts.fill = opts.fill || false
