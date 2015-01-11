@@ -1,4 +1,4 @@
-require '../../lib/css/card.css'
+require '../scss/card.scss'
 
 QJ = require 'qj'
 payment = require './payment/src/payment.coffee'
@@ -70,12 +70,16 @@ class Card
       invalid: 'card-invalid'
     debug: false
 
-  constructor: (el, opts) ->
+  constructor: (opts) ->
     @options = extend(true, {}, @defaults, opts)
     extend @options.messages, @defaults.messages
     extend @options.values, @defaults.values
 
-    @$el = el
+    unless @options.form
+      console.log "Please provide a form"
+      return
+
+    @$el = QJ(@options.form)
 
     unless @options.container
       console.log "Please provide a container"
@@ -88,30 +92,28 @@ class Card
     @handleInitialValues()
 
   render: ->
-    @$container.insertAdjacentHTML('beforeend', @template(
+    QJ.append(@$container, @template(
       @cardTemplate,
       extend({}, @options.messages, @options.values)
     ))
 
     for name, selector of @options.cardSelectors
-      this["$#{name}"] = @$container.querySelectorAll(selector)
+      this["$#{name}"] = QJ.find(@$container, selector)
 
     for name, selector of @options.formSelectors
-      if @options[name]
-        obj = QJ(@options[name])
-      else
-        obj = @$el.querySelectorAll(selector)
+      selector = if @options[name] then @options[name] else selector
+      obj = QJ.find(@$el, selector)
 
       console.error "Card can't find a #{name} in your form." if !obj.length and @options.debug
       this["$#{name}"] = obj
 
     if @options.formatting
-      Payment.formatCardNumber(@$numberInput[0])
-      Payment.formatCardCVC(@$cvcInput[0])
+      Payment.formatCardNumber(@$numberInput)
+      Payment.formatCardCVC(@$cvcInput)
 
       # we can only format if there's only one expiry input
       if @$expiryInput.length == 1
-        Payment.formatCardExpiry(@$expiryInput[0])
+        Payment.formatCardExpiry(@$expiryInput)
 
     if @options.width
       baseWidth = parseInt @$cardContainer.css('width')
@@ -260,3 +262,4 @@ class Card
     el
 
 module.exports = Card
+global.Card = Card

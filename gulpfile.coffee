@@ -25,7 +25,7 @@ gulp.task 'browserify', ->
     .pipe browserify
       insertGlobals: false
       debug: development
-      transform: ['coffeeify', 'cssify']
+      transform: ['coffeeify', 'sassify']
       extensions: ['.coffee']
       standalone: 'card'
     .pipe rename({ extname: '.js' })
