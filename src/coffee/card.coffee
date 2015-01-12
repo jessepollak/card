@@ -6,25 +6,25 @@ extend = require 'node.extend'
 
 class Card
   cardTemplate: """
-  <div class="card-container">
-      <div class="card">
-          <div class="card-front">
-                  <div class="card-logo card-visa">visa</div>
-                  <div class="card-logo card-mastercard">MasterCard</div>
-                  <div class="card-logo card-amex"></div>
-                  <div class="card-logo card-discover">discover</div>
-              <div class="card-lower">
-                  <div class="card-shiny"></div>
-                  <div class="card-cvc card-display">{{cvc}}</div>
-                  <div class="card-number card-display">{{number}}</div>
-                  <div class="card-name card-display">{{name}}</div>
-                  <div class="card-expiry card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
+  <div class="jp-card-container">
+      <div class="jp-card">
+          <div class="jp-card-front">
+                  <div class="jp-card-logo jp-card-visa">visa</div>
+                  <div class="jp-card-logo jp-card-mastercard">MasterCard</div>
+                  <div class="jp-card-logo jp-card-amex"></div>
+                  <div class="jp-card-logo jp-card-discover">discover</div>
+              <div class="jp-card-lower">
+                  <div class="jp-card-shiny"></div>
+                  <div class="jp-card-cvc cjp-ard-display">{{cvc}}</div>
+                  <div class="jp-card-number jp-card-display">{{number}}</div>
+                  <div class="jp-card-name jp-card-display">{{name}}</div>
+                  <div class="jp-card-expiry jp-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>
               </div>
           </div>
-          <div class="card-back">
-              <div class="card-bar"></div>
-              <div class="card-cvc card-display">{{cvc}}</div>
-              <div class="card-shiny"></div>
+          <div class="jp-card-back">
+              <div class="jp-card-bar"></div>
+              <div class="jp-card-cvc jp-card-display">{{cvc}}</div>
+              <div class="jp-card-shiny"></div>
           </div>
       </div>
   </div>
@@ -33,15 +33,15 @@ class Card
     tpl.replace /\{\{(.*?)\}\}/g, (match, key, str) ->
       data[key]
   cardTypes: [
-    'card-maestro',
-    'card-dinersclub',
-    'card-laser',
-    'card-jcb',
-    'card-unionpay',
-    'card-discover',
-    'card-mastercard',
-    'card-amex',
-    'card-visa'
+    'jp-card-maestro',
+    'jp-card-dinersclub',
+    'jp-card-laser',
+    'jp-card-jcb',
+    'jp-card-unionpay',
+    'jp-card-discover',
+    'jp-card-mastercard',
+    'jp-card-amex',
+    'jp-card-visa'
   ]
   defaults:
     formatting: true
@@ -51,12 +51,12 @@ class Card
       cvcInput: 'input[name="cvc"]'
       nameInput: 'input[name="name"]'
     cardSelectors:
-      cardContainer: '.card-container'
-      card: '.card'
-      numberDisplay: '.card-number'
-      expiryDisplay: '.card-expiry'
-      cvcDisplay: '.card-cvc'
-      nameDisplay: '.card-name'
+      cardContainer: '.jp-card-container'
+      card: '.jp-card'
+      numberDisplay: '.jp-card-number'
+      expiryDisplay: '.jp-card-expiry'
+      cvcDisplay: '.jp-card-cvc'
+      nameDisplay: '.jp-card-name'
     messages:
       validDate: 'valid\nthru'
       monthYear: 'month/year'
@@ -66,8 +66,8 @@ class Card
       expiry: '&bull;&bull;/&bull;&bull;'
       name: 'Full Name'
     classes:
-      valid: 'card-valid'
-      invalid: 'card-invalid'
+      valid: 'jp-card-valid'
+      invalid: 'jp-card-invalid'
     debug: false
 
   constructor: (opts) ->
@@ -121,12 +121,12 @@ class Card
     if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
-        QJ.addClass @$card, 'card-safari'
+        QJ.addClass @$card, 'jp-card-safari'
     if (new Function("/*@cc_on return @_jscript_version; @*/")())
-      QJ.addClass @$card,'card-ie-10'
+      QJ.addClass @$card,'jp-card-ie-10'
     # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
-      QJ.addClass @$card, 'card-ie-11'
+      QJ.addClass @$card, 'jp-card-ie-11'
 
   attachHandlers: ->
     bindVal @$numberInput, @$numberDisplay,
@@ -193,15 +193,15 @@ class Card
     setCardType: ($el, e) ->
       cardType = e.data
       unless QJ.hasClass @$card, cardType
-        QJ.removeClass @$card, 'card-unknown'
+        QJ.removeClass @$card, 'jp-card-unknown'
         QJ.removeClass @$card, @cardTypes.join(' ')
-        QJ.addClass @$card, "card-#{cardType}"
-        QJ.toggleClass @$card, 'card-identified', (cardType isnt 'unknown')
+        QJ.addClass @$card, "jp-card-#{cardType}"
+        QJ.toggleClass @$card, 'jp-card-identified', (cardType isnt 'unknown')
         @cardType = cardType
     flipCard: ->
-      QJ.addClass @$card, 'card-flipped'
+      QJ.addClass @$card, 'jp-card-flipped'
     unflipCard: ->
-      QJ.removeClass @$card, 'card-flipped'
+      QJ.removeClass @$card, 'jp-card-flipped'
 
   bindVal = (el, out, opts={}) ->
     opts.fill = opts.fill || false
@@ -216,10 +216,10 @@ class Card
     outDefaults = (o.textContent for o in out)
 
     QJ.on el, 'focus', ->
-      QJ.addClass out, 'card-focused'
+      QJ.addClass out, 'jp-card-focused'
 
     QJ.on el, 'blur', ->
-      QJ.removeClass el, 'card-focused'
+      QJ.removeClass el, 'jp-card-focused'
 
     QJ.on el, 'keyup change paste', (e) ->
       val = (QJ.val(elem) for elem in el)

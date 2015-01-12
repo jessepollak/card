@@ -1,22 +1,22 @@
-.card.card-ie-10, .card.card-ie-11 {
-    &.card-flipped {
+.jp-card.jp-card-ie-10, .jp-card.jp-card-ie-11 {
+    &.jp-card-flipped {
         @include transform(0deg);
-        .card-front {
+        .jp-card-front {
             @include transform(rotateY(0deg));
         }
-        .card-back {
+        .jp-card-back {
             @include transform(rotateY(0deg));
 
             &:after {
                left: 18%;
             }
 
-            .card-cvc {
+            .jp-card-cvc {
                 @include transform(rotateY(180deg));
                 left: 5%;
             }
 
-            .card-shiny  {
+            .jp-card-shiny  {
                 left: 84%;
                 &:after {
                     left: -480%;
@@ -26,6 +26,6 @@
         }
     }
 }
-.card.card-ie-10.card-amex .card-back, .card.card-ie-11.card-amex .card-back {
+.jp-card.jp-card-ie-10.jp-card-amex .jp-card-back, .jp-card.jp-card-ie-11.jp-card-amex .jp-card-back {
     display: none;
 }

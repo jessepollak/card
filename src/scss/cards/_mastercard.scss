@@ -3,17 +3,17 @@
 
 $fill-color: #0061A8;
 
-.card.card-mastercard {
-    &.card-identified {
-        .card-front, .card-back {
-            .card-logo.card-mastercard {
+.jp-card.jp-card-mastercard {
+    &.jp-card-identified {
+        .jp-card-front, .jp-card-back {
+            .jp-card-logo.jp-card-mastercard {
                 box-shadow: none;
             }
             &:before {
                 background-color: $fill-color;
             }
         }
-        .card-logo.card-mastercard {
+        .jp-card-logo.jp-card-mastercard {
             opacity: 1;
         }
     }

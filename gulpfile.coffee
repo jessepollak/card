@@ -25,10 +25,9 @@ gulp.task 'browserify', ->
     .pipe gulp.dest('./lib/js')
     .pipe livereload(server)
 
-gulp.task 'watch', ['scss', 'browserify', 'connect'],  ->
+gulp.task 'watch', ['browserify', 'connect'],  ->
   server.listen 35729, ->
-    gulp.watch './src/scss/**/*.scss', ['scss']
-    gulp.watch './src/coffee/**/*.coffee', ['browserify']
+    gulp.watch ['./src/coffee/**/*.coffee', './src/scss/**/*.scss'], ['browserify']
 
   gulp.src('example/index.html')
     .pipe open("", url: "http://localhost:8080/example")

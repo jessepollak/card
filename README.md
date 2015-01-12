@@ -81,7 +81,7 @@ var card = new Card({
 
 ### Rendering with different initial card values
 
-Card renders with default values for card `name`, `number`, `expiry`, and `cvc`. To override these values, you can either pass in a `values` object or set `$.card.values` before initializing `card`. Do one or the other, not both.
+Card renders with default values for card `name`, `number`, `expiry`, and `cvc`. To override these values, you can pass in a `values` object.
 
 ```html
 <script src="/path/to/card.js"></script>
@@ -111,7 +111,7 @@ var card = new Card({
 
 ### Translation
 
-To render the card with the strings in a different language, you can either pass in a `messages` object or set `$.card.messages` before initializing `card`. Do one or the other, not both.
+To render the card with the strings in a different language, you can pass in a `messages` object.
 
 ```html
 <script src="/path/to/card.js"></script>

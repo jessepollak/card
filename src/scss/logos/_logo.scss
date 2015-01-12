@@ -2,7 +2,7 @@ $logo-height: 36px;
 $logo-width: 60px;
 
 @include exports("_logo.scss") {
-    .card-logo {
+    .jp-card-logo {
         &, &:before, &:after {
             box-sizing: border-box;
         }
