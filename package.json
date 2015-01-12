@@ -1,6 +1,6 @@
 {
   "name": "card",
-  "version": "0.1.4",
+  "version": "1.0.0-beta",
   "author": "Jesse Pollak <jpollak92@gmail.com>",
   "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
   "main": "lib/js/card.js",
@@ -29,10 +29,12 @@
     "gulp-rimraf": "~0.1.0",
     "gulp-connect": "~2.0.5",
     "gulp-open": "~0.2.8",
-    "run-sequence": "~0.3.6"
+    "run-sequence": "~0.3.6",
+    "jquery": "~2.1.1"
   },
   "dependencies": {
-    "jquery": "~2.1.1",
-    "jquery.payment": "~1.1.3"
+    "qj": "0.0.7",
+    "node.extend": "~1.1.3",
+    "cssify": "~0.6.0"
   }
 }
