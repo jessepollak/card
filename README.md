@@ -1,4 +1,7 @@
 # Card - check out the **[demo](https://jessepollak.github.io/card)**
+
+*NOTE: The `master` branch of this repository is currently on `v1.0.0-beta`. Version 1.0.0 removes the jQuery dependence for the core library, but may have issues. If you don't want to use the beta, you can find code for the last stable release [here](https://github.com/jessepollak/card/releases/tag/v0.1.1) and documentation [here](https://github.com/jessepollak/card/blob/v0.1.1/README.md).*
+
 ### A better credit card form in one line of code
 
 Card will take *any* credit card form and make it the best part of the checkout process (without you changing anything). Everything is created with pure CSS, HTML, and Javascript — no images required.
