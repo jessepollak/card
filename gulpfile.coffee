@@ -13,13 +13,6 @@ runs = require 'run-sequence'
 
 development = process.env.NODE_ENV == 'development'
 
-gulp.task 'scss', ->
-  gulp.src ['./src/scss/**/*.scss']
-  .pipe scss().on('error', console.log)
-  .pipe prefix("> 1%")
-  .pipe livereload(server)
-  .pipe gulp.dest('./lib/css')
-
 gulp.task 'browserify', ->
   gulp.src './src/coffee/*.coffee', read: false
     .pipe browserify
@@ -51,7 +44,6 @@ gulp.task 'clean', ->
 gulp.task 'build', (cb) ->
   runs(
     'clean'
-    'scss',
     'browserify',
     cb
   )
