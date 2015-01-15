@@ -153,26 +153,32 @@
   color: #1A1876;
   text-align: center;
   font-weight: bold;
-  padding-top: 7px;
+  padding-top: 1.95%;
   font-size: 22px; }
-  .card-logo.visa.visa:before, .card-logo.visa.visa:after {
-    content: " ";
-    display: block;
-    position: absolute; }
   .card-logo.visa.visa:before {
-    width: 20px;
-    height: 10px;
-    border-top-right-radius: 55%;
-    top: 10px;
-    z-index: 1;
-    left: -9px;
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 45%, #ffffff 46%, #ffffff 91%, #1a1876 91%, #1a1876 100%); }
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 10px 4px 0;
+    border-color: transparent #E79800 transparent transparent;
+    position: absolute;
+    top: 27%;
+    left: 3.4%;
+    -webkit-transform: rotateZ(3deg);
+    transform: rotateZ(3deg); }
   .card-logo.visa.visa:after {
-    width: 9px;
+    content: "";
+    display: block;
+    width: 11px;
     height: 4px;
-    top: 10px;
-    left: 3px;
-    background-color: #e59703; }
+    border-radius: 50%;
+    left: 1%;
+    position: absolute;
+    top: 29.2%;
+    -webkit-transform: rotateZ(18deg);
+    transform: rotateZ(18deg);
+    background: -webkit-linear-gradient(194deg, #1A1876 24%, white 24%); }
 
 .card.visa.identified .front:before, .card.visa.identified .back:before {
   background-color: #191278; }

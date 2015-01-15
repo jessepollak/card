@@ -10,30 +10,31 @@
         color: $blue;
         text-align: center;
         font-weight: bold;
-        padding-top: 7px;
+        padding-top: 1.95%;
         font-size: 22px;
-        &:before, &:after {
-            content: " ";
-            display: block;
-            position: absolute;
-        }
-
         &:before {
-            width: 20px;
-            height: 10px;
-            border-top-right-radius: 55%;
-            top: 10px;
-            z-index: 1;
-            left: -9px;
-            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 45%,rgba(255,255,255,1) 46%,rgba(255,255,255,1) 91%,rgba(26,24,118,1) 91%,rgba(26,24,118,1) 100%);
-        }
-
+            content: "";
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 0 10px 4px 0;
+            border-color: transparent $yellow transparent transparent;
+            position: absolute;
+            top: 27%;
+            left: 3.4%;
+            transform: rotateZ(3deg);
+        }       
         &:after {
-            width: 9px;
+            content: "";
+            display: block;
+            width: 11px;
             height: 4px;
-            top: 10px;
-            left: 3px;
-            background-color: #e59703;
+            border-radius: 50%;
+            left: 1%;
+            position: absolute;
+            top: 29.2%;
+            transform: rotateZ(18deg);
+            background: -webkit-linear-gradient(194deg, #1A1876 24%, white 24%);
         }
     }
 }
