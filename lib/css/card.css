@@ -60,8 +60,9 @@
     text-align: left;
     padding-left: 2px;
     padding-top: 17px;
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #7dcdee), color-stop(33%, #016cb4));
-    background: -webkit-linear-gradient(-45deg, #7dcdee 0%, #016cb4 33%); }
+    background-image: -webkit-linear-gradient(-405deg, #7dcdee 0%, #016cb4 33%);
+    background-image: -webkit-linear-gradient(315deg, #7dcdee 0%, #016cb4 33%);
+    background-image: linear-gradient(135deg, #7dcdee 0%, #016cb4 33%); }
   .card-logo.amex:after {
     content: "express";
     bottom: 10px;
@@ -207,8 +208,10 @@
     width: 36px;
     height: 36px;
     z-index: -1;
-    background: -webkit-linear-gradient(#fe9900 50%, #cd0001 50%);
-    background: linear, false, #fe9900 50%, #cd0001 50%;
+    background-image: -webkit-linear-gradient( #fe9900 50%, #cd0001 50%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #fe9900), color-stop(50%, #cd0001));
+    background-image: -webkit-linear-gradient(#fe9900 50%, #cd0001 50%);
+    background-image: linear-gradient( #fe9900 50%, #cd0001 50%);
     -webkit-background-size: 4.5px 4.5px;
     background-size: 4.5px 4.5px;
     -webkit-box-shadow: 18px 0 0 0 #fe9900, 18px 0 0 0 #cd0001 inset;

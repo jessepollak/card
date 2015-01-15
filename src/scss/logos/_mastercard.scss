@@ -26,14 +26,12 @@
     width: $logo-height;
     height: $logo-height;
     z-index: -1;
-    background: -webkit-linear-gradient(#fe9900 50%, #cd0001 50%);
-    background: linear-gradient(#fe9900 50%, #cd0001 50%);
-    background: -moz-linear-gradient(#fe9900 50%, #cd0001 50%);
-    background: -o-linear-gradient(#fe9900 50%, #cd0001 50%);
+    @include background-image(linear-gradient($yellow 50%, $red 50%));    
     background-size: $logo-height/8 $logo-height/8;
     box-shadow: ($logo-height/2) 0 0 0 $yellow,
        ($logo-height/2) 0 0 0 $red inset;
-  }    
+  }  
+
   &:after{
     content: '\00ae';
     padding-left: 0.5em;      
