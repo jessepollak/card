@@ -183,26 +183,35 @@
   color: white;
   font-weight: bold;
   text-align: center;
-  font-size: 9px;
+  font-size: 8px;
   line-height: 36px;
   z-index: 1;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  .card-logo.mastercard:before, .card-logo.mastercard:after {
-    content: " ";
-    display: block;
-    width: 36px;
-    top: 0;
-    position: absolute;
-    height: 36px;
-    border-radius: 18px; }
+  text-shadow: -0.5px 0.5px black;
+  font-family: "Droid Sans", Helvetica, sans-serif;
+  padding-right: 4px; }
   .card-logo.mastercard:before {
-    left: 0;
-    background: #FF0000;
-    z-index: -1; }
-  .card-logo.mastercard:after {
+    content: '';
+    position: absolute;
+    top: 0;
     right: 0;
-    background: #FFAB00;
-    z-index: -2; }
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    z-index: -1;
+    background: -webkit-linear-gradient(#fe9900 50%, #cd0001 50%);
+    background: linear, false, #fe9900 50%, #cd0001 50%;
+    -webkit-background-size: 4.5px 4.5px;
+    background-size: 4.5px 4.5px;
+    -webkit-box-shadow: 18px 0 0 0 #fe9900, 18px 0 0 0 #cd0001 inset;
+    box-shadow: 18px 0 0 0 #fe9900, 18px 0 0 0 #cd0001 inset; }
+  .card-logo.mastercard:after {
+    content: '\00ae';
+    padding-left: 0.5em;
+    font: 0.25em Helvetica, sans-serif lighter normal;
+    text-shadow: none; }
 
 .card.mastercard.identified .front .card-logo.mastercard, .card.mastercard.identified .back .card-logo.mastercard {
   -webkit-box-shadow: none;
