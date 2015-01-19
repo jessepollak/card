@@ -1,6 +1,6 @@
 @import "logo";
 
-.card-logo.mastercard {
+.jp-card-logo.jp-card-mastercard {
   // display: none;
   $red: #cd0001;
   $yellow: #fe9900;
@@ -31,7 +31,6 @@
     box-shadow: ($logo-height/2) 0 0 0 $yellow,
        ($logo-height/2) 0 0 0 $red inset;
   }  
-
   &:after{
     content: '\00ae';
     padding-left: 0.5em;      

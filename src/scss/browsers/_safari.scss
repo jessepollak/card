@@ -1,6 +1,6 @@
-.card.safari {
-   &.identified {
-        .front, .back {
+.jp-card.jp-card-safari {
+   &.jp-card-identified {
+        .jp-card-front, .jp-card-back {
             &:before {
                 @include card-texture($radial-gradient: false);
             }

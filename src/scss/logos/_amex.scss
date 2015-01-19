@@ -1,6 +1,6 @@
 @import "logo";
 
-.card-logo.amex {
+.jp-card-logo.jp-card-amex {
     $box-offset: -10px;
     $box-width: $logo-height - $box-offset;
     $box-height: $box-width;
@@ -23,7 +23,6 @@
     &:before {        
         height: $box-height;
         content: "american";
-        // box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
         top: $box-offset / 2 - 1;
         text-align: left;
         padding-left: $font-padding;

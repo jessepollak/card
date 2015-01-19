@@ -4,26 +4,26 @@
 $fill-color: #86B8CF;
 $highlight-color: #FF6600;
 
-.card {
-    .front .card-logo.discover {
+.jp-card {
+    .jp-card-front .jp-card-logo.jp-card-discover {
         right: 12%;
         top: 18%;
     }
 }
 
-.card.discover {
+.jp-card.jp-card-discover {
 
-    &.identified {
-        .front, .back {
+    &.jp-card-identified {
+        .jp-card-front, .jp-card-back {
             &:before {
                 background-color: $fill-color;
             }
         }
-        .card-logo.discover {
+        .jp-card-logo.jp-card-discover {
             opacity: 1;
         }
 
-        .front {
+        .jp-card-front {
             &:after {
                 $size: 50px;
                 @include transition($card-transition-time);
