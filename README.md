@@ -196,6 +196,7 @@ Card is used in the wild in these places:
 * [Blumpa](http://www.blumpa.com/)
 * [CourseLoads](http://www.courseloads.com/)
 * [PubNub](http://pubnub.com/)
+* [GigSalad](https://www.gigsalad.com)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
