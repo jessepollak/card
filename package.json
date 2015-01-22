@@ -8,6 +8,9 @@
     {
       "name": "Jesse Pollak",
       "email": "jpollak92@gmail.com"
+    }, {
+      "name": "Daniel Juhl",
+      "email": "danieljuhl@gmail.com"
     }
   ],
   "scripts": {
@@ -24,6 +27,7 @@
     "gulp-livereload": "~1.5.0",
     "nodemon": "~1.1.1",
     "coffeeify": "~0.6.0",
+    "sassify": "~0.5.2",
     "gulp-rename": "~1.2.0",
     "gulp-changed": "~0.3.0",
     "gulp-rimraf": "~0.1.0",
