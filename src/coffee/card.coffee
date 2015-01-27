@@ -121,9 +121,9 @@ class Card
     if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
-        QJ.addClass @$card, 'jp-card-safari'
-    if (new Function("/*@cc_on return @_jscript_version; @*/")())
-      QJ.addClass @$card,'jp-card-ie-10'
+        @$card.addClass 'safari'
+    if (/MSIE 10\./i.test(navigator.userAgent))
+      @$card.addClass 'ie-10'
     # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
       QJ.addClass @$card, 'jp-card-ie-11'
