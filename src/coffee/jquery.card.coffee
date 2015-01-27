@@ -16,6 +16,6 @@ $.fn.extend card: (option, args...) ->
         if value instanceof jQuery
           option[key] = value[0]
       option['form'] = this
-      $this.data 'card', (data = new Card(this, option))
+      $this.data 'card', (data = new Card(option))
     if typeof option == 'string'
       data[option].apply(data, args)
