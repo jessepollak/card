@@ -16,7 +16,7 @@ class Card
               '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' +
               '<div class="jp-card-lower">' +
                   '<div class="jp-card-shiny"></div>' +
-                  '<div class="jp-card-cvc cjp-ard-display">{{cvc}}</div>' +
+                  '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' +
                   '<div class="jp-card-number jp-card-display">{{number}}</div>' +
                   '<div class="jp-card-name jp-card-display">{{name}}</div>' +
                   '<div class="jp-card-expiry jp-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' +
