@@ -9,6 +9,7 @@
 @import "cards/discover";
 @import "cards/visa";
 @import "cards/mastercard";
+@import "cards/dankort";
 
 .jp-card-container {
     @include perspective(1000px);
