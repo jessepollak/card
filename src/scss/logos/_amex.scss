@@ -2,8 +2,8 @@
 
 .jp-card-logo.jp-card-amex {
     $box-offset: -10px;
-    $box-width: $logo-height - $box-offset;
-    $box-height: $box-width;
+    $box-width: $logo-width;
+    $box-height: $logo-height;
     $font-size: 7px;
     $font-padding: 2px;
 
@@ -20,19 +20,18 @@
         left: ($logo-width - $box-width) / 2;
     }
 
-    &:before {        
+    &:before {
         height: $box-height;
         content: "american";
-        top: $box-offset / 2 - 1;
         text-align: left;
         padding-left: $font-padding;
-        padding-top: $box-height / 2 - $font-size + 1;
-        @include background-image(linear-gradient(135deg, #7dcdee 0%,#016cb4 33%)); 
+        padding-top: $box-height / 2 - $font-size;
+        @include background-image(linear-gradient(135deg, #7dcdee 0%,#016cb4 33%));
     }
 
     &:after {
         content: "express";
-        bottom: $box-height / 2 - $font-size - 6;
+        bottom: $box-height / 2 - $font-size - 1;
         text-align: right;
         padding-right: $font-padding;
     }
