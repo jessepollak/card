@@ -1,11 +1,101 @@
 @import "logo";
 
 .jp-card-logo.jp-card-dankort {
-    &.jp-card-dankort {
-      width: $logo-width;
-      height: $logo-height;
-      background-image: url('data:image/png;base64,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');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
+    $white: #FFFFFF;
+    $black: #000000;
+    $red: #ED1C24;
+    $padding: 3px;
+    $radius: 8px;
+
+    $inner-height: $logo-height - ($padding * 2) - 2; // height - padding - border
+    $letter-height: $inner-height * 0.55;
+
+    width: $logo-width;
+    height: $logo-height;
+    padding: $padding;
+    border-radius: $radius;
+    border: $black 1px solid;
+    background-color: $white;
+
+    .dk {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      &:before {
+        background-color: $red;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: $radius*0.75;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top: -($letter-height/2);
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 7px 10px 0;
+        border-color: transparent $red transparent transparent;
+        z-index: 1;
+      }
+    }
+
+    .d, .k {
+      position: absolute;
+      top: 50%;
+      width: 50%;
+      display: block;
+      height: $letter-height;
+      margin-top: -($letter-height/2);
+      background: white;
+    }
+    .d {
+      left: 0;
+      border-radius: 0 8px 10px 0;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        background: $red;
+        border-radius: 2px 4px 6px 0px;
+        height: 5px;
+        width: 7px;
+        margin: -3px 0 0 -4px;
+      }
+    }
+    .k {
+      right: 0;
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        right: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        margin-right: -1px;
+      }
+
+      &:before {
+        top: 0;
+        border-width: 8px 5px 0 0;
+        border-color: $red transparent transparent transparent;
+      }
+
+      &:after {
+        bottom: 0;
+        border-width: 0 5px 8px 0;
+        border-color: transparent transparent $red transparent;
+      }
     }
 }

@@ -13,7 +13,7 @@ class Card
               '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' +
               '<div class="jp-card-logo jp-card-amex"></div>' +
               '<div class="jp-card-logo jp-card-discover">discover</div>' +
-              '<div class="jp-card-logo jp-card-dankort"></div>' +
+              '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' +
               '<div class="jp-card-lower">' +
                   '<div class="jp-card-shiny"></div>' +
                   '<div class="jp-card-cvc cjp-ard-display">{{cvc}}</div>' +
