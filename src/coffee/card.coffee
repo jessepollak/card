@@ -123,9 +123,9 @@ class Card
     if navigator?.userAgent
       ua = navigator.userAgent.toLowerCase()
       if ua.indexOf('safari') != -1 and ua.indexOf('chrome') == -1
-        QJ.addClass @$card, 'safari'
+        QJ.addClass @$card, 'jp-card-safari'
     if (/MSIE 10\./i.test(navigator.userAgent))
-      QJ.addClass @$card, 'ie-10'
+      QJ.addClass @$card, 'jp-card-ie-10'
     # ie 11 does not support conditional compilation, use user agent instead
     if (/rv:11.0/i.test(navigator.userAgent))
       QJ.addClass @$card, 'jp-card-ie-11'
