@@ -264,6 +264,9 @@
             .jp-card-logo {
                 box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
             }
+            .card-logo.amex {
+                box-shadow: none;
+            }
         }
 
         &.no-radial-gradient {
