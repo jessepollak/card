@@ -1,6 +1,6 @@
 # Card - check out the **[demo](https://jessepollak.github.io/card)**
 
-*NOTE: The `master` branch of this repository is currently on `v1.0.0-beta`. Version 1.0.0 removes the jQuery dependence for the core library, but may have issues. If you don't want to use the beta, you can find code for the last stable release [here](https://github.com/jessepollak/card/releases/tag/v0.1.4) and documentation [here](https://github.com/jessepollak/card/blob/v0.1.4/README.md).*
+*NOTE: The `master` branch of this repository is currently on `v1.0.0-beta2`. Version 1.0.0 removes the jQuery dependence for the core library, but may have issues. If you don't want to use the beta, you can find code for the last stable release [here](https://github.com/jessepollak/card/releases/tag/v0.1.4) and documentation [here](https://github.com/jessepollak/card/blob/v0.1.4/README.md).*
 
 ### A better credit card form in one line of code
 
