@@ -74,7 +74,7 @@
 
         <div class="code-container">
             <h1>With one line of code..</h1>
-            <code class="javascript"> $('form').card({ container: $('.card-wrapper') }); </code>
+            <code class="javascript">new Card({ form: 'form', container: '.card'})</code>
             <h1>You get..</h1>
             <ul>
                 <li>Animations for 4 different card types</li>
@@ -139,10 +139,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
     <script src="build/js/demo.js"></script>
-    <script src="https://cdn.rawgit.com/jessepollak/card/master/lib/js/card.js"></script>
+    <script src="https://rawgit.com/jessepollak/card/master/lib/js/card.js?v=beta1"></script>
     <script>
         $('code').each(function(i, e) {hljs.highlightBlock(e)});
-        $('.active form').card({ container: $('.card-wrapper')})
+        var card = new Card({ form: '.active form', container: '.card-wrapper' })
     </script>
 </body>
 </html>
