@@ -116,8 +116,10 @@ class Card
         Payment.formatCardExpiry(@$expiryInput)
 
     if @options.width
-      baseWidth = parseInt @$cardContainer.css('width')
-      @$cardContainer.style.transform = "scale(#{@options.width / baseWidth})"
+      $cardContainer = QJ(@options.cardSelectors.cardContainer)[0]
+      baseWidth      = parseInt($cardContainer.clientWidth)
+
+      $cardContainer.style.transform = "scale(#{@options.width / baseWidth})"
 
     # safari can't handle transparent radial gradient right now
     if navigator?.userAgent
