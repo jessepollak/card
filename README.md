@@ -70,6 +70,9 @@ If you're using npm, you can install card.js with:
 Card can be used in forms where you have multiple inputs that render to a single field (i.e. you have a first and last name input). To use Card with this functionality, just pass in a selector that selects the fields in the correct order. For example,
 
 ```html
+<html>
+<body>
+<div class='card-wrapper'></div>
 <script src="/path/to/card.js"></script>
 <form>
     <input type="text" name="number">
@@ -88,6 +91,8 @@ var card = new Card({
     }
 });
 </script>
+</body>
+</html>
 ```
 
 ### Rendering with different initial card values
@@ -95,6 +100,9 @@ var card = new Card({
 Card renders with default values for card `name`, `number`, `expiry`, and `cvc`. To override these values, you can pass in a `values` object.
 
 ```html
+<html>
+<body>
+<div class='card-wrapper'></div>
 <script src="/path/to/card.js"></script>
 <form>
     <input type="text" name="number">
@@ -118,6 +126,8 @@ var card = new Card({
     }
 });
 </script>
+</body>
+</html>
 ```
 
 ### Translation
@@ -125,6 +135,9 @@ var card = new Card({
 To render the card with the strings in a different language, you can pass in a `messages` object.
 
 ```html
+<html>
+<body>
+<div class='card-wrapper'></div>
 <script src="/path/to/card.js"></script>
 <form>
     <input type="text" name="number">
@@ -146,6 +159,8 @@ var card = new Card({
     }
 });
 </script>
+</body>
+</html>
 ```
 
 ## Using with jQuery
