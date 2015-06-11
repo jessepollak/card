@@ -184,6 +184,12 @@ $('form').card({
 });
    
 ```
+## Using with Ember.js or Angular.js
+Card has already wrappers for being used within Ember.js or Angular.js.
+
+[angular-card](https://github.com/gavruk/angular-card) by gavruk
+
+[ember-credit-card](https://github.com/esbanarango/ember-credit-card) by esbanarango
 
 ## Development
 
