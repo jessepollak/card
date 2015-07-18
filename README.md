@@ -42,8 +42,8 @@ var card = new Card({
         monthYear: 'mm/yyyy', // optional - default 'month/year'
     },
 
-    // Default values for rendered fields - optional
-    values: {
+    // Default placeholders for rendered fields - optional
+    placeholders: {
         number: '•••• •••• •••• ••••',
         name: 'Full Name',
         expiry: '••/••',
@@ -64,7 +64,7 @@ If you're using npm, you can install card.js with:
     // The current card.js code does not explictly require jQuery, but instead uses the global, so this line is needed.
     window.jQuery = $;
     var card = require("card");
-    
+
 ### Using multiple inputs for one field
 
 Card can be used in forms where you have multiple inputs that render to a single field (i.e. you have a first and last name input). To use Card with this functionality, just pass in a selector that selects the fields in the correct order. For example,
@@ -85,7 +85,7 @@ Card can be used in forms where you have multiple inputs that render to a single
 var card = new Card({
     form: 'form',
     container: '.card-wrapper',
-    
+
     formSelectors: {
         nameInput: 'input[name="first-name"], input[name="last-name"]'
     }
@@ -95,9 +95,9 @@ var card = new Card({
 </html>
 ```
 
-### Rendering with different initial card values
+### Rendering with different initial card placeholders
 
-Card renders with default values for card `name`, `number`, `expiry`, and `cvc`. To override these values, you can pass in a `values` object.
+Card renders with default placeholders for card `name`, `number`, `expiry`, and `cvc`. To override these placeholders, you can pass in a `placeholders` object.
 
 ```html
 <html>
@@ -116,9 +116,9 @@ var card = new Card({
     form: 'form',
     container: '.card-wrapper',
 
-    // passing in a messages object is another way to 
-    // override the default card values
-    values: {
+    // passing in a messages object is another way to
+    // override the default card placeholders
+    placeholders: {
         number: '**** **** **** ****',
         name: 'Arya Stark',
         expiry: '**/****',
@@ -151,7 +151,7 @@ var card = new Card({
     form: 'form',
     container: '.card-wrapper',
 
-    // passing in a messages object is another way to 
+    // passing in a messages object is another way to
     // override the default field names
     messages: {
         validDate: 'expire\ndate',
@@ -182,7 +182,7 @@ $('form').card({
 
     // all of the other options from above
 });
-   
+
 ```
 ## Using with Ember.js or Angular.js
 

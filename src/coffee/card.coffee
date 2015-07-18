@@ -63,7 +63,7 @@ class Card
     messages:
       validDate: 'valid\nthru'
       monthYear: 'month/year'
-    values:
+    placeholders:
       number: '&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;'
       cvc: '&bull;&bull;&bull;'
       expiry: '&bull;&bull;/&bull;&bull;'
@@ -90,12 +90,12 @@ class Card
 
     @render()
     @attachHandlers()
-    @handleInitialValues()
+    @handleInitialPlaceholders()
 
   render: ->
     QJ.append(@$container, @template(
       @cardTemplate,
-      extend({}, @options.messages, @options.values)
+      extend({}, @options.messages, @options.placeholders)
     ))
 
     for name, selector of @options.cardSelectors
@@ -157,7 +157,7 @@ class Card
         filters: @validToggler('cardHolderName')
         join: ' '
 
-  handleInitialValues: ->
+  handleInitialPlaceholders: ->
     for name, selector of @options.formSelectors
       el = this["$#{name}"]
       if QJ.val(el)
