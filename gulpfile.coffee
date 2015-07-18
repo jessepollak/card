@@ -34,7 +34,7 @@ gulp.task 'browserify', (done) ->
         base64Encode: false
         sourceMap: false
 
-      b.bundle()
+      b.bundle().on 'error', console.log
         .pipe source path.basename(entry)
         .pipe rename(extname: '.js')
         .pipe gulp.dest('./lib/js')

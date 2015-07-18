@@ -40,7 +40,7 @@
         border-radius: $size /2;
         top: $offset + 1;
         left: 27px;
-        @include radial-gradient(#FFF, $orange);
+        @include radial-gradient($orange, #fff);
         content: "network";
         font-size: 4px;
         line-height: 24px;
