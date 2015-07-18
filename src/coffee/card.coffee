@@ -224,7 +224,7 @@ class Card
       QJ.addClass out, 'jp-card-focused'
 
     QJ.on el, 'blur', ->
-      QJ.removeClass el, 'jp-card-focused'
+      QJ.removeClass out, 'jp-card-focused'
 
     QJ.on el, 'keyup change paste', (e) ->
       val = (QJ.val(elem) for elem in el)
