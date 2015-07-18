@@ -1,6 +1,5 @@
 gulp = require 'gulp'
-browserify = require 'gulp-browserify'
-scss = require 'gulp-sass'
+browserify = require 'browserify'
 prefix = require 'gulp-autoprefixer'
 spawn = require('child_process').spawn
 server = require('tiny-lr')()
@@ -11,19 +10,36 @@ connect = require 'gulp-connect'
 open = require 'gulp-open'
 runs = require 'run-sequence'
 
+glob = require 'glob'
+source = require 'vinyl-source-stream'
+rename = require 'gulp-rename'
+es = require 'event-stream'
+path = require 'path'
+
 development = process.env.NODE_ENV == 'development'
 
-gulp.task 'browserify', ->
-  gulp.src './src/coffee/*.coffee', read: false
-    .pipe browserify
-      insertGlobals: false
-      debug: development
-      transform: ['coffeeify', 'sassify']
-      extensions: ['.coffee']
-      standalone: 'card'
-    .pipe rename({ extname: '.js' })
-    .pipe gulp.dest('./lib/js')
-    .pipe livereload(server)
+gulp.task 'browserify', (done) ->
+  glob './src/coffee/*.coffee', (err, files) ->
+    done(err) if err
+
+    tasks = files.map (entry) ->
+      b = browserify
+         entries: [entry]
+         debug: development
+         extensions: ['.coffee', '.js']
+
+      b.transform 'coffeeify'
+      b.transform 'sassify',
+        'auto-inject': true
+        base64Encode: false
+        sourceMap: false
+
+      b.bundle()
+        .pipe source path.basename(entry)
+        .pipe rename(extname: '.js')
+        .pipe gulp.dest('./lib/js')
+
+    es.merge(tasks).on 'end', done
 
 gulp.task 'watch', ['browserify', 'connect'],  ->
   server.listen 35729, ->
