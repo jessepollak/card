@@ -27,6 +27,7 @@
     "coffee-script": "~1.7.1",
     "coffeeify": "~0.6.0",
     "event-stream": "^3.3.1",
+    "glob": "^5.0.14",
     "gulp": "~3.8.5",
     "gulp-autoprefixer": "0.0.7",
     "gulp-changed": "~0.3.0",
