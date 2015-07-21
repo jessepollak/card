@@ -116,8 +116,6 @@ var card = new Card({
     form: 'form',
     container: '.card-wrapper',
 
-    // passing in a messages object is another way to
-    // override the default card placeholders
     placeholders: {
         number: '**** **** **** ****',
         name: 'Arya Stark',
@@ -151,8 +149,6 @@ var card = new Card({
     form: 'form',
     container: '.card-wrapper',
 
-    // passing in a messages object is another way to
-    // override the default field names
     messages: {
         validDate: 'expire\ndate',
         monthYear: 'mm/yy'
