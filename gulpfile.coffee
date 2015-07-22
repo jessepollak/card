@@ -15,6 +15,7 @@ source = require 'vinyl-source-stream'
 rename = require 'gulp-rename'
 es = require 'event-stream'
 path = require 'path'
+uglify = require 'gulp-uglify'
 
 development = process.env.NODE_ENV == 'development'
 
@@ -49,11 +50,20 @@ gulp.task 'clean', ->
   gulp.src 'build'
     .pipe rimraf()
 
+gulp.task 'uglify', ->
+  gulp.src './lib/js/*.js'
+    .pipe uglify()
+    .pipe rename (path)->
+      console.log path
+      path.extname = ".min#{path.extname}"
+    .pipe gulp.dest("./lib/js")
+
 # Default task call every tasks created so far.
 gulp.task 'build', (cb) ->
   runs(
     'clean'
     'browserify',
+    'uglify',
     cb
   )
 
