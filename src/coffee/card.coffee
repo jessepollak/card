@@ -111,10 +111,7 @@ class Card
     if @options.formatting
       Payment.formatCardNumber(@$numberInput)
       Payment.formatCardCVC(@$cvcInput)
-
-      # we can only format if there's only one expiry input
-      if @$expiryInput.length == 1
-        Payment.formatCardExpiry(@$expiryInput)
+      Payment.formatCardExpiry(@$expiryInput)
 
     if @options.width
       $cardContainer = QJ(@options.cardSelectors.cardContainer)[0]
@@ -140,8 +137,7 @@ class Card
     QJ.on @$numberInput, 'payment.cardType', @handle('setCardType')
 
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
-    if @$expiryInput.length == 1
-      expiryFilters.push @validToggler('cardExpiry')
+    expiryFilters.push @validToggler('cardExpiry')
 
     bindVal @$expiryInput, @$expiryDisplay,
         join: (text) ->
@@ -192,7 +188,7 @@ class Card
       val
   toggleValidClass: (el, test) ->
     QJ.toggleClass el, @options.classes.valid, test
-    QJ.toggleClass el ,@options.classes.invalid, !test
+    QJ.toggleClass el, @options.classes.invalid, !test
 
   handlers:
     setCardType: ($el, e) ->

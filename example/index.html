@@ -23,13 +23,25 @@
 
     </style>
     <div class="demo-container">
-        <div class="card-wrapper"></div>
+        <div class="card-wrapper-1"></div>
 
         <div class="form-container active">
-            <form action="">
+            <form class="example-1" action="">
                 <input placeholder="Card number" type="text" name="number">
                 <input placeholder="Full name" type="text" name="name">
                 <input placeholder="MM/YY" type="text" name="expiry">
+                <input placeholder="CVC" type="text" name="cvc">
+            </form>
+        </div>
+
+        <div class="card-wrapper-2"></div>
+
+        <div class="form-container active">
+            <form class="example-2" action="">
+                <input placeholder="Card number" type="text" name="number">
+                <input placeholder="Full name" type="text" name="name">
+                <input placeholder="MM" type="text" name="expiry[month]">
+                <input placeholder="YY" type="text" name="expiry[year]">
                 <input placeholder="CVC" type="text" name="cvc">
             </form>
         </div>
@@ -38,8 +50,15 @@
     <script src="../lib/js/card.js"></script>
     <script>
         new Card({
-            form: document.querySelector('form'),
-            container: '.card-wrapper'
+            form: document.querySelector('form.example-1'),
+            container: '.card-wrapper-1'
+        });
+        new Card({
+            form: document.querySelector('form.example-2'),
+            container: '.card-wrapper-2',
+            formSelectors: {
+                expiryInput: ['input[name="expiry[month]"]', 'input[name="expiry[year]"]']
+            }
         });
     </script>
 </body>
