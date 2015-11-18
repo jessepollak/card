@@ -10,6 +10,7 @@ class Card
       '<div class="jp-card">' +
           '<div class="jp-card-front">' +
               '<div class="jp-card-logo jp-card-visa">visa</div>' +
+              '<div class="jp-card-logo jp-card-elo">elo</div>' +
               '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' +
               '<div class="jp-card-logo jp-card-maestro">Maestro</div>' +
               '<div class="jp-card-logo jp-card-amex"></div>' +
@@ -35,6 +36,7 @@ class Card
       data[key]
   cardTypes: [
     'jp-card-amex',
+    'jp-card-elo',
     'jp-card-dankort',
     'jp-card-dinersclub',
     'jp-card-discover',
