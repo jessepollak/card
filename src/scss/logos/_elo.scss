@@ -20,7 +20,7 @@
     }
 
     .e {
-        transform: rotate(-15deg);
+        @include transform(rotate(-15deg));
     }
 
     .o {
@@ -31,11 +31,8 @@
         right: 0;
         top: 7px;
         border-radius: 100%;
-        background: -webkit-linear-gradient(yellow 50%, red 50%);
-        background: -o-linear-gradient(yellow 50%, red 50%);
-        background: -moz-linear-gradient(yellow 50%, red 50%);
-        background: linear-gradient(yellow 50%, red 50%);
-        transform: rotate(40deg);
+        @include background-image(linear-gradient(yellow 50%, red 50%));
+        @include transform(rotate(40deg));
         text-indent: -9999px;
 
         &:before {
