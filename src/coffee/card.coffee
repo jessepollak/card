@@ -9,6 +9,11 @@ class Card
   '<div class="jp-card-container">' +
       '<div class="jp-card">' +
           '<div class="jp-card-front">' +
+              '<div class="jp-card-logo jp-card-elo">' +
+                '<div class="e">e</div>' +
+                '<div class="l">l</div>' +
+                '<div class="o">o</div>' +
+              '</div>' +
               '<div class="jp-card-logo jp-card-visa">visa</div>' +
               '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' +
               '<div class="jp-card-logo jp-card-maestro">Maestro</div>' +
@@ -44,7 +49,8 @@ class Card
     'jp-card-mastercard',
     'jp-card-unionpay',
     'jp-card-visa',
-    'jp-card-visaelectron'
+    'jp-card-visaelectron',
+    'jp-card-elo'
   ]
   defaults:
     formatting: true
