@@ -28,12 +28,6 @@ gulp.task 'browserify', (done) ->
          debug: development
          extensions: ['.coffee', '.js']
 
-      b.transform 'coffeeify'
-      b.transform 'sassify',
-        'auto-inject': true
-        base64Encode: false
-        sourceMap: false
-
       b.bundle().on 'error', console.log
         .pipe source path.basename(entry)
         .pipe rename(extname: '.js')
