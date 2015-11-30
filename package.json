@@ -24,7 +24,7 @@
   "browserify": {
     "transform": [
       "coffeeify",
-      ["sassify", { "auto-inject": true, "base64Encode": false, "sourceMap": false }]
+      ["sassify", { "auto-inject": true, "base64Encode": false, "sourceMap": false, "includePaths": ["./node_modules"] }]
     ]
   },
   "devDependencies": {
