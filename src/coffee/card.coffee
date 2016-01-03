@@ -1,7 +1,7 @@
 require '../scss/card.scss'
 
-QJ = require 'qj'
-payment = require 'payment'
+QJ = require 'qj/src/qj.coffee'
+payment = require 'payment/src/payment'
 extend = require 'node.extend'
 
 class Card
