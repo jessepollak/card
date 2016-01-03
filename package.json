@@ -24,7 +24,15 @@
   "browserify": {
     "transform": [
       "coffeeify",
-      ["sassify", { "auto-inject": true, "base64Encode": false, "sourceMap": false }]
+      [
+        "sassify",
+        {
+          "auto-inject": true,
+          "base64Encode": false,
+          "sourceMap": false,
+          "sourceMapEmbed": false
+        }
+      ]
     ]
   },
   "devDependencies": {
@@ -32,6 +40,7 @@
     "browserify": "^11.0.0",
     "coffeeify": "~1.2.0",
     "coffee-script": "~1.7.1",
+    "coffeeify": "~1.2.0",
     "event-stream": "^3.3.1",
     "glob": "^5.0.14",
     "gulp": "~3.8.5",
