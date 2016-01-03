@@ -12,9 +12,12 @@ runs = require 'run-sequence'
 
 glob = require 'glob'
 source = require 'vinyl-source-stream'
+buffer = require 'vinyl-buffer'
 rename = require 'gulp-rename'
 es = require 'event-stream'
 path = require 'path'
+uglify = require 'gulp-uglify'
+sourcemaps = require 'gulp-sourcemaps'
 
 development = process.env.NODE_ENV == 'development'
 
@@ -25,12 +28,15 @@ gulp.task 'browserify', (done) ->
     tasks = files.map (entry) ->
       b = browserify
          entries: [entry]
-         debug: development
+         debug: true
          extensions: ['.coffee', '.js']
 
       b.bundle().on 'error', console.log
         .pipe source path.basename(entry)
+        .pipe buffer()
         .pipe rename(extname: '.js')
+        .pipe sourcemaps.init(loadMaps: true)
+        .pipe sourcemaps.write (".")
         .pipe gulp.dest('./lib/js')
 
     es.merge(tasks).on 'end', done
@@ -46,14 +52,24 @@ gulp.task 'connect', ->
   connect.server()
 
 gulp.task 'clean', ->
-  gulp.src 'build'
+  gulp.src 'lib/js'
     .pipe rimraf()
+
+gulp.task 'uglify', ->
+  gulp.src './lib/js/*.js'
+    .pipe sourcemaps.init(loadMaps: true)
+    .pipe uglify()
+    .pipe rename (path)->
+      path.extname = ".min#{path.extname}"
+    .pipe sourcemaps.write (".")
+    .pipe gulp.dest("./lib/js")
 
 # Default task call every tasks created so far.
 gulp.task 'build', (cb) ->
   runs(
     'clean'
     'browserify',
+    'uglify',
     cb
   )
 
