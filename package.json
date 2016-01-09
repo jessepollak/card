@@ -46,6 +46,7 @@
     "gulp-autoprefixer": "0.0.7",
     "gulp-changed": "~0.3.0",
     "gulp-connect": "~2.0.5",
+    "gulp-derequire": "^2.1.0",
     "gulp-livereload": "~1.5.0",
     "gulp-open": "~0.2.8",
     "gulp-rename": "^1.2.2",

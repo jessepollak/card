@@ -8,6 +8,7 @@ rename = require 'gulp-rename'
 rimraf = require 'gulp-rimraf'
 connect = require 'gulp-connect'
 open = require 'gulp-open'
+derequire = require 'gulp-derequire'
 runs = require 'run-sequence'
 
 glob = require 'glob'
@@ -26,10 +27,12 @@ gulp.task 'browserify', (done) ->
       b = browserify
          entries: [entry]
          debug: development
+         standalone: if development then null else 'card'
          extensions: ['.coffee', '.js']
 
       b.bundle().on 'error', console.log
         .pipe source path.basename(entry)
+        .pipe derequire()
         .pipe rename(extname: '.js')
         .pipe gulp.dest('./lib/js')
 
