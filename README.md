@@ -224,7 +224,7 @@ Card is used in the wild in these places:
 * [GigSalad](https://www.gigsalad.com)
 * [Boligninja](http://www.boligninja.dk)
 * [EasyCarros](http://www.easycarros.com/)
-* [Sintelle] (http://www.sintelle.fr/)
+* [Sintelle] (http://www.sintelleparapharmacie.com/)
 * [Wevorce](http://wevorce.com/)
 * [PayumServer](https://github.com/Payum/PayumServer)
 * [Paribus](https://paribus.co)
