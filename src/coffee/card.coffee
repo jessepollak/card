@@ -94,7 +94,9 @@ class Card
 
     @$container = QJ(@options.container)
 
-    @render()
+    if @$container?
+      if !QJ.find(@$container, @options.cardSelectors.cardContainer)?.length
+        @render()
     @attachHandlers()
     @handleInitialPlaceholders()
 

@@ -25,10 +25,10 @@ gulp.task 'browserify', (done) ->
 
     tasks = files.map (entry) ->
       b = browserify
-         entries: [entry]
-         debug: development
-         standalone: if development then null else 'card'
-         extensions: ['.coffee', '.js']
+        entries: [entry]
+        debug: development
+        standalone: if development then null else 'card'
+        extensions: ['.coffee', '.js']
 
       b.bundle().on 'error', console.log
         .pipe source path.basename(entry)
@@ -40,7 +40,8 @@ gulp.task 'browserify', (done) ->
 
 gulp.task 'watch', ['browserify', 'connect'],  ->
   server.listen 35729, ->
-    gulp.watch ['./src/coffee/**/*.coffee', './src/scss/**/*.scss'], ['browserify']
+    gulp.watch ['./src/coffee/**/*.coffee', './src/scss/**/*.scss'],
+      ['browserify']
 
   gulp.src('example/index.html')
     .pipe open("", url: "http://localhost:8080/example")
