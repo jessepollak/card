@@ -224,9 +224,11 @@ Card is used in the wild in these places:
 * [GigSalad](https://www.gigsalad.com)
 * [Boligninja](http://www.boligninja.dk)
 * [EasyCarros](http://www.easycarros.com/)
-* [Sintelle] (http://www.sintelle.fr/)
+* [Sintelle] (http://www.sintelleparapharmacie.com/)
 * [Wevorce](http://wevorce.com/)
 * [PayumServer](https://github.com/Payum/PayumServer)
+* [Paribus](https://paribus.co)
+* [Bizzabo](https://www.bizzabo.com)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
