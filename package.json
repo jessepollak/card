@@ -61,7 +61,7 @@
   "dependencies": {
     "cssify": "~0.6.0",
     "node.extend": "~1.1.3",
-    "qj": "0.0.8",
-    "payment": "~0.0.12"
+    "qj": "~1.0.0",
+    "payment": "~1.0.1"
   }
 }
