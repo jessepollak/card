@@ -5,6 +5,7 @@ payment = require 'payment/src/payment'
 extend = require 'node.extend'
 
 class Card
+  initializedDataAttr: "data-jp-card-initialized"
   cardTemplate: '' +
   '<div class="jp-card-container">' +
       '<div class="jp-card">' +
@@ -93,6 +94,12 @@ class Card
       return
 
     @$container = QJ(@options.container)
+
+    # set a data attribute to ensure that card is only ever initialized
+    # once on a given container
+    toInitialize = if QJ.isDOMElement(@$container) then @$container else @$container[0]
+    return if toInitialize.getAttribute(@initializedDataAttr)
+    toInitialize.setAttribute(@initializedDataAttr, true)
 
     @render()
     @attachHandlers()
