@@ -26,22 +26,6 @@ var baseConfig = {
   }
 }
 
-var libConfig = _.defaults(
-  {
-    output: {
-      path: __dirname + '/lib/',
-      filename: 'index.js',
-      library: 'card',
-      libraryTarget: 'umd',
-    },
-    externals: {
-      "qj": "QJ",
-      "payment": "Payment"
-    }
-  },
-  baseConfig
-)
-
 var jQueryConfig = _.defaults(
   {
     entry: './src/coffee/jquery.card.coffee',
@@ -60,6 +44,5 @@ var jQueryConfig = _.defaults(
 
 module.exports = [
   baseConfig,
-  libConfig,
   jQueryConfig
 ]
