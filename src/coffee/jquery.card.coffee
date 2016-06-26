@@ -1,6 +1,6 @@
 Card = require './card'
+$ = require('jquery')
 
-$ = jQuery
 $.card = {}
 $.card.fn = {}
 $.fn.card = (opts) ->

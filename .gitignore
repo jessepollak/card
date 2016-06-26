@@ -1,3 +1,5 @@
 bower_components
+.tmp
+coverage
 node_modules
-*.log
+lib
