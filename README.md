@@ -229,6 +229,7 @@ Card is used in the wild in these places:
 * [PayumServer](https://github.com/Payum/PayumServer)
 * [Paribus](https://paribus.co)
 * [Bizzabo](https://www.bizzabo.com)
+* [Tortuba](https://www.tortuba.com)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
