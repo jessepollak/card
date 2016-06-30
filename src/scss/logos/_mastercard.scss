@@ -1,36 +1,40 @@
-@import "_logo";
+@import "logo";
 
-.card-logo.mastercard {
-    // display: none;
-    $red: #FF0000;
-    $yellow: #FFAB00;
-    $offset: 0;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-size: 9px;
-    line-height: $logo-height;
-    z-index: 1;
-    text-shadow: 1px 1px rgba(0, 0, 0, .6);
-    &:before, &:after {
-        content: " ";
-        display: block;
-        width: $logo-height;
-        top: 0;
-        position: absolute;
-        height: $logo-height;
-        border-radius: $logo-height / 2;
-    }
-
-    &:before {
-        left: $offset;
-        background: $red;
-        z-index: -1;
-    }
-
-    &:after {
-        right: $offset;
-        background: $yellow;
-        z-index: -2;
-    }
+.jp-card-logo.jp-card-mastercard {
+  // display: none;
+  $red: #cd0001;
+  $yellow: #fe9900;
+  $offset: 0;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 8px;
+  line-height: $logo-height;
+  z-index: 1;
+  text-shadow: -0.5px 0.5px rgba(0, 0, 0, 1);
+  font-family: "Droid Sans", Helvetica, sans-serif;
+  padding-right: 4px;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0; 
+    right: $offset; 
+    bottom: 0; 
+    left: $offset;
+    display: inline-block;
+    border-radius: 50%;
+    width: $logo-height;
+    height: $logo-height;
+    z-index: -1;
+    @include background-image(linear-gradient($yellow 50%, $red 50%));    
+    background-size: $logo-height/8 $logo-height/8;
+    box-shadow: ($logo-height/2) 0 0 0 $yellow,
+       ($logo-height/2) 0 0 0 $red inset;
+  }  
+  &:after{
+    content: '\00ae';
+    padding-left: 0.5em;      
+    font: 0.25em Helvetica,sans-serif lighter normal;
+    text-shadow: none;
+  }
 }

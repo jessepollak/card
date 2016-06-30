@@ -1,10 +1,10 @@
-@import "_logo";
+@import "logo";
 
-.card-logo.amex {
-    $box-offset: 8px;
-    $box-width: $logo-height - $box-offset;
-    $box-height: $box-width;
-    $font-size: 4px;
+.jp-card-logo.jp-card-amex {
+    $box-offset: -10px;
+    $box-width: $logo-width;
+    $box-height: $logo-height;
+    $font-size: 7px;
     $font-padding: 2px;
 
     text-transform: uppercase;
@@ -12,9 +12,6 @@
     font-size: $font-size;
     font-weight: bold;
     color: white;
-
-    @include background-image(repeating-radial-gradient(circle at center, #FFF 1px, #999 2px));
-    border: 1px solid #EEE;
 
     &:before, &:after {
         width: $box-width;
@@ -24,20 +21,17 @@
     }
 
     &:before {
-        $blue: #267AC3;
         height: $box-height;
         content: "american";
-        // box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
-        top: $box-offset / 2 - 1;
         text-align: left;
         padding-left: $font-padding;
-        padding-top: $box-height / 2 - $font-size + 1;
-        background: $blue;
+        padding-top: $box-height / 2 - $font-size;
+        @include background-image(linear-gradient(135deg, #7dcdee 0%,#016cb4 33%));
     }
 
     &:after {
         content: "express";
-        bottom: $box-height / 2 - $font-size + 1;
+        bottom: $box-height / 2 - $font-size - 1;
         text-align: right;
         padding-right: $font-padding;
     }

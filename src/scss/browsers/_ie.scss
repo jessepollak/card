@@ -1,0 +1,31 @@
+.jp-card.jp-card-ie-10, .jp-card.jp-card-ie-11 {
+    &.jp-card-flipped {
+        @include transform(0deg);
+        .jp-card-front {
+            @include transform(rotateY(0deg));
+        }
+        .jp-card-back {
+            @include transform(rotateY(0deg));
+
+            &:after {
+               left: 18%;
+            }
+
+            .jp-card-cvc {
+                @include transform(rotateY(180deg));
+                left: 5%;
+            }
+
+            .jp-card-shiny  {
+                left: 84%;
+                &:after {
+                    left: -480%;
+                    @include transform(rotateY(180deg));
+                }
+            }
+        }
+    }
+}
+.jp-card.jp-card-ie-10.jp-card-amex .jp-card-back, .jp-card.jp-card-ie-11.jp-card-amex .jp-card-back {
+    display: none;
+}

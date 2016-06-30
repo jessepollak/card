@@ -1,19 +1,16 @@
 @import "card";
-@import "../logos/mastercard";
+@import "../logos/dankort";
 
-$fill-color: #0061A8;
+$fill-color: #0055C7;
 
-.jp-card.jp-card-mastercard {
+.jp-card.jp-card-dankort {
     &.jp-card-identified {
         .jp-card-front, .jp-card-back {
-            .jp-card-logo.jp-card-mastercard {
-                box-shadow: none;
-            }
             &:before {
                 background-color: $fill-color;
             }
         }
-        .jp-card-logo.jp-card-mastercard {
+        .jp-card-logo.jp-card-dankort {
             opacity: 1;
         }
     }

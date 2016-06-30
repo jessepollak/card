@@ -1,11 +1,13 @@
 $logo-height: 36px;
 $logo-width: 60px;
 
-.card-logo {
-    &, &:before, &:after {
-        box-sizing: border-box;
+@include exports("_logo.scss") {
+    .jp-card-logo {
+        &, &:before, &:after {
+            box-sizing: border-box;
+        }
+        height: $logo-height;
+        width: $logo-width;
+        font-style: italic;
     }
-    height: $logo-height;
-    width: $logo-width;
-    font-style: italic;
 }
