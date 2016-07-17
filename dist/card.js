@@ -1023,6 +1023,7 @@ var card =
 	    }, {
 	      type: 'mastercard',
 	      pattern: /^5[1-5]/,
+	      pattern: /^(5[1-5]|677189)|^(222[1-9]|2[3-6]\d{2}|27[0-1]\d|2720)/,
 	      format: defaultFormat,
 	      length: [16],
 	      cvcLength: [3],
@@ -1155,10 +1156,12 @@ var card =
 	    }
 	    if (re.test(value)) {
 	      e.preventDefault();
-	      return QJ.val(target, value + ' ' + digit);
+	      QJ.val(target, value + ' ' + digit);
+	      return QJ.trigger(target, 'change');
 	    } else if (re.test(value + digit)) {
 	      e.preventDefault();
-	      return QJ.val(target, value + digit + ' ');
+	      QJ.val(target, value + digit + ' ');
+	      return QJ.trigger(target, 'change');
 	    }
 	  };
 

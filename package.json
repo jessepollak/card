@@ -49,9 +49,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "cssify": "~1.0.2",
     "node.extend": "~1.1.3",
-    "qj": "~2.0.0-0",
-    "payment": "~2.0.0-beta1"
+    "qj": "~2.0.0",
+    "payment": "~2.0.0"
   }
 }
