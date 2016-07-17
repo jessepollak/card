@@ -24,7 +24,7 @@
     "compile:lib": "coffee --compile -o ./lib/ ./src/coffee/card.coffee && node-sass ./src/scss/card.scss -o lib/ && replace '../scss/card.scss' './card.css' lib/card.js",
     "compile:dist": "NODE_ENV=production webpack",
     "development": "webpack-dev-server --hot --inline",
-    "preversion": "npm run test && npm run compile",
+    "preversion": "npm run compile",
     "prepublish": "NODE_ENV=production npm run compile",
     "postpublish": "git push origin master && git push --tags",
     "test": "karma start --single-run --browsers PhantomJS"
