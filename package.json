@@ -1,9 +1,9 @@
 {
   "name": "card",
-  "version": "1.3.2",
+  "version": "2.0.0-beta4",
   "author": "Jesse Pollak <jpollak92@gmail.com>",
   "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
-  "main": "lib/js/card.js",
+  "main": "lib/card.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jessepollak/card"
@@ -19,49 +19,38 @@
     }
   ],
   "scripts": {
-    "start": "gulp watch"
-  },
-  "browserify": {
-    "transform": [
-      "coffeeify",
-      [
-        "sassify",
-        {
-          "auto-inject": true,
-          "base64Encode": false,
-          "sourceMap": false,
-          "sourceMapEmbed": false
-        }
-      ]
-    ]
+    "clean": "rm -rf ./lib/ && rm -rf ./dist/",
+    "compile": "npm run clean && npm run compile:lib && npm run compile:dist",
+    "compile:lib": "coffee --compile -o ./lib/ ./src/coffee/card.coffee && node-sass ./src/scss/card.scss -o lib/ && replace '../scss/card.scss' './card.css' lib/card.js",
+    "compile:dist": "NODE_ENV=production webpack",
+    "development": "webpack-dev-server --hot --inline",
+    "preversion": "npm run test && npm run compile",
+    "prepublish": "NODE_ENV=production npm run compile",
+    "postpublish": "git push origin master && git push --tags",
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "devDependencies": {
-    "bower": "~1.2.8",
-    "browserify": "^11.0.0",
-    "coffee-script": "~1.7.1",
-    "coffeeify": "~1.2.0",
+    "bower": "~1.7.9",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "~1.10.0",
+    "css-loader": "^0.23.1",
     "event-stream": "^3.3.1",
-    "glob": "^5.0.14",
-    "gulp": "~3.8.5",
-    "gulp-autoprefixer": "0.0.7",
-    "gulp-changed": "~0.3.0",
-    "gulp-connect": "~2.0.5",
-    "gulp-derequire": "^2.1.0",
-    "gulp-livereload": "~1.5.0",
-    "gulp-open": "~0.2.8",
-    "gulp-rename": "^1.2.2",
-    "gulp-rimraf": "~0.1.0",
-    "jquery": "~2.1.1",
-    "nodemon": "~1.1.1",
-    "run-sequence": "~0.3.6",
-    "sassify": "~0.9.1",
-    "tiny-lr": "0.0.7",
-    "vinyl-source-stream": "^1.1.0"
+    "glob": "^7.0.5",
+    "jquery": "~3.0.0",
+    "node-sass": "^3.8.0",
+    "nodemon": "~1.9.2",
+    "replace": "^0.3.0",
+    "run-sequence": "~1.2.1",
+    "sass-loader": "^3.2.2",
+    "style-loader": "^0.13.1",
+    "underscore": "^1.8.3",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "cssify": "~0.6.0",
     "node.extend": "~1.1.3",
-    "qj": "~1.0.0",
-    "payment": "~1.0.4"
+    "qj": "~2.0.0",
+    "payment": "~2.0.0"
   }
 }

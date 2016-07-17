@@ -8,7 +8,7 @@ Card will take *any* credit card form and make it the best part of the checkout 
 
 ## Usage (without jQuery)
 
-To use, you'll need to include the Card JavaScript files into your HTML. You can find the necessary file at `/lib/js/card.js` and include it in your HTML like so.
+To use, you'll need to include the Card JavaScript files into your HTML. You can find the necessary file at `/dist/card.js` and include it in your HTML like so.
 
 ```html
 <!-- at the end of BODY -->
@@ -161,7 +161,7 @@ var card = new Card({
 
 ## Using with jQuery
 
-To use with jQuery, you'll need to include the `jquery.card.js` file into your HTML. You can find the necessary file at `/lib/js/jquery.card.js` and include it in your HTML like so.
+To use with jQuery, you'll need to include the `jquery.card.js` file into your HTML. You can find the necessary file at `/dist/jquery.card.js` and include it in your HTML like so.
 
 ```html
 <!-- at the end of BODY -->
@@ -183,7 +183,7 @@ $('form').card({
 ## Using with other javascript libraries
 
 Card has wrappers that make it easy to use with other javascript libraries:
- 
+
 ### Angular
 
 * [angular-card](https://github.com/gavruk/angular-card)
@@ -206,7 +206,7 @@ $ git clone --recursive https://github.com/jessepollak/card.git
 $ cd card
 $ git submodule init && git submodule update
 $ npm install
-$ npm start
+$ npm development
 ```
 
 Now, if you go to localhost:8080/example in your browser, you should see the demo page.
