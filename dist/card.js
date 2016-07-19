@@ -988,7 +988,7 @@ var card =
 	    }, {
 	      type: 'dinersclub',
 	      pattern: /^(36|38|30[0-5])/,
-	      format: defaultFormat,
+	      format: /(\d{1,4})(\d{1,6})?(\d{1,4})?/,
 	      length: [14],
 	      cvcLength: [3],
 	      luhn: true
