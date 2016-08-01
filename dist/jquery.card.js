@@ -1516,7 +1516,7 @@ var card =
 	        }
 	        upperLength = card.length[card.length.length - 1];
 	        num = num.replace(/\D/g, '');
-	        num = num.slice(0, +upperLength + 1 || 9e9);
+	        num = num.slice(0, upperLength);
 	        if (card.format.global) {
 	          return (ref = num.match(card.format)) != null ? ref.join(' ') : void 0;
 	        } else {
