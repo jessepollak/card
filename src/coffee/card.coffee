@@ -103,7 +103,7 @@ class Card
 
     @render()
     @attachHandlers()
-    @handleInitialPlaceholders()
+    @handleInitialValues()
 
   render: ->
     QJ.append(@$container, @template(
@@ -166,15 +166,19 @@ class Card
         filters: @validToggler('cardHolderName')
         join: ' '
 
-  handleInitialPlaceholders: ->
+  handleInitialValues: ->
     for name, selector of @options.formSelectors
       el = this["$#{name}"]
-      if QJ.val(el)
-        # if the input has a value, we want to trigger a refresh
-        QJ.trigger el, 'paste'
-        # set a timeout because `jquery.payment` does the reset of the val
-        # in a timeout
-        setTimeout -> QJ.trigger el, 'keyup'
+
+      for elem in el when QJ.val elem
+        do (elem) ->
+          # if the input has a value, we want to trigger a refresh
+          QJ.trigger elem, 'paste'
+          # set a timeout because `jquery.payment` does the reset of the val
+          # in a timeout
+          setTimeout ->
+            QJ.trigger elem, 'keyup'
+    return
 
   handle: (fn) ->
     (e) =>
