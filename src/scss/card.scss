@@ -42,6 +42,7 @@
 
     &.jp-card-flipped {
         @include transform(rotateY(180deg));
+        @include backface-visibility(hidden);
     }
 
     .jp-card-front, .jp-card-back {
