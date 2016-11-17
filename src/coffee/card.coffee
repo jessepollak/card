@@ -210,10 +210,9 @@ class Card
 
   maskCardNumber: (val, el, out) =>
     mask = @options.masks.cardNumber
-    cardType = payment.fns.cardType(val)
     numbers = val.split(' ')
 
-    if (cardType == 'amex' && (numbers.length == 3)) || numbers.length >= 4
+    if numbers.length >= 3
       numbers.forEach (item, idx) ->
         numbers[idx] = numbers[idx].replace(/\d/g, mask) unless idx == numbers.length - 1
       numbers.join(' ')
