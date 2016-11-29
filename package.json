@@ -1,6 +1,6 @@
 {
   "name": "card",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "author": "Jesse Pollak <jpollak92@gmail.com>",
   "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
   "main": "lib/card.js",
