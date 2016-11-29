@@ -27,7 +27,6 @@
     "preversion": "npm run compile",
     "prepublish": "npm run env NODE_ENV=production && npm run compile",
     "postpublish": "git push origin master && git push --tags",
-    "postinstall": "bower install",
     "test": "karma start --single-run --browsers PhantomJS"
   },
   "devDependencies": {
