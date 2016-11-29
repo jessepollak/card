@@ -8,10 +8,11 @@ Card will take *any* credit card form and make it the best part of the checkout 
 
 ## Usage (without jQuery)
 
-To use, you'll need to include the Card JavaScript files into your HTML. You can find the necessary file at `/dist/card.js` and include it in your HTML like so.
+To use, you'll need to include the Card JavaScript files into your HTML, no CSS link is necessary as the JavaScript file does this for you. You can find the necessary file at `/dist/card.js` and include it in your HTML like so.
 
 ```html
 <!-- at the end of BODY -->
+<!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
 ```
 
@@ -54,6 +55,12 @@ var card = new Card({
     debug: false // optional - default false
 });
 ```
+### Installing card from bower
+
+If you're using bower, you can install card.js with:
+
+    bower install card --save
+
 ### Installing card from npm
 
 If you're using npm, you can install card.js with:
@@ -73,6 +80,7 @@ Card can be used in forms where you have multiple inputs that render to a single
 <html>
 <body>
 <div class='card-wrapper'></div>
+<!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
 <form>
     <input type="text" name="number">
@@ -103,6 +111,7 @@ Card renders with default placeholders for card `name`, `number`, `expiry`, and 
 <html>
 <body>
 <div class='card-wrapper'></div>
+<!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
 <form>
     <input type="text" name="number">
@@ -136,6 +145,7 @@ To render the card with the strings in a different language, you can pass in a `
 <html>
 <body>
 <div class='card-wrapper'></div>
+<!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
 <form>
     <input type="text" name="number">
@@ -165,6 +175,7 @@ To use with jQuery, you'll need to include the `jquery.card.js` file into your H
 
 ```html
 <!-- at the end of BODY -->
+<!-- CSS is included via this JavaScript file -->
 <script src="/path/to/jquery.card.js"></script>
 ```
 
@@ -184,7 +195,7 @@ $('form').card({
 
 Card has wrappers that make it easy to use with other javascript libraries:
 
-### Angular
+### Angular (1.x Currently)
 
 * [angular-card](https://github.com/gavruk/angular-card)
 
