@@ -128,7 +128,7 @@ class Card
 
     if @options.width
       $cardContainer = QJ(@options.cardSelectors.cardContainer)[0]
-      baseWidth      = parseInt($cardContainer.clientWidth)
+      baseWidth = parseInt($cardContainer.clientWidth || window.getComputedStyle($cardContainer).width)
 
       $cardContainer.style.transform = "scale(#{@options.width / baseWidth})"
 
