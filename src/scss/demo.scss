@@ -159,22 +159,24 @@ a.twitter-share-button {
     left: 10px;
 }
 
-.sponsored {
+.sponsored,
+.sponsored-mobile {
     position: absolute;
     top: 0;
     left: 0;
     width: 150px;
     margin: 5px 10px;
-    .fusion-img {
+    .carbon-img {
     }
-    .fusion-text {
+    .carbon-text {
         font-size: 12px;
         line-height: 16px;
         color: #333;
         display: block;
         margin: 10px 0;
+        font-weight: 400;
     }
-    .fusion-poweredby {
+    .carbon-poweredby {
         margin: 0;
         line-height: 100%;
         font-size: 11px;
@@ -182,78 +184,34 @@ a.twitter-share-button {
         clear: both;
         display: block;
     }
-
-    a {
-        font-weight: bold;
-    }
-    h6 {
-        font-size: 12px;
-        margin: 0;
-        font-weight: bold;
-    }
-    img {
-        background: #62B7D2;
-        margin: 5px 0;
-        padding: 10px;
-    }
-    p {
-        font-size: 10px;
-        line-height: 12px;
-        margin: 0   ;
-    }
-    .sponsor {
-        font-size: 10px;
-        color: #ccc;
-        text-align: underline;
-        &:hover {
-            color: #bbb;
-        }
-    }
-}
-
-.sponsored-mobile {
-    padding: 10px;
-    border: 1px solid #eee;
-    margin: 20px 0;
-    display: none;
-    a.img {
-        float: left;
-        width: 75px;
-        margin-right: 5%;
-        width: 20%;
-        background: #62B7D2;
-        padding: 10px;
-    }
-    h6, p {
-        margin: 0;
-        float: left;
-        width: 70%;
-    }
-    h6 {
-        font-size: 14px;
-        margin-bottom: 3px;
-        font-weight: bold;
-    }
-    p {
-        font-size: 12px;
-        line-height: 14px;
-    }
-    .clear {
-        display: block;
-        clear: both;
-    }
 }
 
 
 @media (max-width: 840px) {
-    .sponsored {
-        display: none;
+  .sponsored {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    img {
+      float: left;
     }
-    .sponsored-mobile {
-        display: block;
+    .carbon-text {
+      float: left;
+      width: 100px;
+      margin-top: 10px;
+      margin-left: 10px;
     }
-    .header {
-        margin-top: 0;
+    .carbon-poweredby {
+      float: left;
+      margin-top: 10px;
     }
+    .clear {
+      clear: both;
+    }
+  }
+
+  .header {
+      margin-top: 0;
+  }
 }
 
