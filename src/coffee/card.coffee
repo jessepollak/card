@@ -75,6 +75,8 @@ class Card
       cvc: '&bull;&bull;&bull;'
       expiry: '&bull;&bull;/&bull;&bull;'
       name: 'Full Name'
+    masks:
+      cardNumber: false
     classes:
       valid: 'jp-card-valid'
       invalid: 'jp-card-invalid'
@@ -144,9 +146,12 @@ class Card
       QJ.addClass @$card, 'jp-card-ie-11'
 
   attachHandlers: ->
+    numberInputFilters = [@validToggler('cardNumber')]
+    numberInputFilters.push(@maskCardNumber) if @options.masks.cardNumber
+
     bindVal @$numberInput, @$numberDisplay,
       fill: false,
-      filters: @validToggler('cardNumber')
+      filters: numberInputFilters
     QJ.on @$numberInput, 'payment.cardType', @handle('setCardType')
 
     expiryFilters = [(val) -> val.replace /(\s+)/g, '']
@@ -202,6 +207,18 @@ class Card
   toggleValidClass: (el, test) ->
     QJ.toggleClass el, @options.classes.valid, test
     QJ.toggleClass el, @options.classes.invalid, !test
+
+  maskCardNumber: (val, el, out) =>
+    mask = @options.masks.cardNumber
+    numbers = val.split(' ')
+
+    if numbers.length >= 3
+      numbers.forEach (item, idx) ->
+        numbers[idx] = numbers[idx].replace(/\d/g, mask) unless idx == numbers.length - 1
+      numbers.join(' ')
+
+    else
+      val.replace /\d/g, mask
 
   handlers:
     setCardType: ($el, e) ->
