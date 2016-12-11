@@ -51,6 +51,10 @@ var card = new Card({
         cvc: '•••'
     },
 
+    masks: {
+        cardNumber: '•' // optional - mask card number
+    }
+
     // if true, will log helpful messages for setting up Card
     debug: false // optional - default false
 });
