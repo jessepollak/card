@@ -45,7 +45,8 @@ var card =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var Card, QJ, extend, payment;
+	/* WEBPACK VAR INJECTION */(function(global) {var Card, QJ, extend, payment,
+	  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 	__webpack_require__(1);
 
@@ -96,6 +97,9 @@ var card =
 	      expiry: '&bull;&bull;/&bull;&bull;',
 	      name: 'Full Name'
 	    },
+	    masks: {
+	      cardNumber: false
+	    },
 	    classes: {
 	      valid: 'jp-card-valid',
 	      invalid: 'jp-card-invalid'
@@ -104,6 +108,7 @@ var card =
 	  };
 
 	  function Card(opts) {
+	    this.maskCardNumber = __bind(this.maskCardNumber, this);
 	    var toInitialize;
 	    this.options = extend(true, this.defaults, opts);
 	    if (!this.options.form) {
@@ -127,16 +132,16 @@ var card =
 	  }
 
 	  Card.prototype.render = function() {
-	    var $cardContainer, baseWidth, name, obj, ref, ref1, selector, ua;
+	    var $cardContainer, baseWidth, name, obj, selector, ua, _ref, _ref1;
 	    QJ.append(this.$container, this.template(this.cardTemplate, extend({}, this.options.messages, this.options.placeholders)));
-	    ref = this.options.cardSelectors;
-	    for (name in ref) {
-	      selector = ref[name];
+	    _ref = this.options.cardSelectors;
+	    for (name in _ref) {
+	      selector = _ref[name];
 	      this["$" + name] = QJ.find(this.$container, selector);
 	    }
-	    ref1 = this.options.formSelectors;
-	    for (name in ref1) {
-	      selector = ref1[name];
+	    _ref1 = this.options.formSelectors;
+	    for (name in _ref1) {
+	      selector = _ref1[name];
 	      selector = this.options[name] ? this.options[name] : selector;
 	      obj = QJ.find(this.$el, selector);
 	      if (!obj.length && this.options.debug) {
@@ -169,10 +174,14 @@ var card =
 	  };
 
 	  Card.prototype.attachHandlers = function() {
-	    var expiryFilters;
+	    var expiryFilters, numberInputFilters;
+	    numberInputFilters = [this.validToggler('cardNumber')];
+	    if (this.options.masks.cardNumber) {
+	      numberInputFilters.push(this.maskCardNumber);
+	    }
 	    bindVal(this.$numberInput, this.$numberDisplay, {
 	      fill: false,
-	      filters: this.validToggler('cardNumber')
+	      filters: numberInputFilters
 	    });
 	    QJ.on(this.$numberInput, 'payment.cardType', this.handle('setCardType'));
 	    expiryFilters = [
@@ -204,22 +213,22 @@ var card =
 	  };
 
 	  Card.prototype.handleInitialPlaceholders = function() {
-	    var el, name, ref, results, selector;
-	    ref = this.options.formSelectors;
-	    results = [];
-	    for (name in ref) {
-	      selector = ref[name];
+	    var el, name, selector, _ref, _results;
+	    _ref = this.options.formSelectors;
+	    _results = [];
+	    for (name in _ref) {
+	      selector = _ref[name];
 	      el = this["$" + name];
 	      if (QJ.val(el)) {
 	        QJ.trigger(el, 'paste');
-	        results.push(setTimeout(function() {
+	        _results.push(setTimeout(function() {
 	          return QJ.trigger(el, 'keyup');
 	        }));
 	      } else {
-	        results.push(void 0);
+	        _results.push(void 0);
 	      }
 	    }
-	    return results;
+	    return _results;
 	  };
 
 	  Card.prototype.handle = function(fn) {
@@ -272,6 +281,22 @@ var card =
 	    return QJ.toggleClass(el, this.options.classes.invalid, !test);
 	  };
 
+	  Card.prototype.maskCardNumber = function(val, el, out) {
+	    var mask, numbers;
+	    mask = this.options.masks.cardNumber;
+	    numbers = val.split(' ');
+	    if (numbers.length >= 3) {
+	      numbers.forEach(function(item, idx) {
+	        if (idx !== numbers.length - 1) {
+	          return numbers[idx] = numbers[idx].replace(/\d/g, mask);
+	        }
+	      });
+	      return numbers.join(' ');
+	    } else {
+	      return val.replace(/\d/g, mask);
+	    }
+	  };
+
 	  Card.prototype.handlers = {
 	    setCardType: function($el, e) {
 	      var cardType;
@@ -310,13 +335,13 @@ var card =
 	      };
 	    }
 	    outDefaults = (function() {
-	      var j, len, results;
-	      results = [];
-	      for (j = 0, len = out.length; j < len; j++) {
-	        o = out[j];
-	        results.push(o.textContent);
+	      var _i, _len, _results;
+	      _results = [];
+	      for (_i = 0, _len = out.length; _i < _len; _i++) {
+	        o = out[_i];
+	        _results.push(o.textContent);
 	      }
-	      return results;
+	      return _results;
 	    })();
 	    QJ.on(el, 'focus', function() {
 	      return QJ.addClass(out, 'jp-card-focused');
@@ -325,37 +350,37 @@ var card =
 	      return QJ.removeClass(out, 'jp-card-focused');
 	    });
 	    QJ.on(el, 'keyup change paste', function(e) {
-	      var elem, filter, i, j, join, k, len, len1, outEl, outVal, ref, results, val;
+	      var elem, filter, i, join, outEl, outVal, val, _i, _j, _len, _len1, _ref, _results;
 	      val = (function() {
-	        var j, len, results;
-	        results = [];
-	        for (j = 0, len = el.length; j < len; j++) {
-	          elem = el[j];
-	          results.push(QJ.val(elem));
+	        var _i, _len, _results;
+	        _results = [];
+	        for (_i = 0, _len = el.length; _i < _len; _i++) {
+	          elem = el[_i];
+	          _results.push(QJ.val(elem));
 	        }
-	        return results;
+	        return _results;
 	      })();
 	      join = opts.join(val);
 	      val = val.join(join);
 	      if (val === join) {
 	        val = "";
 	      }
-	      ref = opts.filters;
-	      for (j = 0, len = ref.length; j < len; j++) {
-	        filter = ref[j];
+	      _ref = opts.filters;
+	      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+	        filter = _ref[_i];
 	        val = filter(val, el, out);
 	      }
-	      results = [];
-	      for (i = k = 0, len1 = out.length; k < len1; i = ++k) {
+	      _results = [];
+	      for (i = _j = 0, _len1 = out.length; _j < _len1; i = ++_j) {
 	        outEl = out[i];
 	        if (opts.fill) {
 	          outVal = val + outDefaults[i].substring(val.length);
 	        } else {
 	          outVal = val || outDefaults[i];
 	        }
-	        results.push(outEl.textContent = outVal);
+	        _results.push(outEl.textContent = outVal);
 	      }
-	      return results;
+	      return _results;
 	    });
 	    return el;
 	  };
