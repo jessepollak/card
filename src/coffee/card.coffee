@@ -213,7 +213,7 @@ class Card
     numbers = val.split(' ')
 
     if numbers[numbers.length-1] == ''
-      numbers.slice(-1,1)
+      numbers.splice(-1)
 
     if numbers.length >= 3
       numbers.forEach (item, idx) ->
