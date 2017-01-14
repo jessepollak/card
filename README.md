@@ -247,6 +247,7 @@ Card is used in the wild in these places:
 * [Tortuba](https://www.tortuba.com)
 * [Netlify](https://www.netlify.com)
 * [The Spice House](https://www.thespicehouse.com/)
+* [Touts](https://www.touts.com.br/)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
