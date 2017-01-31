@@ -1,0 +1,26 @@
+@import "logo";
+
+.jp-card-logo.jp-card-dinersclub {
+    font-family: serif;
+    height: 40px;
+    width: 100px;
+    color: white;
+    font-size: 17px;
+    font-style: normal;
+    letter-spacing: 1px;
+
+    &::before, &::after {
+        display: block;
+        position: relative;
+    }
+
+    &::before {
+        content: 'Diners Club';
+    }
+
+    &::after {
+        content: 'International';
+        text-transform: uppercase;
+        font-size: 0.6em;
+    }
+}
