@@ -12,6 +12,7 @@
 @import "cards/maestro";
 @import "cards/dankort";
 @import "cards/elo";
+@import "cards/dinersclub";
 
 .jp-card-container {
     @include perspective(1000px);
