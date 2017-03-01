@@ -1,0 +1,17 @@
+@import "card";
+@import "../logos/visaelectron";
+
+$fill-color: #191278;
+
+.jp-card.jp-card-visaelectron {
+    &.jp-card-identified {
+        .jp-card-front, .jp-card-back {
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .jp-card-logo.jp-card-visa {
+            opacity: 1;
+        }
+    }
+}
