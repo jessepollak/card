@@ -46,7 +46,7 @@ var card =
 /***/ function(module, exports, __webpack_require__) {
 
 	var $, Card,
-	  __slice = [].slice;
+	  slice = [].slice;
 
 	Card = __webpack_require__(1);
 
@@ -63,7 +63,7 @@ var card =
 	$.fn.extend({
 	  card: function() {
 	    var args, option;
-	    option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+	    option = arguments[0], args = 2 <= arguments.length ? slice.call(arguments, 1) : [];
 	    return this.each(function() {
 	      var $this, data;
 	      $this = $(this);
@@ -92,7 +92,7 @@ var card =
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {var Card, QJ, extend, payment,
-	  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+	  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 	__webpack_require__(2);
 
@@ -154,7 +154,7 @@ var card =
 	  };
 
 	  function Card(opts) {
-	    this.maskCardNumber = __bind(this.maskCardNumber, this);
+	    this.maskCardNumber = bind(this.maskCardNumber, this);
 	    var toInitialize;
 	    this.options = extend(true, this.defaults, opts);
 	    if (!this.options.form) {
@@ -178,16 +178,16 @@ var card =
 	  }
 
 	  Card.prototype.render = function() {
-	    var $cardContainer, baseWidth, name, obj, selector, ua, _ref, _ref1;
+	    var $cardContainer, baseWidth, name, obj, ref, ref1, selector, ua;
 	    QJ.append(this.$container, this.template(this.cardTemplate, extend({}, this.options.messages, this.options.placeholders)));
-	    _ref = this.options.cardSelectors;
-	    for (name in _ref) {
-	      selector = _ref[name];
+	    ref = this.options.cardSelectors;
+	    for (name in ref) {
+	      selector = ref[name];
 	      this["$" + name] = QJ.find(this.$container, selector);
 	    }
-	    _ref1 = this.options.formSelectors;
-	    for (name in _ref1) {
-	      selector = _ref1[name];
+	    ref1 = this.options.formSelectors;
+	    for (name in ref1) {
+	      selector = ref1[name];
 	      selector = this.options[name] ? this.options[name] : selector;
 	      obj = QJ.find(this.$el, selector);
 	      if (!obj.length && this.options.debug) {
@@ -259,22 +259,22 @@ var card =
 	  };
 
 	  Card.prototype.handleInitialPlaceholders = function() {
-	    var el, name, selector, _ref, _results;
-	    _ref = this.options.formSelectors;
-	    _results = [];
-	    for (name in _ref) {
-	      selector = _ref[name];
+	    var el, name, ref, results, selector;
+	    ref = this.options.formSelectors;
+	    results = [];
+	    for (name in ref) {
+	      selector = ref[name];
 	      el = this["$" + name];
 	      if (QJ.val(el)) {
 	        QJ.trigger(el, 'paste');
-	        _results.push(setTimeout(function() {
+	        results.push(setTimeout(function() {
 	          return QJ.trigger(el, 'keyup');
 	        }));
 	      } else {
-	        _results.push(void 0);
+	        results.push(void 0);
 	      }
 	    }
-	    return _results;
+	    return results;
 	  };
 
 	  Card.prototype.handle = function(fn) {
@@ -381,13 +381,13 @@ var card =
 	      };
 	    }
 	    outDefaults = (function() {
-	      var _i, _len, _results;
-	      _results = [];
-	      for (_i = 0, _len = out.length; _i < _len; _i++) {
-	        o = out[_i];
-	        _results.push(o.textContent);
+	      var j, len, results;
+	      results = [];
+	      for (j = 0, len = out.length; j < len; j++) {
+	        o = out[j];
+	        results.push(o.textContent);
 	      }
-	      return _results;
+	      return results;
 	    })();
 	    QJ.on(el, 'focus', function() {
 	      return QJ.addClass(out, 'jp-card-focused');
@@ -396,37 +396,37 @@ var card =
 	      return QJ.removeClass(out, 'jp-card-focused');
 	    });
 	    QJ.on(el, 'keyup change paste', function(e) {
-	      var elem, filter, i, join, outEl, outVal, val, _i, _j, _len, _len1, _ref, _results;
+	      var elem, filter, i, j, join, k, len, len1, outEl, outVal, ref, results, val;
 	      val = (function() {
-	        var _i, _len, _results;
-	        _results = [];
-	        for (_i = 0, _len = el.length; _i < _len; _i++) {
-	          elem = el[_i];
-	          _results.push(QJ.val(elem));
+	        var j, len, results;
+	        results = [];
+	        for (j = 0, len = el.length; j < len; j++) {
+	          elem = el[j];
+	          results.push(QJ.val(elem));
 	        }
-	        return _results;
+	        return results;
 	      })();
 	      join = opts.join(val);
 	      val = val.join(join);
 	      if (val === join) {
 	        val = "";
 	      }
-	      _ref = opts.filters;
-	      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-	        filter = _ref[_i];
+	      ref = opts.filters;
+	      for (j = 0, len = ref.length; j < len; j++) {
+	        filter = ref[j];
 	        val = filter(val, el, out);
 	      }
-	      _results = [];
-	      for (i = _j = 0, _len1 = out.length; _j < _len1; i = ++_j) {
+	      results = [];
+	      for (i = k = 0, len1 = out.length; k < len1; i = ++k) {
 	        outEl = out[i];
 	        if (opts.fill) {
 	          outVal = val + outDefaults[i].substring(val.length);
 	        } else {
 	          outVal = val || outDefaults[i];
 	        }
-	        _results.push(outEl.textContent = outVal);
+	        results.push(outEl.textContent = outVal);
 	      }
-	      return _results;
+	      return results;
 	    });
 	    return el;
 	  };
@@ -1215,14 +1215,10 @@ var card =
 	    }
 	    for (i = j = 0, len = upperLengths.length; j < len; i = ++j) {
 	      upperLength = upperLengths[i];
-	      if (length > upperLength && upperLengths[i + 1]) {
+	      if (length >= upperLength && upperLengths[i + 1]) {
 	        continue;
 	      }
-	      if (length > upperLength) {
-	        return;
-	      }
-	      if (length === upperLength) {
-	        QJ.val(target, value + digit);
+	      if (length >= upperLength) {
 	        return;
 	      }
 	    }
@@ -1237,10 +1233,6 @@ var card =
 	    if (re.test(value)) {
 	      e.preventDefault();
 	      QJ.val(target, value + ' ' + digit);
-	      return QJ.trigger(target, 'change');
-	    } else if (re.test(value + digit)) {
-	      e.preventDefault();
-	      QJ.val(target, value + digit + ' ');
 	      return QJ.trigger(target, 'change');
 	    }
 	  };
