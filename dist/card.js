@@ -1221,10 +1221,10 @@ var card =
 	    val = QJ.val(target) + digit;
 	    if (/^\d$/.test(val) && (val !== '0' && val !== '1')) {
 	      e.preventDefault();
-	      return QJ.val(target, "0" + val + " / ");
+	      return QJ.val(target, "0" + val + "/");
 	    } else if (/^\d\d$/.test(val)) {
 	      e.preventDefault();
-	      return QJ.val(target, val + " / ");
+	      return QJ.val(target, val + "/");
 	    }
 	  };
 
@@ -1254,7 +1254,7 @@ var card =
 	    target = e.target;
 	    val = QJ.val(target);
 	    if (/^\d\d$/.test(val)) {
-	      return QJ.val(target, val + " / ");
+	      return QJ.val(target, val + "/");
 	    }
 	  };
 
@@ -1267,7 +1267,7 @@ var card =
 	    target = e.target;
 	    val = QJ.val(target);
 	    if (/^\d$/.test(val) && val !== '0') {
-	      return QJ.val(target, "0" + val + " / ");
+	      return QJ.val(target, "0" + val + "/");
 	    }
 	  };
 
