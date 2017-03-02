@@ -16,6 +16,7 @@ class Card
                 '<div class="o">o</div>' +
               '</div>' +
               '<div class="jp-card-logo jp-card-visa">visa</div>' +
+              '<div class="jp-card-logo jp-card-visaelectron">visa<div class="elec">Electron</div></div>' +
               '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' +
               '<div class="jp-card-logo jp-card-maestro">Maestro</div>' +
               '<div class="jp-card-logo jp-card-amex"></div>' +
