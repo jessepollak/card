@@ -20,9 +20,10 @@
   ],
   "scripts": {
     "clean": "rimraf ./lib/ && rimraf ./dist/",
-    "compile": "npm run clean && npm run compile:lib && npm run compile:dist",
+    "compile": "npm run clean && npm run compile:lib && npm run compile:dist && npm run compile:styles",
     "compile:lib": "coffee --compile -o ./lib/ ./src/coffee/card.coffee && node-sass ./src/scss/card.scss -o lib/ && replace '../scss/card.scss' './card.css' lib/card.js",
     "compile:dist": "npm run env NODE_ENV=production && webpack",
+    "compile:styles": "node-sass ./src/scss/card.scss -o ./dist/ --output-style compressed",
     "development": "webpack-dev-server --hot --inline",
     "preversion": "npm run compile",
     "prepublish": "npm run env NODE_ENV=production && npm run compile",
