@@ -214,6 +214,9 @@ class Card
     mask = @options.masks.cardNumber
     numbers = val.split(' ')
 
+    if numbers[numbers.length-1] == ''
+      numbers.splice(-1)
+
     if numbers.length >= 3
       numbers.forEach (item, idx) ->
         numbers[idx] = numbers[idx].replace(/\d/g, mask) unless idx == numbers.length - 1
