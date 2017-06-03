@@ -1,0 +1,45 @@
+@import "logo";
+
+.jp-card-logo.jp-card-jcb {
+    @mixin jcb-radius($jcbradius) {
+      border-radius: $jcbradius 0px $jcbradius 0px;
+      -moz-border-radius: $jcbradius 0px $jcbradius 0px;
+      -webkit-border-radius: $jcbradius 0px $jcbradius 0px;
+    }
+    $logo-padding:2px; $logo-margin:3px;
+    $j-left : #000063; $j-right: #008cff;
+    $c-left : #630000; $c-right: #ff008d;
+    $b-left : #006300; $b-right: #00ff00;
+    
+    
+    font-style:normal;
+    color:white;
+    padding:$logo-padding 0 0 $logo-padding;
+    > div {
+        width: 15px ;
+        margin-right:$logo-margin;
+        display:inline-block;
+        text-align:center;
+        text-shadow:1px 1px rgba(0, 0, 0, 0.6);
+        @include jcb-radius( 5px );
+        &:before, &:after {
+            content: " ";
+            display: block;
+            height: 8px;
+        }
+        
+        &:first-child {
+            margin-left: $logo-padding ;
+        }
+        
+        &.j {
+            @include linear-gradient( to right , $j-left, $j-right);
+        }
+        &.c {
+            @include linear-gradient( to right , $c-left, $c-right);
+        }
+        &.b {
+            @include linear-gradient( to right , $b-left, $b-right);
+        }
+    }
+}
