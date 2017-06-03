@@ -1,5 +1,6 @@
 $logo-height: 36px;
 $logo-width: 60px;
+$mastercard-family-name-height: 84px;
 
 @include exports("_logo.scss") {
     .jp-card-logo {

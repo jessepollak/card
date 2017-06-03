@@ -2,14 +2,16 @@
 
 .jp-card-logo.jp-card-mastercard {
     // display: none;
-    $red: #FF0000;
-    $yellow: #FFAB00;
+    $red: #EB001B;
+    $yellow: #FF5F00;
     $offset: 0;
     color: white;
+    font-style: normal;
+    text-transform: lowercase;
     font-weight: bold;
     text-align: center;
     font-size: 9px;
-    line-height: $logo-height;
+    line-height: $mastercard-family-name-height;
     z-index: 1;
     text-shadow: 1px 1px rgba(0, 0, 0, .6);
     &:before, &:after {
@@ -26,6 +28,7 @@
         left: $offset;
         background: $red;
         z-index: -1;
+        opacity: 0.9;
     }
 
     &:after {
