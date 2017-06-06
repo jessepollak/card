@@ -11,13 +11,15 @@
     $c-left : #630000; $c-right: #ff008d;
     $b-left : #006300; $b-right: #00ff00;
     
-    
+    @include jcb-radius( 5px );
+    background-color: white;
     font-style:normal;
     color:white;
+    width:50px;
     padding:$logo-padding 0 0 $logo-padding;
     > div {
         width: 15px ;
-        margin-right:$logo-margin;
+        margin-right:1px;
         display:inline-block;
         text-align:center;
         text-shadow:1px 1px rgba(0, 0, 0, 0.6);
@@ -26,10 +28,6 @@
             content: " ";
             display: block;
             height: 8px;
-        }
-        
-        &:first-child {
-            margin-left: $logo-padding ;
         }
         
         &.j {
