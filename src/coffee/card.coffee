@@ -188,6 +188,11 @@ class Card
         # in a timeout
         setTimeout -> QJ.trigger el, 'keyup'
 
+    # if the number input has a value, call the setCardType method
+    if @options.placeholders.number
+      @handlers.setCardType.call this, null,
+          data: Payment.fns.cardType(@options.placeholders.number)
+
   handle: (fn) ->
     (e) =>
       args = Array.prototype.slice.call arguments
