@@ -199,9 +199,13 @@ $('form').card({
 
 Card has wrappers that make it easy to use with other javascript libraries:
 
-### Angular (1.x Currently)
+### Angular 1.x
 
 * [angular-card](https://github.com/gavruk/angular-card)
+
+### Angular 2+
+
+* [ngx-card](https://github.com/ihym/ngx-card)
 
 ### Ember
 
