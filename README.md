@@ -211,6 +211,7 @@ Card has wrappers that make it easy to use with other javascript libraries:
 
 * [react-credit-card](https://github.com/JohnyDays/react-credit-card)
 * [card-react](https://github.com/shatran/card-react)
+* [react-plastic](https://github.com/armsteadj1/react-plastic) - static CSS only version.
 
 ## Development
 
