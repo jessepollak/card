@@ -2,14 +2,16 @@
 
 .jp-card-logo.jp-card-maestro {
     // display: none;
-    $blue: #0064CB;
-    $red: #CC0000;
+    $blue: #EB001B;
+    $red: #00A2E5;
     $offset: 0;
     color: white;
+    font-style: normal;
+    text-transform: lowercase;
     font-weight: bold;
     text-align: center;
     font-size: 14px;
-    line-height: $logo-height;
+    line-height: $mastercard-family-name-height;
     z-index: 1;
     text-shadow: 1px 1px rgba(0, 0, 0, .6);
     &:before, &:after {
@@ -25,12 +27,13 @@
     &:before {
         left: $offset;
         background: $blue;
-        z-index: -1;
+        z-index: -2;
     }
 
     &:after {
         right: $offset;
         background: $red;
-        z-index: -2;
+        z-index: -1;
+        opacity: 0.8;
     }
 }
