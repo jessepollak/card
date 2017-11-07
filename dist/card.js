@@ -57,7 +57,7 @@ var card =
 	extend = __webpack_require__(7);
 
 	Card = (function() {
-	  var bindVal;
+	  var bindVal, setVal;
 
 	  Card.prototype.initializedDataAttr = "data-jp-card-initialized";
 
@@ -343,6 +343,7 @@ var card =
 	      }
 	      return results;
 	    })();
+	    setVal(el, out, outDefaults, opts);
 	    QJ.on(el, 'focus', function() {
 	      return QJ.addClass(out, 'jp-card-focused');
 	    });
@@ -350,39 +351,43 @@ var card =
 	      return QJ.removeClass(out, 'jp-card-focused');
 	    });
 	    QJ.on(el, 'keyup change paste', function(e) {
-	      var elem, filter, i, j, join, k, len, len1, outEl, outVal, ref, results, val;
-	      val = (function() {
-	        var j, len, results;
-	        results = [];
-	        for (j = 0, len = el.length; j < len; j++) {
-	          elem = el[j];
-	          results.push(QJ.val(elem));
-	        }
-	        return results;
-	      })();
-	      join = opts.join(val);
-	      val = val.join(join);
-	      if (val === join) {
-	        val = "";
-	      }
-	      ref = opts.filters;
-	      for (j = 0, len = ref.length; j < len; j++) {
-	        filter = ref[j];
-	        val = filter(val, el, out);
-	      }
-	      results = [];
-	      for (i = k = 0, len1 = out.length; k < len1; i = ++k) {
-	        outEl = out[i];
-	        if (opts.fill) {
-	          outVal = val + outDefaults[i].substring(val.length);
-	        } else {
-	          outVal = val || outDefaults[i];
-	        }
-	        results.push(outEl.textContent = outVal);
-	      }
-	      return results;
+	      return setVal(el, out, outDefaults, opts);
 	    });
 	    return el;
+	  };
+
+	  setVal = function(el, out, outDefaults, opts) {
+	    var elem, filter, i, j, join, k, len, len1, outEl, outVal, ref, results, val;
+	    val = (function() {
+	      var j, len, results;
+	      results = [];
+	      for (j = 0, len = el.length; j < len; j++) {
+	        elem = el[j];
+	        results.push(QJ.val(elem));
+	      }
+	      return results;
+	    })();
+	    join = opts.join(val);
+	    val = val.join(join);
+	    if (val === join) {
+	      val = "";
+	    }
+	    ref = opts.filters;
+	    for (j = 0, len = ref.length; j < len; j++) {
+	      filter = ref[j];
+	      val = filter(val, el, out);
+	    }
+	    results = [];
+	    for (i = k = 0, len1 = out.length; k < len1; i = ++k) {
+	      outEl = out[i];
+	      if (opts.fill) {
+	        outVal = val + outDefaults[i].substring(val.length);
+	      } else {
+	        outVal = val || outDefaults[i];
+	      }
+	      results.push(outEl.textContent = outVal);
+	    }
+	    return results;
 	  };
 
 	  return Card;
