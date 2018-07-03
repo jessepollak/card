@@ -1,12 +1,10 @@
 @import "bourbon/app/assets/stylesheets/bourbon";
-@import "mixins";
-
-// browser specific hacks
+@import "mixins"; // browser specific hacks
 @import "browsers/safari";
 @import "browsers/ie";
-
 @import "cards/amex";
 @import "cards/discover";
+@import "cards/unionpay";
 @import "cards/visa";
 @import "cards/visaelectron";
 @import "cards/mastercard";
@@ -17,266 +15,274 @@
 @import "cards/dinersclub";
 
 .jp-card-container {
-    @include perspective(1000px);
-    width: $card-width;
-    max-width: 100%;
-    height: $card-height;
-    margin: auto;
-    z-index: 1;
-    position: relative;
+  @include perspective(1000px);
+  width: $card-width;
+  max-width: 100%;
+  height: $card-height;
+  margin: auto;
+  z-index: 1;
+  position: relative;
 }
 
 .jp-card {
-    font-family: $card-font-family;
-    line-height: 1;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-width: 315px;
-    border-radius: $card-border-radius;
+  font-family: $card-font-family;
+  line-height: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 315px;
+  border-radius: $card-border-radius;
 
-    & > *, & > *:before, & > *:after {
-        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-        font-family: inherit;
-    }
+  & > *,
+  & > *:after,
+  & > *:before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  @include transform-style(preserve-3d);
+  @include transition(all $card-transition-time linear);
 
+  &.jp-card-flipped {
+    @include transform(rotateY(180deg));
+  }
+
+  .jp-card-back,
+  .jp-card-front {
+    @include backface-visibility(hidden);
     @include transform-style(preserve-3d);
     @include transition(all $card-transition-time linear);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: $card-border-radius;
+    background: #DDD;
 
-    &.jp-card-flipped {
-        @include transform(rotateY(180deg));
+    &:before {
+      @include shape();
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      border-radius: 10px;
+      @include transition(all $card-transition-time ease);
     }
 
-    .jp-card-front, .jp-card-back {
-        @include backface-visibility(hidden);
-        @include transform-style(preserve-3d);
-        @include transition(all $card-transition-time linear);
-        width: 100%;
-        height: 100%;
+    &:after {
+      @include shape();
+    }
+
+    .jp-card-display {
+      color: $card-font-color;
+      font-weight: normal;
+      opacity: 0.5;
+      @include transition(opacity $card-transition-time linear);
+
+      &.jp-card-focused {
+        opacity: 1;
+        font-weight: 700;
+
+        &.valid {}
+      }
+    }
+
+    .jp-card-cvc {
+      font-family: $card-monospace-font-family;
+      font-size: 14px;
+    }
+
+    .jp-card-shiny {
+      $color: #CCC;
+      $radius: 5px;
+      width: 50px;
+      height: 35px;
+      border-radius: $radius;
+      background: $color;
+      position: relative;
+
+      &:before {
+        @include shape();
+        $height: 60%;
+        width: 70%;
+        height: $height;
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+        background: lighten($color, 5%);
         position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        border-radius: $card-border-radius;
-        background: #DDD;
+        top: (100% - $height) / 2;
+      }
+    }
+  }
+
+  .jp-card-front {
+    .jp-card-logo {
+      position: absolute;
+      opacity: 0;
+      right: 5%;
+      top: 8%;
+      @include transition($card-transition-time);
+    }
+
+    .jp-card-lower {
+      $width: 80%;
+      width: $width;
+      position: absolute;
+      left: (100% - $width) / 2;
+      bottom: 30px;
+      @media only screen and (max-width : 480px) {
+        width: 90%;
+        left: 5%;
+      }
+
+      .jp-card-cvc {
+        visibility: hidden;
+        float: right;
+        position: relative;
+        bottom: 5px;
+      }
+
+      .jp-card-number {
+        font-family: $card-monospace-font-family;
+        font-size: 24px;
+        clear: both;
+        margin-bottom: 30px;
+      }
+
+      .jp-card-expiry {
+        font-family: $card-monospace-font-family;
+        $label-padding: 5px;
+        letter-spacing: 0;
+        position: relative;
+        float: right;
+        width: 25%;
+
+        &:after,
+        &:before {
+          font-family: $card-font-family;
+          font-weight: bold;
+          font-size: 7px;
+          white-space: pre;
+          display: block;
+          opacity: 0.5;
+        }
 
         &:before {
-            @include shape();
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            border-radius: 10px;
-            @include transition(all $card-transition-time ease);
+          content: attr(data-before);
+          margin-bottom: $label-padding - 3px;
+          font-size: 7px;
+          text-transform: uppercase;
         }
 
         &:after {
-            @include shape();
+          position: absolute;
+          content: attr(data-after);
+          text-align: right;
+          right: 100%;
+          margin-right: $label-padding;
+          margin-top: 2px;
+          bottom: 0;
         }
+      }
 
-        .jp-card-display {
-            color: $card-font-color;
-            font-weight: normal;
-            opacity: 0.5;
-            @include transition(opacity $card-transition-time linear);
-            &.jp-card-focused {
-                opacity: 1;
-                font-weight: 700;
-                &.valid {}
-            }
-        }
+      .jp-card-name {
+        text-transform: uppercase;
+        font-family: $card-monospace-font-family;
+        font-size: 20px;
+        max-height: 45px;
+        position: absolute;
+        bottom: 0;
+        width: 190px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: horizontal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 
-        .jp-card-cvc {
-            font-family: $card-monospace-font-family;
-            font-size: 14px;
-        }
+  .jp-card-back {
+    @include transform(rotateY(180deg));
+    $bar-top-offset: 40%;
+    $signature-height: 16%;
+    $signature-left: 2%;
 
-        .jp-card-shiny {
-            $color: #CCC;
-            $radius: 5px;
-            width: 50px;
-            height: 35px;
-            border-radius: $radius;
-            background: $color;
-            position: relative;
-            &:before {
-                @include shape();
-                $height: 60%;
-                width: 70%;
-                height: $height;
-                border-top-right-radius: $radius;
-                border-bottom-right-radius: $radius;
-                background: lighten($color, 5%);
-                position: absolute;
-                top: (100% - $height) / 2
-            }
-        }
+    .jp-card-bar {
+      @include linear-gradient(#444, #333);
+      width: 100%;
+      height: 20%;
+      position: absolute;
+      top: 10%;
     }
 
+    &:after {
+      @include shape();
+      @include linear-gradient(#FFF, #FFF);
+      width: 80%;
+      height: $signature-height;
+      position: absolute;
+      top: $bar-top-offset;
+      left: $signature-left;
+    }
+
+    .jp-card-cvc {
+      position: absolute;
+      top: $bar-top-offset;
+      left: 85%;
+      @include transition-delay($card-transition-time + 200ms);
+    }
+
+    .jp-card-shiny {
+      position: absolute;
+      top: $bar-top-offset + $signature-height + 10%;
+      left: $signature-left;
+
+      &:after {
+        content: "This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free. It comes with no warranty. For support issues, please visit: github.com/jessepollak/card.";
+        position: absolute;
+        left: 120%;
+        top: 5%;
+        color: white;
+        font-size: 7px;
+        width: 230px;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.jp-card-identified {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+    .jp-card-back,
     .jp-card-front {
+      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.5);
 
-        .jp-card-logo{
-            position: absolute;
-            opacity: 0;
-            right: 5%;
-            top: 8%;
-            @include transition($card-transition-time);
-        }
+      &:before {
+        @include transition(all $card-transition-time ease);
+        @include card-texture();
+        opacity: 1;
+        // box-shadow: inset 0 0 5px rgba(255,255,255,1);
+      }
 
-        .jp-card-lower {
-            $width: 80%;
-            width: $width;
-            position: absolute;
-            left: (100% - $width) / 2;
-            bottom: 30px;
-
-            @media only screen and (max-width : 480px) {
-                width: 90%;
-                left: 5%;
-            }
-
-            .jp-card-cvc {
-                visibility: hidden;
-                float: right;
-                position: relative;
-                bottom: 5px;
-            }
-
-            .jp-card-number {
-                font-family: $card-monospace-font-family;
-                font-size: 24px;
-                clear: both;
-                margin-bottom: 30px;
-            }
-
-            .jp-card-expiry {
-                font-family: $card-monospace-font-family;
-                $label-padding: 5px;
-                letter-spacing: 0em;
-                position: relative;
-                float: right;
-                width: 25%;
-
-                &:before, &:after {
-                    font-family: $card-font-family;
-                    font-weight: bold;
-                    font-size: 7px;
-                    white-space: pre;
-                    display: block;
-                    opacity: .5;
-                }
-
-                &:before {
-                    content: attr(data-before);
-                    margin-bottom: $label-padding - 3px;
-                    font-size: 7px;
-                    text-transform: uppercase;
-                }
-
-                &:after {
-                    position: absolute;
-                    content: attr(data-after);
-                    text-align: right;
-                    right: 100%;
-                    margin-right: $label-padding;
-                    margin-top: 2px;
-                    bottom: 0;
-                }
-            }
-
-            .jp-card-name {
-                text-transform: uppercase;
-                font-family: $card-monospace-font-family;
-                font-size: 20px;
-                max-height: 45px;
-                position: absolute;
-                bottom: 0;
-                width: 190px;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: horizontal;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
+      .jp-card-logo {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+      }
     }
 
-    .jp-card-back {
-        @include transform(rotateY(180deg));
-        $bar-top-offset: 40%;
-        $signature-height: 16%;
-        $signature-left: 2%;
-
-        .jp-card-bar {
-            @include linear-gradient(#444, #333);
-            width: 100%;
-            height: 20%;
-            position: absolute;
-            top: 10%;
+    &.no-radial-gradient {
+      .jp-card-back,
+      .jp-card-front {
+        &:before {
+          @include card-texture($radial-gradient: false);
         }
-
-        &:after {
-            @include shape();
-            @include linear-gradient(#FFF, #FFF);
-            width: 80%;
-            height: $signature-height;
-            position: absolute;
-            top: $bar-top-offset;
-            left: $signature-left;
-        }
-
-        .jp-card-cvc {
-            position: absolute;
-            top: $bar-top-offset;
-            left: 85%;
-            @include transition-delay($card-transition-time + 200ms);
-        }
-
-        .jp-card-shiny {
-            position: absolute;
-            top: $bar-top-offset + $signature-height + 10%;
-            left: $signature-left;
-
-            &:after {
-                content: "This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free. It comes with no warranty. For support issues, please visit: github.com/jessepollak/card.";
-                position: absolute;
-                left: 120%;
-                top: 5%;
-                color: white;
-                font-size: 7px;
-                width: 230px;
-                opacity: .5;
-            }
-        }
+      }
     }
-
-    &.jp-card-identified {
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-
-        .jp-card-front, .jp-card-back {
-            background-color: #000;
-            background-color: rgba(0, 0, 0, 0.5);
-
-            &:before {
-                @include transition(all $card-transition-time ease);
-                @include card-texture();
-                opacity: 1;
-                // box-shadow: inset 0 0 5px rgba(255,255,255,1);
-            }
-
-            .jp-card-logo {
-                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        &.no-radial-gradient {
-            .jp-card-front, .jp-card-back {
-                &:before {
-                    @include card-texture($radial-gradient: false);
-                }
-            }
-        }
-    }
+  }
 }
