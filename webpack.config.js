@@ -17,13 +17,20 @@ var baseConfig = {
     library: 'card',
     libraryTarget: 'var',
   },
+
   module: {
     loaders: [
       { test: /\.scss/, loaders: ["style-loader", "css-loader", "sass-loader"] },
       { test: /\.json/, loader: "json-loader" },
       { test: /\.coffee$/, loader: "coffee-loader" }
     ]
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      global: 'window'
+    })
+  ]
 }
 
 var jQueryConfig = _.defaults(

@@ -1,0 +1,19 @@
+@import "logo";
+
+.jp-card-logo.jp-card-hipercard {
+    height: 20px;
+    width: 100px;
+    color: white;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: bold;
+
+    &::before, &::after {
+        display: block;
+        position: relative;
+    }
+    svg {
+        width: 100%;
+        display: block;
+    }
+}
