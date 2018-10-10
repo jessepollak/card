@@ -22,6 +22,7 @@ class Card
               '<div class="jp-card-logo jp-card-amex"></div>' +
               '<div class="jp-card-logo jp-card-discover">discover</div>' +
               '<div class="jp-card-logo jp-card-dinersclub"></div>' +
+              '<div class="jp-card-logo jp-card-hipercard">Hipercard</div>' +
               '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' +
               '<div class="jp-card-logo jp-card-jcb">' +
                 '<div class="j">J</div>' +
@@ -58,7 +59,8 @@ class Card
     'jp-card-unionpay',
     'jp-card-visa',
     'jp-card-visaelectron',
-    'jp-card-elo'
+    'jp-card-elo',
+    'jp-card-hipercard'
   ]
   defaults:
     formatting: true
