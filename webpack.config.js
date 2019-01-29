@@ -2,9 +2,9 @@ var webpack = require('webpack')
 var _ = require('underscore')
 
 var baseConfig = {
+  mode: 'development',
   resolve: {
     extensions: [
-      '',
       '.js',
       '.coffee',
       '.scss'
@@ -18,9 +18,13 @@ var baseConfig = {
     libraryTarget: 'var',
   },
   module: {
-    loaders: [
-      { test: /\.scss/, loaders: ["style-loader", "css-loader", "sass-loader"] },
-      { test: /\.json/, loader: "json-loader" },
+    rules: [
+      {
+        test: /\.scss/,
+        use: [
+          "style-loader", "css-loader", "sass-loader"
+        ],
+      },
       { test: /\.coffee$/, loader: "coffee-loader" }
     ]
   }

@@ -38,17 +38,18 @@
     "event-stream": "^3.3.1",
     "glob": "^7.0.5",
     "jquery": "~3.0.0",
-    "node-sass": "^3.8.0",
+    "node-sass": "^4.11.0",
     "nodemon": "~1.9.2",
-    "replace": "^0.3.0",
+    "replace": "^1.0.1",
     "rimraf": "^2.5.4",
     "run-sequence": "~1.2.1",
-    "sass-loader": "^3.2.2",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.13.1",
     "underscore": "^1.8.3",
     "vinyl-source-stream": "^1.1.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "^4.29.0 ",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "node.extend": "~1.1.3",
