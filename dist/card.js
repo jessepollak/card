@@ -1,4 +1,4 @@
-var card =
+var card =1234 5678 9010 0124
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
