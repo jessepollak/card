@@ -217,6 +217,58 @@ Card has wrappers that make it easy to use with other javascript libraries:
 * [card-react](https://github.com/shatran/card-react)
 * [react-plastic](https://github.com/armsteadj1/react-plastic) - static CSS only version.
 
+### Vue
+
+For use with VueJs, install card.js from npm:
+
+```bash
+npm install card --save
+
+```
+Add in your component an Div with class 'card-wrapper', just pass in a selector that selects the fields in the correct order. Import the component card.js and add the object in instance mounted like this example:
+```html
+<div class='card-wrapper'></div>
+
+<form>
+    <input type="text" name="number">
+    <input type="text" name="first-name"/>
+    <input type="text" name="last-name"/>
+    <input type="text" name="expiry"/>
+    <input type="text" name="cvc"/>
+</form>
+
+<script>
+import * as Card from "card";
+
+export default {
+    name: "Form CreditCard",
+    mounted() {
+    new Card({ 
+      form: "form#cc-form",
+      container: ".card-wrapper",
+      formSelectors: { 
+        numberInput: "input#cc-number",
+        expiryInput: "input#cc-expiration",
+        cvcInput: "input#cc-cvv",
+        nameInput: "input#cc-name"
+      },
+      width: 270,
+      formatting: true,
+      placeholders: {
+        number: "•••• •••• •••• ••••",
+        name: "Nome Completo",
+        expiry: "••/••",
+        cvc: "•••"
+      }
+    });
+  },
+}
+</script>
+```
+
+
+
+
 ## Development
 
 To contribute, follow this steps:
