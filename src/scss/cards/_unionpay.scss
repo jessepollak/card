@@ -1,0 +1,19 @@
+@import "card";
+@import "../logos/unionpay";
+$fill-color: #987c00;
+$highlight-color: #FF6600;
+
+.jp-card.jp-card-unionpay {
+  &.jp-card-identified {
+    .jp-card-back,
+    .jp-card-front {
+      &:before {
+        background-color: $fill-color;
+      }
+    }
+
+    .jp-card-logo.jp-card-unionpay {
+      opacity: 1;
+    }
+  }
+}

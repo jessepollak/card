@@ -1,0 +1,52 @@
+@import "logo";
+
+.jp-card-logo.jp-card-unionpay {
+  $red: #e21836;
+  $offset: 0;
+  $size: 40px;
+  width: $size + 20;
+  display: block;
+  height: $size;
+  background: $red;
+  -webkit-transform: skew(-15deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  border-radius: 5px;
+  font-size: 10px;
+  z-index: 1;
+  line-height: 33px;
+  color: #fff;
+  text-align: center;
+  font-family: "Sans-serif", "Microsoft Yahei", "\5FAE\8F6F\96C5\9ED1", "Hiragino Sans", "Gulim", "\5B8B\4F53";
+  font-weight: bold;
+
+  &:after,
+  &:before {
+    display: block;
+    margin: $offset auto;
+    position: absolute;
+    height: $size;
+    top: $offset;
+    z-index: -1;
+  }
+
+  &:before {
+    content: " ";
+    width: $size - 12;
+    background: #00447c;
+    left: 14px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &:after {
+    content: "银联";
+    width: $size - 14;
+    background: #007b84;
+    left: 34px;
+    border-radius: 5px;
+    font-size: 10px;
+    line-height: 54px;
+    text-indent: -17px;
+  }
+}
