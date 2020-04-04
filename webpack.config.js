@@ -2,7 +2,7 @@ var webpack = require('webpack')
 var _ = require('underscore')
 
 var baseConfig = {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     extensions: [
       '.js',
