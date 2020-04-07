@@ -22,7 +22,7 @@ var baseConfig = {
       {
         test: /\.scss/,
         use: [
-          "style-loader", "css-loader", "sass-loader"
+          "style-loader", "css-loader", "sass-loader?outputStyle=compressed"
         ],
       },
       { test: /\.coffee$/, loader: "coffee-loader" }
