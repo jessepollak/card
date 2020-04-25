@@ -24,6 +24,7 @@ class Card
               '<div class="jp-card-logo jp-card-unionpay">UnionPay</div>' +
               '<div class="jp-card-logo jp-card-dinersclub"></div>' +
               '<div class="jp-card-logo jp-card-hipercard">Hipercard</div>' +
+              '<div class="jp-card-logo jp-card-troy">troy</div>' +
               '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' +
               '<div class="jp-card-logo jp-card-jcb">' +
                 '<div class="j">J</div>' +
@@ -58,6 +59,7 @@ class Card
     'jp-card-laser',
     'jp-card-maestro',
     'jp-card-mastercard',
+    'jp-card-troy',
     'jp-card-unionpay',
     'jp-card-visa',
     'jp-card-visaelectron',
