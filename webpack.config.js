@@ -1,52 +1,47 @@
-var webpack = require('webpack')
-var _ = require('underscore')
+var webpack = require("webpack");
+var _ = require("underscore");
 
 var baseConfig = {
-  mode: 'production',
+  mode: "production",
   resolve: {
-    extensions: [
-      '.js',
-      '.coffee',
-      '.scss'
-    ]
+    extensions: [".js", ".coffee", ".scss"],
   },
-  entry: './src/coffee/card.coffee',
+  entry: "./src/coffee/card.coffee",
   output: {
-    path: __dirname + '/dist/',
-    filename: 'card.js',
-    library: 'card',
-    libraryTarget: 'var',
+    path: __dirname + "/dist/",
+    filename: "card.js",
+    library: "card",
+    libraryTarget: "var",
   },
   module: {
     rules: [
       {
         test: /\.scss/,
         use: [
-          "style-loader", "css-loader", "sass-loader?outputStyle=compressed"
+          "style-loader",
+          "css-loader",
+          "sass-loader?outputStyle=compressed",
         ],
       },
-      { test: /\.coffee$/, loader: "coffee-loader" }
-    ]
-  }
-}
+      { test: /\.coffee$/, loader: "coffee-loader" },
+    ],
+  },
+};
 
 var jQueryConfig = _.defaults(
   {
-    entry: './src/coffee/jquery.card.coffee',
+    entry: "./src/coffee/jquery.card.coffee",
     output: {
-      path: __dirname + '/dist/',
-      filename: 'jquery.card.js',
-      library: 'card',
-      libraryTarget: 'var',
+      path: __dirname + "/dist/",
+      filename: "jquery.card.js",
+      library: "card",
+      libraryTarget: "var",
     },
     externals: {
-      "jquery": "jQuery"
-    }
+      jquery: "jQuery",
+    },
   },
   baseConfig
-)
+);
 
-module.exports = [
-  baseConfig,
-  jQueryConfig
-]
+module.exports = [baseConfig, jQueryConfig];

@@ -1,5 +1,5 @@
 @import "bourbon/app/assets/stylesheets/bourbon";
-@import "mixins"; 
+@import "mixins";
 
 // browser specific hacks
 @import "browsers/safari";
@@ -64,7 +64,7 @@
     left: 0;
     overflow: hidden;
     border-radius: $card-border-radius;
-    background: #DDD;
+    background: #ddd;
 
     &:before {
       @include shape();
@@ -92,7 +92,8 @@
         opacity: 1;
         font-weight: 700;
 
-        &.valid {}
+        &.valid {
+        }
       }
     }
 
@@ -102,7 +103,7 @@
     }
 
     .jp-card-shiny {
-      $color: #CCC;
+      $color: #ccc;
       $radius: 5px;
       width: 50px;
       height: 35px;
@@ -139,7 +140,7 @@
       position: absolute;
       left: (100% - $width) / 2;
       bottom: 30px;
-      @media only screen and (max-width : 480px) {
+      @media only screen and (max-width: 480px) {
         width: 90%;
         left: 5%;
       }
@@ -227,7 +228,7 @@
 
     &:after {
       @include shape();
-      @include linear-gradient(#FFF, #FFF);
+      @include linear-gradient(#fff, #fff);
       width: 80%;
       height: $signature-height;
       position: absolute;
@@ -261,7 +262,7 @@
   }
 
   &.jp-card-identified {
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 
     .jp-card-back,
     .jp-card-front {
