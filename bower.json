@@ -1,29 +1,14 @@
 {
   "name": "card",
   "homepage": "https://github.com/jessepollak/card",
-  "authors": [
-    "Jesse Pollak <jpollak92@gmail.com>"
-  ],
+  "authors": ["Jesse Pollak <jpollak92@gmail.com>"],
   "description": "Card let's you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
-  "main": [
-    "dist/card.js"
-  ],
-  "keywords": [
-    "card",
-    "credit",
-    "card",
-    "form"
-  ],
+  "main": ["dist/card.js"],
+  "keywords": ["card", "credit", "card", "form"],
   "dependencies": {
     "jquery": ">=1.5"
   },
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "example",
-    "test",
-    "tests"
-  ],
-  "version": "2.4.0"
+  "ignore": ["**/.*", "node_modules", "example", "test", "tests"],
+  "version": "2.5.0"
 }
