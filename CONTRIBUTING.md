@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to the Card contributor guidlines. We are *so happy to have you*. No matter who you are or what your contributing background is, we want this to be a safe, fun place for you to help out.
+Welcome to the Card contributor guidelines. We are *so happy to have you*. No matter who you are or what your contributing background is, we want this to be a safe, fun place for you to help out.
 
 Card follows the [Clef code of conduct](https://github.com/clef/code-of-conduct) and violations are taken very seriously. If you seem something wrong, please don't hesitate to reach out to [@jessepollak](http://twitter.com/jessepollak) through their email on Github.
 
