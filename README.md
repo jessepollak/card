@@ -2,7 +2,7 @@
 
 ### A better credit card form in one line of code
 
-Card will take *any* credit card form and make it the best part of the checkout process (without you changing anything). Everything is created with pure CSS, HTML, and Javascript — no images required.
+The card will take *any* credit card form and make it the best part of the checkout process (without you changing anything). Everything is created with pure CSS, HTML, and Javascript — no images required.
 
 ![card](http://i.imgur.com/qG3TenO.gif)
 
@@ -109,7 +109,7 @@ var card = new Card({
 
 ### Rendering with different initial card placeholders
 
-Card renders with default placeholders for card `name`, `number`, `expiry`, and `cvc`. To override these placeholders, you can pass in a `placeholders` object.
+Card renders with default placeholders for card `name`, `number`, `expiry`, and `CVV`. To override these placeholders, you can pass in a `placeholders` object.
 
 ```html
 <html>
@@ -183,7 +183,7 @@ To use with jQuery, you'll need to include the `jquery.card.js` file into your H
 <script src="/path/to/jquery.card.js"></script>
 ```
 
-Once you've included those files, you can initialize Card with jQuery.
+Once you've included those files, you can initialize the Card with jQuery.
 
 ```javascript
 $('form').card({
@@ -197,7 +197,7 @@ $('form').card({
 ```
 ## Using with other javascript libraries
 
-Card has wrappers that make it easy to use with other javascript libraries:
+The card has wrappers that make it easy to use with other javascript libraries:
 
 ### Angular 1.x
 
@@ -233,7 +233,7 @@ Now, if you go to localhost:8080/example in your browser, you should see the dem
 
 ## Places using Card
 
-Card is used in the wild in these places:
+The card is used in the wild in these places:
 
 * [InspectAll](http://www.inspectall.com/)
 * [PennyWhale](https://www.pennywhale.com/)
@@ -258,8 +258,8 @@ Card is used in the wild in these places:
 * [ROKA](https://www.rokahub.com)
 * [LeSalon](https://lesalon.com)
 
-Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
+Are you using a Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
 ## Donations
 
-If you'd like to donate to help support development of Card, send Bitcoin directly to `17NUKd3v7GWben18kGhmFafa4ZpWrXpQSC` or through Coinbase [here](https://coinbase.com/jessepollak).
+If you'd like to donate to help support the development of Card, send Bitcoin directly to `17NUKd3v7GWben18kGhmFafa4ZpWrXpQSC` or through Coinbase [here](https://coinbase.com/jessepollak).
