@@ -21,7 +21,10 @@ class Card
               '<div class="jp-card-logo jp-card-maestro">Maestro</div>' +
               '<div class="jp-card-logo jp-card-amex"></div>' +
               '<div class="jp-card-logo jp-card-discover">discover</div>' +
+              '<div class="jp-card-logo jp-card-unionpay">UnionPay</div>' +
               '<div class="jp-card-logo jp-card-dinersclub"></div>' +
+              '<div class="jp-card-logo jp-card-hipercard">Hipercard</div>' +
+              '<div class="jp-card-logo jp-card-troy">troy</div>' +
               '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' +
               '<div class="jp-card-logo jp-card-jcb">' +
                 '<div class="j">J</div>' +
@@ -51,14 +54,17 @@ class Card
     'jp-card-dankort',
     'jp-card-dinersclub',
     'jp-card-discover',
+    'jp-card-unionpay',
     'jp-card-jcb',
     'jp-card-laser',
     'jp-card-maestro',
     'jp-card-mastercard',
+    'jp-card-troy',
     'jp-card-unionpay',
     'jp-card-visa',
     'jp-card-visaelectron',
-    'jp-card-elo'
+    'jp-card-elo',
+    'jp-card-hipercard'
   ]
   defaults:
     formatting: true
@@ -181,12 +187,13 @@ class Card
   handleInitialPlaceholders: ->
     for name, selector of @options.formSelectors
       el = this["$#{name}"]
+      el = el[0] if el instanceof NodeList
       if QJ.val(el)
         # if the input has a value, we want to trigger a refresh
         QJ.trigger el, 'paste'
         # set a timeout because `jquery.payment` does the reset of the val
         # in a timeout
-        setTimeout -> QJ.trigger el, 'keyup'
+        do (el) -> setTimeout -> QJ.trigger el, 'keyup'
 
   handle: (fn) ->
     (e) =>

@@ -217,6 +217,58 @@ Card has wrappers that make it easy to use with other javascript libraries:
 * [card-react](https://github.com/shatran/card-react)
 * [react-plastic](https://github.com/armsteadj1/react-plastic) - static CSS only version.
 
+### Vue
+
+For use with VueJs, install card.js from npm:
+
+```bash
+npm install card --save
+
+```
+Add in your component an Div with class 'card-wrapper', just pass in a selector that selects the fields in the correct order. Import the component card.js and add the object in instance mounted like this example:
+```html
+<div class='card-wrapper'></div>
+
+<form>
+    <input type="text" name="number">
+    <input type="text" name="first-name"/>
+    <input type="text" name="last-name"/>
+    <input type="text" name="expiry"/>
+    <input type="text" name="cvc"/>
+</form>
+
+<script>
+import * as Card from "card";
+
+export default {
+    name: "Form CreditCard",
+    mounted() {
+    new Card({ 
+      form: "form#cc-form",
+      container: ".card-wrapper",
+      formSelectors: { 
+        numberInput: "input#cc-number",
+        expiryInput: "input#cc-expiration",
+        cvcInput: "input#cc-cvv",
+        nameInput: "input#cc-name"
+      },
+      width: 270,
+      formatting: true,
+      placeholders: {
+        number: "•••• •••• •••• ••••",
+        name: "Nome Completo",
+        expiry: "••/••",
+        cvc: "•••"
+      }
+    });
+  },
+}
+</script>
+```
+
+
+
+
 ## Development
 
 To contribute, follow this steps:
@@ -226,7 +278,7 @@ $ git clone --recursive https://github.com/jessepollak/card.git
 $ cd card
 $ git submodule init && git submodule update
 $ npm install
-$ npm development
+$ npm run development
 ```
 
 Now, if you go to localhost:8080/example in your browser, you should see the demo page.
@@ -259,6 +311,12 @@ Card is used in the wild in these places:
 * [LeSalon](https://lesalon.com)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
+
+## Project scope
+
+The project scope is to improve the capture of payment cards on websites. Issues and fixes related to the user interface and validating of payment cards are in scope.
+
+For questions on how to use Card in your particular project, please ask on Stack Overflow or similar forum.
 
 ## Donations
 

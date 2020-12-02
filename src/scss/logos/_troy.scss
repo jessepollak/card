@@ -1,0 +1,25 @@
+@import "logo";
+
+.jp-card-logo.jp-card-troy {
+    text-transform: lowercase;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 18px;
+    margin-top: 5px;
+
+
+    &:before, &:after {
+        content: \"\";
+        display: block;
+        width: 26%;
+        height: 6%;
+        background: #22b8c3;
+        right: 32%;
+        top: 24%;
+        position: absolute;
+        transform: rotate(105deg);
+    }
+
+}
