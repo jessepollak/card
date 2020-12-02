@@ -260,6 +260,10 @@ class Card
 
     outDefaults = (o.textContent for o in out)
 
+    # Set the value on initiation
+    setVal(el, out, outDefaults, opts)
+
+    # Update on Events
     QJ.on el, 'focus', ->
       QJ.addClass out, 'jp-card-focused'
 
@@ -267,25 +271,29 @@ class Card
       QJ.removeClass out, 'jp-card-focused'
 
     QJ.on el, 'keyup change paste', (e) ->
-      val = (QJ.val(elem) for elem in el)
-
-      join = opts.join(val)
-
-      val = val.join(join)
-      val = "" if val == join
-
-      for filter in opts.filters
-        val = filter(val, el, out)
-
-      for outEl, i in out
-        if opts.fill
-          outVal = val + outDefaults[i].substring(val.length)
-        else
-          outVal = val or outDefaults[i]
-
-        outEl.textContent = outVal
+      setVal(el, out, outDefaults, opts)
 
     el
+
+  setVal = (el, out, outDefaults, opts) ->
+    val = (QJ.val(elem) for elem in el)
+
+    join = opts.join(val)
+
+    val = val.join(join)
+    val = "" if val == join
+
+    for filter in opts.filters
+      val = filter(val, el, out)
+
+    for outEl, i in out
+      if opts.fill
+        outVal = val + outDefaults[i].substring(val.length)
+      else
+        outVal = val or outDefaults[i]
+
+      outEl.textContent = outVal
+
 
 module.exports = Card
 global.Card = Card
