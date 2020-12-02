@@ -72,7 +72,7 @@ If you're using npm, you can install card.js with:
     npm install --save card
 
 	var $ = require("jquery");
-    // The current card.js code does not explicitly require jQuery, but instead uses the global, so this line is needed.
+    // The current card.js code does not explictly require jQuery, but instead uses the global, so this line is needed.
     window.jQuery = $;
     var card = require("card");
 
