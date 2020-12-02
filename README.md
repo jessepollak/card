@@ -312,6 +312,12 @@ Card is used in the wild in these places:
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
+## Project scope
+
+The project scope is to improve the capture of payment cards on websites. Issues and fixes related to the user interface and validating of payment cards are in scope.
+
+For questions on how to use Card in your particular project, please ask on Stack Overflow or similar forum.
+
 ## Donations
 
 If you'd like to donate to help support development of Card, send Bitcoin directly to `17NUKd3v7GWben18kGhmFafa4ZpWrXpQSC` or through Coinbase [here](https://coinbase.com/jessepollak).
