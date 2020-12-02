@@ -187,12 +187,13 @@ class Card
   handleInitialPlaceholders: ->
     for name, selector of @options.formSelectors
       el = this["$#{name}"]
+      el = el[0] if el instanceof NodeList
       if QJ.val(el)
         # if the input has a value, we want to trigger a refresh
         QJ.trigger el, 'paste'
         # set a timeout because `jquery.payment` does the reset of the val
         # in a timeout
-        setTimeout -> QJ.trigger el, 'keyup'
+        do (el) -> setTimeout -> QJ.trigger el, 'keyup'
 
   handle: (fn) ->
     (e) =>
