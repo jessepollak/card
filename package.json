@@ -1,6 +1,6 @@
 {
   "name": "card",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "author": "Jesse Pollak <jpollak92@gmail.com>",
   "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
   "main": "lib/card.js",
@@ -45,10 +45,10 @@
     "run-sequence": "~1.2.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.13.1",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.0",
     "vinyl-source-stream": "^1.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
