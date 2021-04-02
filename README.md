@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/card)
+
 # Card - check out the **[demo](https://jessepollak.github.io/card)**
 
 ### A better credit card form in one line of code
