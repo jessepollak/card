@@ -167,7 +167,9 @@ class Card
       filters: numberInputFilters
     QJ.on @$numberInput, 'payment.cardType', @handle('setCardType')
 
-    expiryFilters = [(val) -> val.replace /(\s+)/g, '']
+    expiryFilters = [(val) -> 
+                        if val.length == 1 and val[0] == '0' then '' else val.replace /(\s+)/g, ''
+                    ]
     expiryFilters.push @validToggler('cardExpiry')
 
     bindVal @$expiryInput, @$expiryDisplay,
