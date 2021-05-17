@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Card &ndash; the better way to collect credit cards</title>
     <meta name="viewport" content="initial-scale=1">
     <!-- CSS is included through the card.js script -->
 </head>
+
 <body>
     <style>
         .demo-container {
@@ -16,12 +18,12 @@
         form {
             margin: 30px;
         }
+
         input {
             width: 200px;
             margin: 10px auto;
             display: block;
         }
-
     </style>
     <div class="demo-container">
         <div class="card-wrapper"></div>
@@ -38,10 +40,11 @@
 
     <script src="http://localhost:8080/card.js"></script>
     <script>
-        new Card({
+        var c = new Card({
             form: document.querySelector('form'),
             container: '.card-wrapper'
         });
     </script>
 </body>
+
 </html>
