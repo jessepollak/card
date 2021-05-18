@@ -300,7 +300,7 @@ class Card
 
   getCardType: ->
     ccType = Payment.fns.cardType(@$numberInput[0].value)
-    if ccType then Payment.fns.cardType(@$numberInput[0].value) else 'unknown'
+    if ccType then ccType else 'unknown'
 
 
 module.exports = Card
