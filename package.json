@@ -34,7 +34,7 @@
     "bower": "^1.8.12",
     "coffee-loader": "^0.7.2",
     "coffee-script": "~1.10.0",
-    "css-loader": "^0.23.1",
+    "css-loader": "^5.2.4",
     "event-stream": "^3.3.1",
     "glob": "^7.0.5",
     "jquery": "^3.6.0",
