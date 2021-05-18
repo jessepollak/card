@@ -239,6 +239,8 @@ class Card
   handlers:
     setCardType: ($el, e) ->
       cardType = e.data
+      event = new CustomEvent('card-type-changed', 'detail': e.data)
+      document.dispatchEvent event
       unless QJ.hasClass @$card, cardType
         QJ.removeClass @$card, 'jp-card-unknown'
         QJ.removeClass @$card, @cardTypes.join(' ')
@@ -295,6 +297,10 @@ class Card
         outVal = val or outDefaults[i]
 
       outEl.textContent = outVal
+
+  getCardType: ->
+    ccType = Payment.fns.cardType(@$numberInput[0].value)
+    if ccType then ccType else 'unknown'
 
 
 module.exports = Card
