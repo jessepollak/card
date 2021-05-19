@@ -44,7 +44,7 @@
     "rimraf": "^3.0.2",
     "run-sequence": "~2.2.1",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.13.1",
+    "style-loader": "^2.0.0",
     "underscore": "^1.12.1",
     "vinyl-source-stream": "^2.0.0",
     "webpack": "^4.46.0",
