@@ -1,6 +1,6 @@
 {
   "name": "card",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "author": "Jesse Pollak <jpollak92@gmail.com>",
   "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
   "main": "lib/card.js",
@@ -12,6 +12,10 @@
     {
       "name": "Jesse Pollak",
       "email": "jpollak92@gmail.com"
+    },
+    {
+      "name": "Melloware",
+      "email": "mellowaredev@gmail.com"
     },
     {
       "name": "Daniel Juhl",
@@ -38,7 +42,7 @@
     "event-stream": "^3.3.1",
     "glob": "^7.0.5",
     "jquery": "^3.6.0",
-    "node-sass": "^6.0.0",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.7",
     "replace": "^1.2.1",
     "rimraf": "^3.0.2",
