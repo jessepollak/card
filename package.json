@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "node.extend": "~2.0.2",
-    "payment": "^2.4.5",
+    "payment": "^2.4.6",
     "qj": "^2.0.0"
   }
 }
