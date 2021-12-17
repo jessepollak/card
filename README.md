@@ -88,7 +88,7 @@ Card can be used in forms where you have multiple inputs that render to a single
 <div class='card-wrapper'></div>
 <!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
-<form>
+<form id="cc-form">
     <input type="text" name="number">
     <input type="text" name="first-name"/>
     <input type="text" name="last-name"/>
@@ -97,7 +97,7 @@ Card can be used in forms where you have multiple inputs that render to a single
 </form>
 <script>
 var card = new Card({
-    form: 'form',
+    form: 'cc-form',
     container: '.card-wrapper',
 
     formSelectors: {
@@ -119,7 +119,7 @@ Card renders with default placeholders for card `name`, `number`, `expiry`, and 
 <div class='card-wrapper'></div>
 <!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
-<form>
+<form id="cc-form">
     <input type="text" name="number">
     <input type="text" name="name"/>
     <input type="text" name="expiry"/>
@@ -128,7 +128,7 @@ Card renders with default placeholders for card `name`, `number`, `expiry`, and 
 <script>
 
 var card = new Card({
-    form: 'form',
+    form: 'cc-form',
     container: '.card-wrapper',
 
     placeholders: {
@@ -153,7 +153,7 @@ To render the card with the strings in a different language, you can pass in a `
 <div class='card-wrapper'></div>
 <!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
-<form>
+<form id="cc-form">
     <input type="text" name="number">
     <input type="text" name="name"/>
     <input type="text" name="expiry"/>
@@ -162,7 +162,7 @@ To render the card with the strings in a different language, you can pass in a `
 <script>
 
 var card = new Card({
-    form: 'form',
+    form: 'cc-form',
     container: '.card-wrapper',
 
     messages: {
