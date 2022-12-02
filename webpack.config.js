@@ -20,7 +20,15 @@ var baseConfig = {
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader?outputStyle=compressed",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("node-sass"),
+              sassOptions: {
+                outputStyle: "compressed",
+              },
+            },
+          },
         ],
       },
       { test: /\.coffee$/, loader: "coffee-loader" },
