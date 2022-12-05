@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "bower": "^1.8.12",
-    "coffee-loader": "^0.7.2",
+    "coffee-loader": "^4.0.0",
     "coffee-script": "~1.12.7",
     "css-loader": "^6.7.2",
     "event-stream": "^4.0.1",
