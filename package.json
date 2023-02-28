@@ -40,7 +40,7 @@
     "coffee-script": "~1.12.7",
     "css-loader": "^6.7.2",
     "event-stream": "^4.0.1",
-    "glob": "^8.0.3",
+    "glob": "^9.0.1",
     "jquery": "^3.6.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.7",
