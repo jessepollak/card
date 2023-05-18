@@ -45,7 +45,7 @@
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.7",
     "replace": "^1.2.1",
-    "rimraf": "^4.0.4",
+    "rimraf": "^5.0.1",
     "run-sequence": "~2.2.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
